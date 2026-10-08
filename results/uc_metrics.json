@@ -1,0 +1,100 @@
+{
+ "internal": {
+  "dataset": "LIMUC",
+  "images": 11276,
+  "patients": 564,
+  "class_counts": [
+   6105,
+   3052,
+   1254,
+   865
+  ],
+  "cv": "5-fold StratifiedGroupKFold by patient (no patient in both train and test)",
+  "accuracy": 0.6716034054629301,
+  "macro_f1": 0.6005481105966063,
+  "qwk": 0.7416638432995951,
+  "qwk_ci95": [
+   0.7202606171020641,
+   0.7597294729590305
+  ],
+  "per_class_recall": [
+   0.7552825552825553,
+   0.5976408912188729,
+   0.474481658692185,
+   0.6277456647398844
+  ],
+  "confusion": [
+   [
+    4611,
+    1272,
+    177,
+    45
+   ],
+   [
+    706,
+    1824,
+    452,
+    70
+   ],
+   [
+    59,
+    334,
+    595,
+    266
+   ],
+   [
+    17,
+    39,
+    266,
+    543
+   ]
+  ],
+  "remission_vs_active": {
+   "auroc": 0.9427945457571122,
+   "auroc_ci95": [
+    0.9341702527694439,
+    0.9496397532912806
+   ],
+   "accuracy": 0.8989003192621497,
+   "sensitivity": 0.7848041529023124,
+   "specificity": 0.9253030468494048
+  },
+  "temperature_scaling": {
+   "nll_before": 0.9392160357316819,
+   "nll_after": 0.7578690164173206,
+   "ece_before": 0.14436892203200685,
+   "ece_after": 0.014182683976577527,
+   "T": 2.2409318462841794
+  }
+ },
+ "external": {
+  "dataset": "HyperKvasir UC subset",
+  "images": 851,
+  "grade_counts": {
+   "grade-2": 443,
+   "grade-1": 201,
+   "grade-3": 133,
+   "grade-0-1": 35,
+   "grade-2-3": 28,
+   "grade-1-2": 11
+  },
+  "spearman_expected_mayo_vs_grade": 0.44641253666951014,
+  "remission_vs_active": {
+   "n": 840,
+   "auroc": 0.7461836345268829,
+   "accuracy": 0.7226190476190476,
+   "sensitivity": 0.8195364238410596,
+   "specificity": 0.4745762711864407
+  },
+  "exact_mayo_accuracy_on_single_grade_images": 0.5070785070785071,
+  "mean_expected_mayo_by_grade": {
+   "grade-0-1": 1.258005134507792,
+   "grade-1": 1.4424300124213805,
+   "grade-1-2": 1.751354879117378,
+   "grade-2": 1.8693206997636336,
+   "grade-2-3": 2.0603105822476397,
+   "grade-3": 2.291734203216687
+  },
+  "note": "HyperKvasir has no Mayo-0 class; images labelled 1-2 are excluded from the binary test"
+ }
+}

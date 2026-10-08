@@ -1,0 +1,7 @@
+{
+ "note": "LIMUC 5-fold patient-grouped CV, same LR head; features from the CrohnIPI fine-tuned fold-1 EfficientNet-B0 instead of ImageNet",
+ "accuracy": 0.6389677190493083,
+ "macro_f1": 0.5623959811784762,
+ "qwk": 0.7005999783789858,
+ "remission_vs_active_auroc": 0.9244595214217839
+}

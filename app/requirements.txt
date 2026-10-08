@@ -1,0 +1,8 @@
+# CrohnSight runtime (inference only - no PyTorch / scikit-learn needed)
+fastapi>=0.110
+uvicorn>=0.29
+python-multipart>=0.0.9
+onnxruntime>=1.17
+numpy>=1.24
+pillow>=10.0
+imageio-ffmpeg>=0.4    # video decoding for "Scan your own video" (bundles ffmpeg)

@@ -1,0 +1,144 @@
+{
+ "n_labelled_sampled_frames": 4728,
+ "videos": 43,
+ "per_class": {
+  "Ampulla of Vater": {
+   "n": 2,
+   "dropped_pct": 100.0
+  },
+  "Angiectasia": {
+   "n": 89,
+   "dropped_pct": 6.741573033707865
+  },
+  "Blood - fresh": {
+   "n": 43,
+   "dropped_pct": 51.162790697674424
+  },
+  "Blood - hematin": {
+   "n": 1,
+   "dropped_pct": 100.0
+  },
+  "Erosion": {
+   "n": 56,
+   "dropped_pct": 25.0
+  },
+  "Erythema": {
+   "n": 16,
+   "dropped_pct": 12.5
+  },
+  "Foreign Body": {
+   "n": 79,
+   "dropped_pct": 22.78481012658228
+  },
+  "Ileocecal valve": {
+   "n": 418,
+   "dropped_pct": 48.5645933014354
+  },
+  "Lymphangiectasia": {
+   "n": 61,
+   "dropped_pct": 13.114754098360656
+  },
+  "Normal clean mucosa": {
+   "n": 3432,
+   "dropped_pct": 9.644522144522144
+  },
+  "Polyp": {
+   "n": 5,
+   "dropped_pct": 20.0
+  },
+  "Pylorus": {
+   "n": 151,
+   "dropped_pct": 51.65562913907284
+  },
+  "Reduced Mucosal View": {
+   "n": 290,
+   "dropped_pct": 64.48275862068965
+  },
+  "Ulcer": {
+   "n": 85,
+   "dropped_pct": 58.82352941176471
+  }
+ },
+ "inflammatory_kept_pct": 57.961783439490446,
+ "landmark_and_poor_view_dropped_pct": 54.587688734030195,
+ "normal_dropped_pct": 9.644522144522144,
+ "lesion_model_false_positives_before": 1274,
+ "lesion_model_false_positives_removed": 291,
+ "folds": [
+  {
+   "fold": 0,
+   "threshold": 0.5,
+   "test_videos": [
+    "0531325b64674948",
+    "07c1fa15a20a4398",
+    "2fc3db471f9d44c0",
+    "39960e5e099a45ca",
+    "5e59c7fdb16c4228",
+    "7ad22d50ebaf4596",
+    "8ebf0e483cac48d6",
+    "ad91cf7ca91440aa",
+    "bca26705313a4644",
+    "df6b47bafe5143f5"
+   ]
+  },
+  {
+   "fold": 1,
+   "threshold": 0.5,
+   "test_videos": [
+    "0728084c8da942d9",
+    "3c8d5f0b90d7475d",
+    "4560e83f9afc4685",
+    "64440803f87b4843",
+    "7a47e8eacea04e64",
+    "89cdd41258c542c5",
+    "c11b28a8b2344716",
+    "d626f4f4a5ac4785"
+   ]
+  },
+  {
+   "fold": 2,
+   "threshold": 0.5,
+   "test_videos": [
+    "48579eec79784294",
+    "8a00709108cd4e2b",
+    "af9bd7d0e43741e3",
+    "b2134f4a6f864613",
+    "c7084b3556e34619",
+    "dac1e27f7e4d4ef5",
+    "dc221ccc65d34010",
+    "eb0203196e284797"
+   ]
+  },
+  {
+   "fold": 3,
+   "threshold": 0.5,
+   "test_videos": [
+    "04a78ef00c5245e0",
+    "495f16498db34d3c",
+    "4aebc5cb2d4847aa",
+    "6cb700585c4f4070",
+    "bc84479c66fe4da6",
+    "d7a271f233ba4a40",
+    "fb86bc87d3874cd7",
+    "fc32def0e7194981",
+    "fe5d372e43f94f68"
+   ]
+  },
+  {
+   "fold": 4,
+   "threshold": 0.5,
+   "test_videos": [
+    "131368cc17e44240",
+    "3ada4222967f421d",
+    "5bb1d3cc7dc64cec",
+    "5e9beaf4e66142c8",
+    "8885668afb844852",
+    "d369e4f163df4aba",
+    "dca1377dec974312",
+    "ed02f27ef36f483e"
+   ]
+  }
+ ],
+ "cv": "5-fold GroupKFold by video; threshold per fold keeps >=98% of training inflammatory frames",
+ "sampled_frames_kept_pct_all_videos": 66.68956841982954
+}

@@ -1,0 +1,805 @@
+{
+ "source": "Kvasir-Capsule video 0728084c8da942d9: 160 expert-labelled frames in temporal order (40 lesion frames, 120 normal frames sampled)",
+ "frames": [
+  {
+   "file": "frame_005209.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5209
+  },
+  {
+   "file": "frame_005211.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5211
+  },
+  {
+   "file": "frame_005213.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5213
+  },
+  {
+   "file": "frame_005224.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5224
+  },
+  {
+   "file": "frame_005232.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5232
+  },
+  {
+   "file": "frame_005234.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5234
+  },
+  {
+   "file": "frame_005247.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5247
+  },
+  {
+   "file": "frame_005266.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5266
+  },
+  {
+   "file": "frame_005287.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5287
+  },
+  {
+   "file": "frame_005291.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5291
+  },
+  {
+   "file": "frame_005300.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5300
+  },
+  {
+   "file": "frame_005330.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5330
+  },
+  {
+   "file": "frame_005355.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5355
+  },
+  {
+   "file": "frame_005383.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5383
+  },
+  {
+   "file": "frame_005416.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5416
+  },
+  {
+   "file": "frame_005423.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5423
+  },
+  {
+   "file": "frame_005428.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5428
+  },
+  {
+   "file": "frame_005431.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5431
+  },
+  {
+   "file": "frame_005433.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5433
+  },
+  {
+   "file": "frame_005443.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5443
+  },
+  {
+   "file": "frame_005445.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5445
+  },
+  {
+   "file": "frame_005462.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 5462
+  },
+  {
+   "file": "frame_010906.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 10906
+  },
+  {
+   "file": "frame_010912.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 10912
+  },
+  {
+   "file": "frame_010925.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 10925
+  },
+  {
+   "file": "frame_010931.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 10931
+  },
+  {
+   "file": "frame_010940.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 10940
+  },
+  {
+   "file": "frame_010954.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 10954
+  },
+  {
+   "file": "frame_010963.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 10963
+  },
+  {
+   "file": "frame_010967.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 10967
+  },
+  {
+   "file": "frame_010975.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 10975
+  },
+  {
+   "file": "frame_010989.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 10989
+  },
+  {
+   "file": "frame_010993.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 10993
+  },
+  {
+   "file": "frame_010996.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 10996
+  },
+  {
+   "file": "frame_011011.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11011
+  },
+  {
+   "file": "frame_011032.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11032
+  },
+  {
+   "file": "frame_011061.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11061
+  },
+  {
+   "file": "frame_011081.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11081
+  },
+  {
+   "file": "frame_011082.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11082
+  },
+  {
+   "file": "frame_011087.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11087
+  },
+  {
+   "file": "frame_011090.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11090
+  },
+  {
+   "file": "frame_011094.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11094
+  },
+  {
+   "file": "frame_011105.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11105
+  },
+  {
+   "file": "frame_011111.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11111
+  },
+  {
+   "file": "frame_011118.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11118
+  },
+  {
+   "file": "frame_011136.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11136
+  },
+  {
+   "file": "frame_011139.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11139
+  },
+  {
+   "file": "frame_011141.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11141
+  },
+  {
+   "file": "frame_011143.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11143
+  },
+  {
+   "file": "frame_011163.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11163
+  },
+  {
+   "file": "frame_011174.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11174
+  },
+  {
+   "file": "frame_011176.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11176
+  },
+  {
+   "file": "frame_011179.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11179
+  },
+  {
+   "file": "frame_011189.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11189
+  },
+  {
+   "file": "frame_011200.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11200
+  },
+  {
+   "file": "frame_011209.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 11209
+  },
+  {
+   "file": "frame_014147.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 14147
+  },
+  {
+   "file": "frame_014153.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 14153
+  },
+  {
+   "file": "frame_014159.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 14159
+  },
+  {
+   "file": "frame_014165.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 14165
+  },
+  {
+   "file": "frame_014186.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 14186
+  },
+  {
+   "file": "frame_014192.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 14192
+  },
+  {
+   "file": "frame_014204.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 14204
+  },
+  {
+   "file": "frame_014205.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 14205
+  },
+  {
+   "file": "frame_014212.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 14212
+  },
+  {
+   "file": "frame_014225.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 14225
+  },
+  {
+   "file": "frame_014247.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 14247
+  },
+  {
+   "file": "frame_014250.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 14250
+  },
+  {
+   "file": "frame_014253.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 14253
+  },
+  {
+   "file": "frame_014264.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 14264
+  },
+  {
+   "file": "frame_016469.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 16469
+  },
+  {
+   "file": "frame_016471.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 16471
+  },
+  {
+   "file": "frame_016475.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 16475
+  },
+  {
+   "file": "frame_016480.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 16480
+  },
+  {
+   "file": "frame_016521.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 16521
+  },
+  {
+   "file": "frame_016530.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 16530
+  },
+  {
+   "file": "frame_016550.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 16550
+  },
+  {
+   "file": "frame_016563.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 16563
+  },
+  {
+   "file": "frame_016570.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 16570
+  },
+  {
+   "file": "frame_016572.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 16572
+  },
+  {
+   "file": "frame_016598.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 16598
+  },
+  {
+   "file": "frame_016605.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 16605
+  },
+  {
+   "file": "frame_020131.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 20131
+  },
+  {
+   "file": "frame_020132.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 20132
+  },
+  {
+   "file": "frame_020167.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 20167
+  },
+  {
+   "file": "frame_020173.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 20173
+  },
+  {
+   "file": "frame_020179.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 20179
+  },
+  {
+   "file": "frame_020205.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 20205
+  },
+  {
+   "file": "frame_022806.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 22806
+  },
+  {
+   "file": "frame_022822.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 22822
+  },
+  {
+   "file": "frame_022840.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 22840
+  },
+  {
+   "file": "frame_022851.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 22851
+  },
+  {
+   "file": "frame_022863.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 22863
+  },
+  {
+   "file": "frame_022883.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 22883
+  },
+  {
+   "file": "frame_022891.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 22891
+  },
+  {
+   "file": "frame_022894.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 22894
+  },
+  {
+   "file": "frame_022904.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 22904
+  },
+  {
+   "file": "frame_022911.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 22911
+  },
+  {
+   "file": "frame_022914.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 22914
+  },
+  {
+   "file": "frame_022970.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 22970
+  },
+  {
+   "file": "frame_022980.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 22980
+  },
+  {
+   "file": "frame_022989.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 22989
+  },
+  {
+   "file": "frame_022993.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 22993
+  },
+  {
+   "file": "frame_023004.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23004
+  },
+  {
+   "file": "frame_023007.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23007
+  },
+  {
+   "file": "frame_023034.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23034
+  },
+  {
+   "file": "frame_023039.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23039
+  },
+  {
+   "file": "frame_023058.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23058
+  },
+  {
+   "file": "frame_023061.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23061
+  },
+  {
+   "file": "frame_023104.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23104
+  },
+  {
+   "file": "frame_023107.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23107
+  },
+  {
+   "file": "frame_023114.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23114
+  },
+  {
+   "file": "frame_023124.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23124
+  },
+  {
+   "file": "frame_023133.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23133
+  },
+  {
+   "file": "frame_023153.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23153
+  },
+  {
+   "file": "frame_023171.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23171
+  },
+  {
+   "file": "frame_023211.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23211
+  },
+  {
+   "file": "frame_023212.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23212
+  },
+  {
+   "file": "frame_023229.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23229
+  },
+  {
+   "file": "frame_023231.jpg",
+   "label": "Normal clean mucosa",
+   "frame": 23231
+  },
+  {
+   "file": "frame_027118.jpg",
+   "label": "Erosion",
+   "frame": 27118
+  },
+  {
+   "file": "frame_027120.jpg",
+   "label": "Erosion",
+   "frame": 27120
+  },
+  {
+   "file": "frame_027122.jpg",
+   "label": "Erosion",
+   "frame": 27122
+  },
+  {
+   "file": "frame_027176.jpg",
+   "label": "Erosion",
+   "frame": 27176
+  },
+  {
+   "file": "frame_027178.jpg",
+   "label": "Erosion",
+   "frame": 27178
+  },
+  {
+   "file": "frame_028687.jpg",
+   "label": "Erosion",
+   "frame": 28687
+  },
+  {
+   "file": "frame_028689.jpg",
+   "label": "Erosion",
+   "frame": 28689
+  },
+  {
+   "file": "frame_028691.jpg",
+   "label": "Erosion",
+   "frame": 28691
+  },
+  {
+   "file": "frame_028693.jpg",
+   "label": "Erosion",
+   "frame": 28693
+  },
+  {
+   "file": "frame_028695.jpg",
+   "label": "Erosion",
+   "frame": 28695
+  },
+  {
+   "file": "frame_028697.jpg",
+   "label": "Erosion",
+   "frame": 28697
+  },
+  {
+   "file": "frame_028699.jpg",
+   "label": "Erosion",
+   "frame": 28699
+  },
+  {
+   "file": "frame_028738.jpg",
+   "label": "Erosion",
+   "frame": 28738
+  },
+  {
+   "file": "frame_028740.jpg",
+   "label": "Erosion",
+   "frame": 28740
+  },
+  {
+   "file": "frame_028742.jpg",
+   "label": "Erosion",
+   "frame": 28742
+  },
+  {
+   "file": "frame_028744.jpg",
+   "label": "Erosion",
+   "frame": 28744
+  },
+  {
+   "file": "frame_028746.jpg",
+   "label": "Erosion",
+   "frame": 28746
+  },
+  {
+   "file": "frame_028748.jpg",
+   "label": "Erosion",
+   "frame": 28748
+  },
+  {
+   "file": "frame_028750.jpg",
+   "label": "Erosion",
+   "frame": 28750
+  },
+  {
+   "file": "frame_028752.jpg",
+   "label": "Erosion",
+   "frame": 28752
+  },
+  {
+   "file": "frame_028754.jpg",
+   "label": "Erosion",
+   "frame": 28754
+  },
+  {
+   "file": "frame_028758.jpg",
+   "label": "Erosion",
+   "frame": 28758
+  },
+  {
+   "file": "frame_028760.jpg",
+   "label": "Erosion",
+   "frame": 28760
+  },
+  {
+   "file": "frame_028762.jpg",
+   "label": "Erosion",
+   "frame": 28762
+  },
+  {
+   "file": "frame_028764.jpg",
+   "label": "Erosion",
+   "frame": 28764
+  },
+  {
+   "file": "frame_028786.jpg",
+   "label": "Erosion",
+   "frame": 28786
+  },
+  {
+   "file": "frame_028788.jpg",
+   "label": "Erosion",
+   "frame": 28788
+  },
+  {
+   "file": "frame_028798.jpg",
+   "label": "Erosion",
+   "frame": 28798
+  },
+  {
+   "file": "frame_028800.jpg",
+   "label": "Erosion",
+   "frame": 28800
+  },
+  {
+   "file": "frame_028921.jpg",
+   "label": "Erosion",
+   "frame": 28921
+  },
+  {
+   "file": "frame_028923.jpg",
+   "label": "Erosion",
+   "frame": 28923
+  },
+  {
+   "file": "frame_028925.jpg",
+   "label": "Erosion",
+   "frame": 28925
+  },
+  {
+   "file": "frame_028927.jpg",
+   "label": "Erosion",
+   "frame": 28927
+  },
+  {
+   "file": "frame_029984.jpg",
+   "label": "Erosion",
+   "frame": 29984
+  },
+  {
+   "file": "frame_029986.jpg",
+   "label": "Erosion",
+   "frame": 29986
+  },
+  {
+   "file": "frame_029988.jpg",
+   "label": "Erosion",
+   "frame": 29988
+  },
+  {
+   "file": "frame_029990.jpg",
+   "label": "Erosion",
+   "frame": 29990
+  },
+  {
+   "file": "frame_029992.jpg",
+   "label": "Erosion",
+   "frame": 29992
+  },
+  {
+   "file": "frame_029994.jpg",
+   "label": "Erosion",
+   "frame": 29994
+  },
+  {
+   "file": "frame_029996.jpg",
+   "label": "Erosion",
+   "frame": 29996
+  }
+ ]
+}

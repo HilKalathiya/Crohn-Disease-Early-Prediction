@@ -1,0 +1,7 @@
+* text=auto
+*.onnx binary
+*.npz binary
+*.npy binary
+*.jpg binary
+*.png binary
+*.svg text

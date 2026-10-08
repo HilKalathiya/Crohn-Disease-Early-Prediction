@@ -1,0 +1,141 @@
+{
+ "dataset": "Kvasir-Capsule (labelled images; normal class randomly sub-sampled to 4,000 of 34,338)",
+ "images": 8266,
+ "videos": 41,
+ "class_counts": {
+  "normal": 4000,
+  "ulcer": 854,
+  "erosion": 506,
+  "erythema": 159,
+  "angiectasia": 866,
+  "blood": 458,
+  "lymphangiectasia": 592,
+  "foreign_body": 776,
+  "polyp": 55
+ },
+ "cv": "5-fold StratifiedGroupKFold by capsule video",
+ "accuracy": 0.47241713041374306,
+ "balanced_accuracy": 0.17912084304439632,
+ "macro_f1": 0.18241708590073427,
+ "per_class_recall": {
+  "normal": 0.84575,
+  "ulcer": 0.18384074941451992,
+  "erosion": 0.13438735177865613,
+  "erythema": 0.0,
+  "angiectasia": 0.019630484988452657,
+  "blood": 0.04585152838427948,
+  "lymphangiectasia": 0.20608108108108109,
+  "foreign_body": 0.17654639175257733,
+  "polyp": 0.0
+ },
+ "confusion": [
+  [
+   3383,
+   59,
+   251,
+   56,
+   117,
+   3,
+   52,
+   79,
+   0
+  ],
+  [
+   402,
+   157,
+   221,
+   33,
+   26,
+   4,
+   7,
+   4,
+   0
+  ],
+  [
+   278,
+   26,
+   68,
+   3,
+   32,
+   3,
+   13,
+   83,
+   0
+  ],
+  [
+   123,
+   20,
+   4,
+   0,
+   10,
+   0,
+   2,
+   0,
+   0
+  ],
+  [
+   627,
+   48,
+   74,
+   24,
+   17,
+   10,
+   65,
+   0,
+   1
+  ],
+  [
+   161,
+   27,
+   148,
+   0,
+   65,
+   21,
+   8,
+   26,
+   2
+  ],
+  [
+   323,
+   3,
+   42,
+   6,
+   7,
+   8,
+   122,
+   80,
+   1
+  ],
+  [
+   459,
+   21,
+   28,
+   6,
+   2,
+   5,
+   115,
+   137,
+   3
+  ],
+  [
+   2,
+   2,
+   2,
+   0,
+   33,
+   2,
+   0,
+   14,
+   0
+  ]
+ ],
+ "normal_vs_abnormal": {
+  "auroc": 0.7087604899203002,
+  "auroc_ci95": [
+   0.6373355220848359,
+   0.7842764134440238
+  ],
+  "sensitivity": 0.4706985466479137,
+  "specificity": 0.82075
+ }
+}

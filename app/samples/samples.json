@@ -1,0 +1,101 @@
+{
+ "capsule": [
+  {
+   "url": "/samples/capsule/kvasir_ulcer_5483.jpg",
+   "label": "Ulcer",
+   "source": "Kvasir-Capsule (external)"
+  },
+  {
+   "url": "/samples/capsule/kvasir_ulcer_48492.jpg",
+   "label": "Ulcer",
+   "source": "Kvasir-Capsule (external)"
+  },
+  {
+   "url": "/samples/capsule/kvasir_erosion_28920.jpg",
+   "label": "Erosion",
+   "source": "Kvasir-Capsule (external)"
+  },
+  {
+   "url": "/samples/capsule/kvasir_erythema_35617.jpg",
+   "label": "Erythema",
+   "source": "Kvasir-Capsule (external)"
+  },
+  {
+   "url": "/samples/capsule/kvasir_normal_16535.jpg",
+   "label": "Normal clean mucosa",
+   "source": "Kvasir-Capsule (external)"
+  },
+  {
+   "url": "/samples/capsule/seeai_stenosis_image03065.jpg",
+   "label": "Stenosis",
+   "source": "SEE-AI (external)"
+  },
+  {
+   "url": "/samples/capsule/seeai_stenosis_image03215.jpg",
+   "label": "Stenosis",
+   "source": "SEE-AI (external)"
+  },
+  {
+   "url": "/samples/capsule/seeai_erosion_image08215.jpg",
+   "label": "Erosion",
+   "source": "SEE-AI (external)"
+  },
+  {
+   "url": "/samples/capsule/crohnipi_AU_01280.jpg",
+   "label": "Aphthoid ulceration",
+   "source": "CrohnIPI (training data)"
+  },
+  {
+   "url": "/samples/capsule/crohnipi_Ugt10_02914.jpg",
+   "label": "Ulcer >10 mm",
+   "source": "CrohnIPI (training data)"
+  },
+  {
+   "url": "/samples/capsule/crohnipi_S_00161.jpg",
+   "label": "Stenosis",
+   "source": "CrohnIPI (training data)"
+  },
+  {
+   "url": "/samples/capsule/crohnipi_O_01485.jpg",
+   "label": "Oedema",
+   "source": "CrohnIPI (training data)"
+  }
+ ],
+ "uc": [
+  {
+   "url": "/samples/uc/hk_grade-1_0da47e4e-d994-44b5-86aa-0fd8ba92c62e.jpg",
+   "label": "UC grade 1",
+   "source": "HyperKvasir (external)"
+  },
+  {
+   "url": "/samples/uc/hk_grade-2_024fc35f-6b5f-407e-a1c7-9530a1785165.jpg",
+   "label": "UC grade 2",
+   "source": "HyperKvasir (external)"
+  },
+  {
+   "url": "/samples/uc/hk_grade-3_02d689df-b6ec-4bc9-8443-f0a1b45fe4b0.jpg",
+   "label": "UC grade 3",
+   "source": "HyperKvasir (external)"
+  },
+  {
+   "url": "/samples/uc/limuc_mayo0_UC_patient_120_18.jpg",
+   "label": "Mayo 0",
+   "source": "LIMUC (training data)"
+  },
+  {
+   "url": "/samples/uc/limuc_mayo1_UC_patient_50_5.jpg",
+   "label": "Mayo 1",
+   "source": "LIMUC (training data)"
+  },
+  {
+   "url": "/samples/uc/limuc_mayo2_UC_patient_120_65.jpg",
+   "label": "Mayo 2",
+   "source": "LIMUC (training data)"
+  },
+  {
+   "url": "/samples/uc/limuc_mayo3_UC_patient_120_92.jpg",
+   "label": "Mayo 3",
+   "source": "LIMUC (training data)"
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "kvasir": {
+  "inflammatory_vs_normal": {
+   "auroc": 0.9134476629361422,
+   "n_pos": 1519,
+   "n_neg": 4000,
+   "sensitivity": 0.8657011191573404,
+   "specificity": 0.784
+  },
+  "ulcer": {
+   "n": 854,
+   "auroc_vs_normal": 0.970806206088993,
+   "mean_lesion_score": 0.8362758159637451
+  },
+  "erosion": {
+   "n": 506,
+   "auroc_vs_normal": 0.8562406126482213,
+   "mean_lesion_score": 0.6819807291030884
+  },
+  "erythema": {
+   "n": 159,
+   "auroc_vs_normal": 0.7874261006289308,
+   "mean_lesion_score": 0.6161755323410034
+  },
+  "angiectasia": {
+   "n": 866,
+   "auroc_vs_normal": 0.867043013856813,
+   "mean_lesion_score": 0.6399926543235779
+  },
+  "blood_fresh": {
+   "n": 446,
+   "auroc_vs_normal": 0.9577875560538117,
+   "mean_lesion_score": 0.7533913254737854
+  },
+  "lymphangiectasia": {
+   "n": 592,
+   "auroc_vs_normal": 0.5470605996621621,
+   "mean_lesion_score": 0.43657925724983215
+  },
+  "foreign_body": {
+   "n": 776,
+   "auroc_vs_normal": 0.45593105670103096,
+   "mean_lesion_score": 0.3838823437690735
+  },
+  "polyp": {
+   "n": 55,
+   "auroc_vs_normal": 0.8412000000000001,
+   "mean_lesion_score": 0.6344207525253296
+  },
+  "normal_mean_lesion_score": 0.40003588795661926,
+  "pointing": {
+   "n": 1477,
+   "hit_rate": 0.5192958700067705,
+   "baseline": 0.04100683625684532
+  }
+ },
+ "seeai": {
+  "erosion": {
+   "n": 1427,
+   "auroc_vs_no_finding": 0.827270497547302,
+   "sensitivity": 0.629292221443588
+  },
+  "stenosis": {
+   "n": 442,
+   "auroc_vs_no_finding": 0.8454943438914027,
+   "sensitivity": 0.665158371040724
+  },
+  "erythema": {
+   "n": 915,
+   "auroc_vs_no_finding": 0.8341923497267759,
+   "sensitivity": 0.6644808743169399
+  },
+  "no_finding": {
+   "n": 2000,
+   "specificity": 0.881
+  },
+  "pointing": {
+   "erosion": {
+    "n": 1427,
+    "hit_rate": 0.6727400140154169,
+    "baseline": 0.17571543262941908
+   },
+   "stenosis": {
+    "n": 442,
+    "hit_rate": 0.8846153846153846,
+    "baseline": 0.5452155404252014
+   }
+  }
+ }
+}

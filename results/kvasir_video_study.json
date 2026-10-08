@@ -1,0 +1,2267 @@
+{
+ "study": {
+  "n_videos": 43,
+  "with_inflammatory": 13,
+  "without": 30,
+  "auroc_all_flagged_pct": 0.5512820512820513,
+  "auroc_all_p99": 0.5487179487179488,
+  "auroc_all_top1pct_mean": 0.5282051282051282,
+  "auroc_all_runs_per_1000": 0.5833333333333334,
+  "auroc_filtered_flagged_pct": 0.5512820512820513,
+  "auroc_filtered_p99": 0.5487179487179488,
+  "auroc_filtered_top1pct_mean": 0.5282051282051282,
+  "auroc_filtered_runs_per_1000": 0.5833333333333334,
+  "auroc_sb_flagged_pct": 0.5461538461538461,
+  "auroc_sb_p99": 0.5256410256410257,
+  "auroc_sb_top1pct_mean": 0.5282051282051282,
+  "auroc_sb_runs_per_1000": 0.5564102564102564,
+  "auroc_sb_filtered_flagged_pct": 0.5461538461538461,
+  "auroc_sb_filtered_p99": 0.5256410256410257,
+  "auroc_sb_filtered_top1pct_mean": 0.5282051282051282,
+  "auroc_sb_filtered_runs_per_1000": 0.5564102564102564,
+  "auroc_ensemble_top150_mean": 0.5384615384615384,
+  "median_lesion_recall_top1pct": 0.15483870967741936,
+  "median_lesion_recall_top1pct_sb_filtered": 0.0,
+  "median_lesion_recall_top5pct": 0.5625,
+  "median_lesion_recall_top5pct_sb_filtered": 0.46859903381642515,
+  "median_lesion_recall_top10pct": 0.7053140096618358,
+  "median_lesion_recall_top10pct_sb_filtered": 0.6181818181818182,
+  "median_inflammatory_inside_sb_window_pct": 100.0
+ },
+ "videos": [
+  {
+   "video_id": "04a78ef00c5245e0",
+   "total_frames": 50986,
+   "sampled": 5099,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Angiectasia",
+    "Blood - fresh",
+    "Ileocecal valve",
+    "Lymphangiectasia",
+    "Pylorus"
+   ],
+   "sb_window": [
+    11876,
+    48462
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 5099,
+    "flagged_pct": 51.206118846832716,
+    "p99": 0.9423918724060059,
+    "top1pct_mean": 0.9646685719490051,
+    "runs_ge_0_9": 2,
+    "runs_per_1000": 0.3922337713277113
+   },
+   "filtered": {
+    "frames_kept": 5099,
+    "flagged_pct": 51.206118846832716,
+    "p99": 0.9423918724060059,
+    "top1pct_mean": 0.9646685719490051,
+    "runs_ge_0_9": 2,
+    "runs_per_1000": 0.3922337713277113
+   },
+   "sb": {
+    "frames_kept": 3659,
+    "flagged_pct": 44.60235036895327,
+    "p99": 0.9411748647689819,
+    "top1pct_mean": 0.9632946848869324,
+    "runs_ge_0_9": 2,
+    "runs_per_1000": 0.5465974309920744
+   },
+   "sb_filtered": {
+    "frames_kept": 3659,
+    "flagged_pct": 44.60235036895327,
+    "p99": 0.9411748647689819,
+    "top1pct_mean": 0.9632946848869324,
+    "runs_ge_0_9": 2,
+    "runs_per_1000": 0.5465974309920744
+   },
+   "ensemble_top150_mean": 0.8097215890884399
+  },
+  {
+   "video_id": "0531325b64674948",
+   "total_frames": 16151,
+   "sampled": 1616,
+   "expert_inflammatory_frames": 16,
+   "has_inflammatory": true,
+   "other_findings": [
+    "Pylorus"
+   ],
+   "sb_window": [
+    3575,
+    16151
+   ],
+   "sb_window_from": "pylorus-end",
+   "inflammatory_inside_sb_window_pct": 0.0,
+   "all": {
+    "frames_kept": 1616,
+    "flagged_pct": 40.47029702970298,
+    "p99": 0.9410256147384644,
+    "top1pct_mean": 0.9588851928710938,
+    "runs_ge_0_9": 3,
+    "runs_per_1000": 1.8564356435643565
+   },
+   "filtered": {
+    "frames_kept": 1616,
+    "flagged_pct": 40.47029702970298,
+    "p99": 0.9410256147384644,
+    "top1pct_mean": 0.9588851928710938,
+    "runs_ge_0_9": 3,
+    "runs_per_1000": 1.8564356435643565
+   },
+   "sb": {
+    "frames_kept": 1258,
+    "flagged_pct": 28.45786963434022,
+    "p99": 0.9411947727203369,
+    "top1pct_mean": 0.959010124206543,
+    "runs_ge_0_9": 3,
+    "runs_per_1000": 2.384737678855326
+   },
+   "sb_filtered": {
+    "frames_kept": 1258,
+    "flagged_pct": 28.45786963434022,
+    "p99": 0.9411947727203369,
+    "top1pct_mean": 0.959010124206543,
+    "runs_ge_0_9": 3,
+    "runs_per_1000": 2.384737678855326
+   },
+   "ensemble_top150_mean": 0.6801989674568176,
+   "lesion_recall_top1pct": 0.5625,
+   "lesion_recall_top5pct": 0.5625,
+   "lesion_recall_top10pct": 0.5625,
+   "lesion_recall_top1pct_sb_filtered": 0.0,
+   "lesion_recall_top5pct_sb_filtered": 0.0,
+   "lesion_recall_top10pct_sb_filtered": 0.0
+  },
+  {
+   "video_id": "0728084c8da942d9",
+   "total_frames": 48948,
+   "sampled": 4895,
+   "expert_inflammatory_frames": 81,
+   "has_inflammatory": true,
+   "other_findings": [
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    4207,
+    30195
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": 100.0,
+   "all": {
+    "frames_kept": 4895,
+    "flagged_pct": 21.695607763023496,
+    "p99": 0.8980950117111206,
+    "top1pct_mean": 0.9479022026062012,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.20429009193054137
+   },
+   "filtered": {
+    "frames_kept": 4895,
+    "flagged_pct": 21.695607763023496,
+    "p99": 0.8980950117111206,
+    "top1pct_mean": 0.9479022026062012,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.20429009193054137
+   },
+   "sb": {
+    "frames_kept": 2599,
+    "flagged_pct": 23.739899961523665,
+    "p99": 0.8844380378723145,
+    "top1pct_mean": 0.9311901926994324,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb_filtered": {
+    "frames_kept": 2599,
+    "flagged_pct": 23.739899961523665,
+    "p99": 0.8844380378723145,
+    "top1pct_mean": 0.9311901926994324,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "ensemble_top150_mean": 0.7510183453559875,
+   "lesion_recall_top1pct": 0.43209876543209874,
+   "lesion_recall_top5pct": 0.5802469135802469,
+   "lesion_recall_top10pct": 0.6790123456790124,
+   "lesion_recall_top1pct_sb_filtered": 0.43209876543209874,
+   "lesion_recall_top5pct_sb_filtered": 0.5802469135802469,
+   "lesion_recall_top10pct_sb_filtered": 0.6790123456790124
+  },
+  {
+   "video_id": "07c1fa15a20a4398",
+   "total_frames": 38620,
+   "sampled": 3862,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve"
+   ],
+   "sb_window": [
+    0,
+    38610
+   ],
+   "sb_window_from": "start-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 3862,
+    "flagged_pct": 15.872604867944071,
+    "p99": 0.860655665397644,
+    "top1pct_mean": 0.9105485677719116,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.2589331952356292
+   },
+   "filtered": {
+    "frames_kept": 3862,
+    "flagged_pct": 15.872604867944071,
+    "p99": 0.860655665397644,
+    "top1pct_mean": 0.9105485677719116,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.2589331952356292
+   },
+   "sb": {
+    "frames_kept": 3860,
+    "flagged_pct": 15.82901554404145,
+    "p99": 0.8606700301170349,
+    "top1pct_mean": 0.9105485677719116,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.25906735751295334
+   },
+   "sb_filtered": {
+    "frames_kept": 3860,
+    "flagged_pct": 15.82901554404145,
+    "p99": 0.8606700301170349,
+    "top1pct_mean": 0.9105485677719116,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.25906735751295334
+   },
+   "ensemble_top150_mean": 0.6232797503471375
+  },
+  {
+   "video_id": "131368cc17e44240",
+   "total_frames": 31721,
+   "sampled": 3173,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve",
+    "Polyp",
+    "Pylorus"
+   ],
+   "sb_window": [
+    1241,
+    30438
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 3173,
+    "flagged_pct": 46.20233217774976,
+    "p99": 0.983022928237915,
+    "top1pct_mean": 0.9902294874191284,
+    "runs_ge_0_9": 24,
+    "runs_per_1000": 7.563819728963127
+   },
+   "filtered": {
+    "frames_kept": 3173,
+    "flagged_pct": 46.20233217774976,
+    "p99": 0.983022928237915,
+    "top1pct_mean": 0.9902294874191284,
+    "runs_ge_0_9": 24,
+    "runs_per_1000": 7.563819728963127
+   },
+   "sb": {
+    "frames_kept": 2919,
+    "flagged_pct": 42.78862624186365,
+    "p99": 0.980957567691803,
+    "top1pct_mean": 0.9882136583328247,
+    "runs_ge_0_9": 20,
+    "runs_per_1000": 6.851661527920521
+   },
+   "sb_filtered": {
+    "frames_kept": 2919,
+    "flagged_pct": 42.78862624186365,
+    "p99": 0.980957567691803,
+    "top1pct_mean": 0.9882136583328247,
+    "runs_ge_0_9": 20,
+    "runs_per_1000": 6.851661527920521
+   },
+   "ensemble_top150_mean": 0.8757731318473816
+  },
+  {
+   "video_id": "2fc3db471f9d44c0",
+   "total_frames": 76859,
+   "sampled": 7686,
+   "expert_inflammatory_frames": 127,
+   "has_inflammatory": true,
+   "other_findings": [],
+   "sb_window": [
+    0,
+    76859
+   ],
+   "sb_window_from": "start-end",
+   "inflammatory_inside_sb_window_pct": 100.0,
+   "all": {
+    "frames_kept": 7686,
+    "flagged_pct": 61.735623211033044,
+    "p99": 0.9871542453765869,
+    "top1pct_mean": 0.9918906688690186,
+    "runs_ge_0_9": 87,
+    "runs_per_1000": 11.319281811085089
+   },
+   "filtered": {
+    "frames_kept": 7686,
+    "flagged_pct": 61.735623211033044,
+    "p99": 0.9871542453765869,
+    "top1pct_mean": 0.9918906688690186,
+    "runs_ge_0_9": 87,
+    "runs_per_1000": 11.319281811085089
+   },
+   "sb": {
+    "frames_kept": 7685,
+    "flagged_pct": 61.73064411190631,
+    "p99": 0.9871544241905212,
+    "top1pct_mean": 0.9918906688690186,
+    "runs_ge_0_9": 87,
+    "runs_per_1000": 11.320754716981131
+   },
+   "sb_filtered": {
+    "frames_kept": 7685,
+    "flagged_pct": 61.73064411190631,
+    "p99": 0.9871544241905212,
+    "top1pct_mean": 0.9918906688690186,
+    "runs_ge_0_9": 87,
+    "runs_per_1000": 11.320754716981131
+   },
+   "ensemble_top150_mean": 0.9557753205299377,
+   "lesion_recall_top1pct": 0.0,
+   "lesion_recall_top5pct": 0.5590551181102362,
+   "lesion_recall_top10pct": 0.7165354330708661,
+   "lesion_recall_top1pct_sb_filtered": 0.0,
+   "lesion_recall_top5pct_sb_filtered": 0.5590551181102362,
+   "lesion_recall_top10pct_sb_filtered": 0.7165354330708661
+  },
+  {
+   "video_id": "39960e5e099a45ca",
+   "total_frames": 32943,
+   "sampled": 3295,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    9087,
+    32902
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 3295,
+    "flagged_pct": 57.7845220030349,
+    "p99": 0.9779748320579529,
+    "top1pct_mean": 0.9852070808410645,
+    "runs_ge_0_9": 27,
+    "runs_per_1000": 8.19423368740516
+   },
+   "filtered": {
+    "frames_kept": 3295,
+    "flagged_pct": 57.7845220030349,
+    "p99": 0.9779748320579529,
+    "top1pct_mean": 0.9852070808410645,
+    "runs_ge_0_9": 27,
+    "runs_per_1000": 8.19423368740516
+   },
+   "sb": {
+    "frames_kept": 2382,
+    "flagged_pct": 45.256087321578505,
+    "p99": 0.9628279209136963,
+    "top1pct_mean": 0.9781152606010437,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 1.6792611251049538
+   },
+   "sb_filtered": {
+    "frames_kept": 2382,
+    "flagged_pct": 45.256087321578505,
+    "p99": 0.9628279209136963,
+    "top1pct_mean": 0.9781152606010437,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 1.6792611251049538
+   },
+   "ensemble_top150_mean": 0.8486949801445007
+  },
+  {
+   "video_id": "3ada4222967f421d",
+   "total_frames": 40529,
+   "sampled": 4053,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Foreign Body",
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    3260,
+    40523
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 4053,
+    "flagged_pct": 21.046138662718974,
+    "p99": 0.9390347003936768,
+    "top1pct_mean": 0.9611971974372864,
+    "runs_ge_0_9": 6,
+    "runs_per_1000": 1.4803849000740192
+   },
+   "filtered": {
+    "frames_kept": 4053,
+    "flagged_pct": 21.046138662718974,
+    "p99": 0.9390347003936768,
+    "top1pct_mean": 0.9611971974372864,
+    "runs_ge_0_9": 6,
+    "runs_per_1000": 1.4803849000740192
+   },
+   "sb": {
+    "frames_kept": 3726,
+    "flagged_pct": 19.806763285024154,
+    "p99": 0.9406096935272217,
+    "top1pct_mean": 0.962892472743988,
+    "runs_ge_0_9": 6,
+    "runs_per_1000": 1.6103059581320451
+   },
+   "sb_filtered": {
+    "frames_kept": 3726,
+    "flagged_pct": 19.806763285024154,
+    "p99": 0.9406096935272217,
+    "top1pct_mean": 0.962892472743988,
+    "runs_ge_0_9": 6,
+    "runs_per_1000": 1.6103059581320451
+   },
+   "ensemble_top150_mean": 0.7653416395187378
+  },
+  {
+   "video_id": "3c8d5f0b90d7475d",
+   "total_frames": 45033,
+   "sampled": 4504,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve"
+   ],
+   "sb_window": [
+    0,
+    45025
+   ],
+   "sb_window_from": "start-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 4504,
+    "flagged_pct": 27.131438721136767,
+    "p99": 0.9397395849227905,
+    "top1pct_mean": 0.9610351324081421,
+    "runs_ge_0_9": 7,
+    "runs_per_1000": 1.5541740674955595
+   },
+   "filtered": {
+    "frames_kept": 4504,
+    "flagged_pct": 27.131438721136767,
+    "p99": 0.9397395849227905,
+    "top1pct_mean": 0.9610351324081421,
+    "runs_ge_0_9": 7,
+    "runs_per_1000": 1.5541740674955595
+   },
+   "sb": {
+    "frames_kept": 4502,
+    "flagged_pct": 27.143491781430473,
+    "p99": 0.9397850036621094,
+    "top1pct_mean": 0.9610351324081421,
+    "runs_ge_0_9": 7,
+    "runs_per_1000": 1.5548645046645935
+   },
+   "sb_filtered": {
+    "frames_kept": 4502,
+    "flagged_pct": 27.143491781430473,
+    "p99": 0.9397850036621094,
+    "top1pct_mean": 0.9610351324081421,
+    "runs_ge_0_9": 7,
+    "runs_per_1000": 1.5548645046645935
+   },
+   "ensemble_top150_mean": 0.7455436587333679
+  },
+  {
+   "video_id": "4560e83f9afc4685",
+   "total_frames": 35019,
+   "sampled": 3502,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    914,
+    20337
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 3502,
+    "flagged_pct": 49.314677327241576,
+    "p99": 0.9818832278251648,
+    "top1pct_mean": 0.9879056811332703,
+    "runs_ge_0_9": 50,
+    "runs_per_1000": 14.277555682467161
+   },
+   "filtered": {
+    "frames_kept": 3502,
+    "flagged_pct": 49.314677327241576,
+    "p99": 0.9818832278251648,
+    "top1pct_mean": 0.9879056811332703,
+    "runs_ge_0_9": 50,
+    "runs_per_1000": 14.277555682467161
+   },
+   "sb": {
+    "frames_kept": 1942,
+    "flagged_pct": 15.653964984552008,
+    "p99": 0.8510852456092834,
+    "top1pct_mean": 0.8972842693328857,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb_filtered": {
+    "frames_kept": 1942,
+    "flagged_pct": 15.653964984552008,
+    "p99": 0.8510852456092834,
+    "top1pct_mean": 0.8972842693328857,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "ensemble_top150_mean": 0.8154691457748413
+  },
+  {
+   "video_id": "48579eec79784294",
+   "total_frames": 34379,
+   "sampled": 3438,
+   "expert_inflammatory_frames": 9,
+   "has_inflammatory": true,
+   "other_findings": [
+    "Foreign Body",
+    "Ileocecal valve",
+    "Pylorus",
+    "Reduced Mucosal View"
+   ],
+   "sb_window": [
+    1315,
+    29734
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": 100.0,
+   "all": {
+    "frames_kept": 3438,
+    "flagged_pct": 33.39150668993601,
+    "p99": 0.9636202454566956,
+    "top1pct_mean": 0.9786370396614075,
+    "runs_ge_0_9": 9,
+    "runs_per_1000": 2.6178010471204187
+   },
+   "filtered": {
+    "frames_kept": 3438,
+    "flagged_pct": 33.39150668993601,
+    "p99": 0.9636202454566956,
+    "top1pct_mean": 0.9786370396614075,
+    "runs_ge_0_9": 9,
+    "runs_per_1000": 2.6178010471204187
+   },
+   "sb": {
+    "frames_kept": 2842,
+    "flagged_pct": 35.60872624912034,
+    "p99": 0.9684006571769714,
+    "top1pct_mean": 0.9812046885490417,
+    "runs_ge_0_9": 9,
+    "runs_per_1000": 3.166783954961295
+   },
+   "sb_filtered": {
+    "frames_kept": 2842,
+    "flagged_pct": 35.60872624912034,
+    "p99": 0.9684006571769714,
+    "top1pct_mean": 0.9812046885490417,
+    "runs_ge_0_9": 9,
+    "runs_per_1000": 3.166783954961295
+   },
+   "ensemble_top150_mean": 0.8122019171714783,
+   "lesion_recall_top1pct": 0.6666666666666666,
+   "lesion_recall_top5pct": 0.6666666666666666,
+   "lesion_recall_top10pct": 0.6666666666666666,
+   "lesion_recall_top1pct_sb_filtered": 0.6666666666666666,
+   "lesion_recall_top5pct_sb_filtered": 0.6666666666666666,
+   "lesion_recall_top10pct_sb_filtered": 0.6666666666666666
+  },
+  {
+   "video_id": "495f16498db34d3c",
+   "total_frames": 32894,
+   "sampled": 3290,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve"
+   ],
+   "sb_window": [
+    0,
+    32877
+   ],
+   "sb_window_from": "start-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 3290,
+    "flagged_pct": 18.814589665653493,
+    "p99": 0.8253048658370972,
+    "top1pct_mean": 0.889584481716156,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "filtered": {
+    "frames_kept": 3290,
+    "flagged_pct": 18.814589665653493,
+    "p99": 0.8253048658370972,
+    "top1pct_mean": 0.889584481716156,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb": {
+    "frames_kept": 3287,
+    "flagged_pct": 18.801338606632186,
+    "p99": 0.8253448605537415,
+    "top1pct_mean": 0.889584481716156,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb_filtered": {
+    "frames_kept": 3287,
+    "flagged_pct": 18.801338606632186,
+    "p99": 0.8253448605537415,
+    "top1pct_mean": 0.889584481716156,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "ensemble_top150_mean": 0.6097011566162109
+  },
+  {
+   "video_id": "4aebc5cb2d4847aa",
+   "total_frames": 28554,
+   "sampled": 2856,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve"
+   ],
+   "sb_window": [
+    0,
+    28464
+   ],
+   "sb_window_from": "start-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 2856,
+    "flagged_pct": 33.61344537815126,
+    "p99": 0.9689522981643677,
+    "top1pct_mean": 0.9799407124519348,
+    "runs_ge_0_9": 8,
+    "runs_per_1000": 2.8011204481792715
+   },
+   "filtered": {
+    "frames_kept": 2856,
+    "flagged_pct": 33.61344537815126,
+    "p99": 0.9689522981643677,
+    "top1pct_mean": 0.9799407124519348,
+    "runs_ge_0_9": 8,
+    "runs_per_1000": 2.8011204481792715
+   },
+   "sb": {
+    "frames_kept": 2846,
+    "flagged_pct": 33.62614195361912,
+    "p99": 0.9690377116203308,
+    "top1pct_mean": 0.9799407124519348,
+    "runs_ge_0_9": 8,
+    "runs_per_1000": 2.8109627547434997
+   },
+   "sb_filtered": {
+    "frames_kept": 2846,
+    "flagged_pct": 33.62614195361912,
+    "p99": 0.9690377116203308,
+    "top1pct_mean": 0.9799407124519348,
+    "runs_ge_0_9": 8,
+    "runs_per_1000": 2.8109627547434997
+   },
+   "ensemble_top150_mean": 0.7668513059616089
+  },
+  {
+   "video_id": "5bb1d3cc7dc64cec",
+   "total_frames": 34183,
+   "sampled": 3419,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve",
+    "Reduced Mucosal View"
+   ],
+   "sb_window": [
+    0,
+    34064
+   ],
+   "sb_window_from": "start-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 3419,
+    "flagged_pct": 25.18280198888564,
+    "p99": 0.8840874433517456,
+    "top1pct_mean": 0.913718581199646,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "filtered": {
+    "frames_kept": 3419,
+    "flagged_pct": 25.18280198888564,
+    "p99": 0.8840874433517456,
+    "top1pct_mean": 0.913718581199646,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb": {
+    "frames_kept": 3406,
+    "flagged_pct": 25.102759835584266,
+    "p99": 0.8841110467910767,
+    "top1pct_mean": 0.913718581199646,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb_filtered": {
+    "frames_kept": 3406,
+    "flagged_pct": 25.102759835584266,
+    "p99": 0.8841110467910767,
+    "top1pct_mean": 0.913718581199646,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "ensemble_top150_mean": 0.6612377762794495
+  },
+  {
+   "video_id": "5e59c7fdb16c4228",
+   "total_frames": 47978,
+   "sampled": 4798,
+   "expert_inflammatory_frames": 155,
+   "has_inflammatory": true,
+   "other_findings": [
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    2813,
+    45076
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": 100.0,
+   "all": {
+    "frames_kept": 4798,
+    "flagged_pct": 12.88036681950813,
+    "p99": 0.8314598202705383,
+    "top1pct_mean": 0.8856721520423889,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.20842017507294705
+   },
+   "filtered": {
+    "frames_kept": 4798,
+    "flagged_pct": 12.88036681950813,
+    "p99": 0.8314598202705383,
+    "top1pct_mean": 0.8856721520423889,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.20842017507294705
+   },
+   "sb": {
+    "frames_kept": 4226,
+    "flagged_pct": 9.441552295314718,
+    "p99": 0.7867673635482788,
+    "top1pct_mean": 0.8603623509407043,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb_filtered": {
+    "frames_kept": 4226,
+    "flagged_pct": 9.441552295314718,
+    "p99": 0.7867673635482788,
+    "top1pct_mean": 0.8603623509407043,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "ensemble_top150_mean": 0.6481083631515503,
+   "lesion_recall_top1pct": 0.15483870967741936,
+   "lesion_recall_top5pct": 0.21935483870967742,
+   "lesion_recall_top10pct": 0.36129032258064514,
+   "lesion_recall_top1pct_sb_filtered": 0.15483870967741936,
+   "lesion_recall_top5pct_sb_filtered": 0.21935483870967742,
+   "lesion_recall_top10pct_sb_filtered": 0.5741935483870968
+  },
+  {
+   "video_id": "5e9beaf4e66142c8",
+   "total_frames": 49340,
+   "sampled": 4934,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve"
+   ],
+   "sb_window": [
+    0,
+    49246
+   ],
+   "sb_window_from": "start-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 4934,
+    "flagged_pct": 24.341305229023106,
+    "p99": 0.9255018830299377,
+    "top1pct_mean": 0.9520901441574097,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.20267531414673692
+   },
+   "filtered": {
+    "frames_kept": 4934,
+    "flagged_pct": 24.341305229023106,
+    "p99": 0.9255018830299377,
+    "top1pct_mean": 0.9520901441574097,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.20267531414673692
+   },
+   "sb": {
+    "frames_kept": 4924,
+    "flagged_pct": 24.20796100731113,
+    "p99": 0.925347089767456,
+    "top1pct_mean": 0.9520901441574097,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.20308692120227456
+   },
+   "sb_filtered": {
+    "frames_kept": 4924,
+    "flagged_pct": 24.20796100731113,
+    "p99": 0.925347089767456,
+    "top1pct_mean": 0.9520901441574097,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.20308692120227456
+   },
+   "ensemble_top150_mean": 0.7726558446884155
+  },
+  {
+   "video_id": "64440803f87b4843",
+   "total_frames": 33069,
+   "sampled": 3307,
+   "expert_inflammatory_frames": 27,
+   "has_inflammatory": true,
+   "other_findings": [
+    "Angiectasia",
+    "Ileocecal valve",
+    "Lymphangiectasia",
+    "Pylorus"
+   ],
+   "sb_window": [
+    3600,
+    32240
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": 100.0,
+   "all": {
+    "frames_kept": 3307,
+    "flagged_pct": 46.41669186573934,
+    "p99": 0.9438320994377136,
+    "top1pct_mean": 0.9648652076721191,
+    "runs_ge_0_9": 8,
+    "runs_per_1000": 2.419110976716057
+   },
+   "filtered": {
+    "frames_kept": 3307,
+    "flagged_pct": 46.41669186573934,
+    "p99": 0.9438320994377136,
+    "top1pct_mean": 0.9648652076721191,
+    "runs_ge_0_9": 8,
+    "runs_per_1000": 2.419110976716057
+   },
+   "sb": {
+    "frames_kept": 2863,
+    "flagged_pct": 41.5997205728257,
+    "p99": 0.9350990653038025,
+    "top1pct_mean": 0.9574412703514099,
+    "runs_ge_0_9": 5,
+    "runs_per_1000": 1.7464198393293748
+   },
+   "sb_filtered": {
+    "frames_kept": 2863,
+    "flagged_pct": 41.5997205728257,
+    "p99": 0.9350990653038025,
+    "top1pct_mean": 0.9574412703514099,
+    "runs_ge_0_9": 5,
+    "runs_per_1000": 1.7464198393293748
+   },
+   "ensemble_top150_mean": 0.8040571212768555,
+   "lesion_recall_top1pct": 0.0,
+   "lesion_recall_top5pct": 0.0,
+   "lesion_recall_top10pct": 0.0,
+   "lesion_recall_top1pct_sb_filtered": 0.0,
+   "lesion_recall_top5pct_sb_filtered": 0.0,
+   "lesion_recall_top10pct_sb_filtered": 0.2222222222222222
+  },
+  {
+   "video_id": "6cb700585c4f4070",
+   "total_frames": 26595,
+   "sampled": 2660,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve"
+   ],
+   "sb_window": [
+    0,
+    26407
+   ],
+   "sb_window_from": "start-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 2660,
+    "flagged_pct": 56.84210526315789,
+    "p99": 0.9667454361915588,
+    "top1pct_mean": 0.9799315929412842,
+    "runs_ge_0_9": 16,
+    "runs_per_1000": 6.015037593984962
+   },
+   "filtered": {
+    "frames_kept": 2660,
+    "flagged_pct": 56.84210526315789,
+    "p99": 0.9667454361915588,
+    "top1pct_mean": 0.9799315929412842,
+    "runs_ge_0_9": 16,
+    "runs_per_1000": 6.015037593984962
+   },
+   "sb": {
+    "frames_kept": 2640,
+    "flagged_pct": 57.04545454545455,
+    "p99": 0.9670504927635193,
+    "top1pct_mean": 0.9799315929412842,
+    "runs_ge_0_9": 16,
+    "runs_per_1000": 6.0606060606060606
+   },
+   "sb_filtered": {
+    "frames_kept": 2640,
+    "flagged_pct": 57.04545454545455,
+    "p99": 0.9670504927635193,
+    "top1pct_mean": 0.9799315929412842,
+    "runs_ge_0_9": 16,
+    "runs_per_1000": 6.0606060606060606
+   },
+   "ensemble_top150_mean": 0.8145415186882019
+  },
+  {
+   "video_id": "7a47e8eacea04e64",
+   "total_frames": 65859,
+   "sampled": 6586,
+   "expert_inflammatory_frames": 145,
+   "has_inflammatory": true,
+   "other_findings": [
+    "Foreign Body",
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    2079,
+    63424
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": 100.0,
+   "all": {
+    "frames_kept": 6586,
+    "flagged_pct": 43.91132705739447,
+    "p99": 0.9436722993850708,
+    "top1pct_mean": 0.9631699919700623,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 0.6073489219556635
+   },
+   "filtered": {
+    "frames_kept": 6586,
+    "flagged_pct": 43.91132705739447,
+    "p99": 0.9436722993850708,
+    "top1pct_mean": 0.9631699919700623,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 0.6073489219556635
+   },
+   "sb": {
+    "frames_kept": 6135,
+    "flagged_pct": 43.194784026079866,
+    "p99": 0.9418779611587524,
+    "top1pct_mean": 0.9616712927818298,
+    "runs_ge_0_9": 3,
+    "runs_per_1000": 0.4889975550122249
+   },
+   "sb_filtered": {
+    "frames_kept": 6135,
+    "flagged_pct": 43.194784026079866,
+    "p99": 0.9418779611587524,
+    "top1pct_mean": 0.9616712927818298,
+    "runs_ge_0_9": 3,
+    "runs_per_1000": 0.4889975550122249
+   },
+   "ensemble_top150_mean": 0.7986640334129333,
+   "lesion_recall_top1pct": 0.6896551724137931,
+   "lesion_recall_top5pct": 0.8551724137931035,
+   "lesion_recall_top10pct": 0.9310344827586207,
+   "lesion_recall_top1pct_sb_filtered": 0.6896551724137931,
+   "lesion_recall_top5pct_sb_filtered": 0.8551724137931035,
+   "lesion_recall_top10pct_sb_filtered": 0.9310344827586207
+  },
+  {
+   "video_id": "7ad22d50ebaf4596",
+   "total_frames": 33769,
+   "sampled": 3377,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve",
+    "Lymphangiectasia",
+    "Pylorus"
+   ],
+   "sb_window": [
+    2842,
+    33598
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 3377,
+    "flagged_pct": 42.73023393544566,
+    "p99": 0.9675355553627014,
+    "top1pct_mean": 0.9789655208587646,
+    "runs_ge_0_9": 9,
+    "runs_per_1000": 2.6650873556411017
+   },
+   "filtered": {
+    "frames_kept": 3377,
+    "flagged_pct": 42.73023393544566,
+    "p99": 0.9675355553627014,
+    "top1pct_mean": 0.9789655208587646,
+    "runs_ge_0_9": 9,
+    "runs_per_1000": 2.6650873556411017
+   },
+   "sb": {
+    "frames_kept": 3075,
+    "flagged_pct": 40.19512195121951,
+    "p99": 0.9690290689468384,
+    "top1pct_mean": 0.9799715876579285,
+    "runs_ge_0_9": 9,
+    "runs_per_1000": 2.926829268292683
+   },
+   "sb_filtered": {
+    "frames_kept": 3075,
+    "flagged_pct": 40.19512195121951,
+    "p99": 0.9690290689468384,
+    "top1pct_mean": 0.9799715876579285,
+    "runs_ge_0_9": 9,
+    "runs_per_1000": 2.926829268292683
+   },
+   "ensemble_top150_mean": 0.7719574570655823
+  },
+  {
+   "video_id": "8885668afb844852",
+   "total_frames": 38804,
+   "sampled": 3881,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Foreign Body",
+    "Ileocecal valve",
+    "Pylorus",
+    "Reduced Mucosal View"
+   ],
+   "sb_window": [
+    4022,
+    35506
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 3881,
+    "flagged_pct": 22.494202525122393,
+    "p99": 0.9253242611885071,
+    "top1pct_mean": 0.9514275789260864,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 1.030662200463798
+   },
+   "filtered": {
+    "frames_kept": 3881,
+    "flagged_pct": 22.494202525122393,
+    "p99": 0.9253242611885071,
+    "top1pct_mean": 0.9514275789260864,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 1.030662200463798
+   },
+   "sb": {
+    "frames_kept": 3148,
+    "flagged_pct": 16.99491740787802,
+    "p99": 0.9259800910949707,
+    "top1pct_mean": 0.9519221782684326,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 1.2706480304955527
+   },
+   "sb_filtered": {
+    "frames_kept": 3148,
+    "flagged_pct": 16.99491740787802,
+    "p99": 0.9259800910949707,
+    "top1pct_mean": 0.9519221782684326,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 1.2706480304955527
+   },
+   "ensemble_top150_mean": 0.7009329199790955
+  },
+  {
+   "video_id": "89cdd41258c542c5",
+   "total_frames": 29792,
+   "sampled": 2980,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Pylorus"
+   ],
+   "sb_window": [
+    2702,
+    29792
+   ],
+   "sb_window_from": "pylorus-end",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 2980,
+    "flagged_pct": 17.91946308724832,
+    "p99": 0.8286293745040894,
+    "top1pct_mean": 0.8706483244895935,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "filtered": {
+    "frames_kept": 2980,
+    "flagged_pct": 17.91946308724832,
+    "p99": 0.8286293745040894,
+    "top1pct_mean": 0.8706483244895935,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb": {
+    "frames_kept": 2709,
+    "flagged_pct": 13.14138058324105,
+    "p99": 0.7958307266235352,
+    "top1pct_mean": 0.8430308103561401,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb_filtered": {
+    "frames_kept": 2709,
+    "flagged_pct": 13.14138058324105,
+    "p99": 0.7958307266235352,
+    "top1pct_mean": 0.8430308103561401,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "ensemble_top150_mean": 0.6328303813934326
+  },
+  {
+   "video_id": "8a00709108cd4e2b",
+   "total_frames": 17634,
+   "sampled": 1764,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve"
+   ],
+   "sb_window": [
+    0,
+    17578
+   ],
+   "sb_window_from": "start-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 1764,
+    "flagged_pct": 42.63038548752834,
+    "p99": 0.9620713591575623,
+    "top1pct_mean": 0.9749945402145386,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 2.2675736961451247
+   },
+   "filtered": {
+    "frames_kept": 1764,
+    "flagged_pct": 42.63038548752834,
+    "p99": 0.9620713591575623,
+    "top1pct_mean": 0.9749945402145386,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 2.2675736961451247
+   },
+   "sb": {
+    "frames_kept": 1757,
+    "flagged_pct": 42.515651678998296,
+    "p99": 0.9621152281761169,
+    "top1pct_mean": 0.9749945402145386,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 2.2766078542970973
+   },
+   "sb_filtered": {
+    "frames_kept": 1757,
+    "flagged_pct": 42.515651678998296,
+    "p99": 0.9621152281761169,
+    "top1pct_mean": 0.9749945402145386,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 2.2766078542970973
+   },
+   "ensemble_top150_mean": 0.7006160616874695
+  },
+  {
+   "video_id": "8ebf0e483cac48d6",
+   "total_frames": 29944,
+   "sampled": 2995,
+   "expert_inflammatory_frames": 144,
+   "has_inflammatory": true,
+   "other_findings": [
+    "Blood - hematin",
+    "Ileocecal valve",
+    "Pylorus",
+    "Reduced Mucosal View"
+   ],
+   "sb_window": [
+    2631,
+    28602
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": 69.44444444444444,
+   "all": {
+    "frames_kept": 2995,
+    "flagged_pct": 24.707846410684475,
+    "p99": 0.9569813013076782,
+    "top1pct_mean": 0.9701836109161377,
+    "runs_ge_0_9": 8,
+    "runs_per_1000": 2.671118530884808
+   },
+   "filtered": {
+    "frames_kept": 2995,
+    "flagged_pct": 24.707846410684475,
+    "p99": 0.9569813013076782,
+    "top1pct_mean": 0.9701836109161377,
+    "runs_ge_0_9": 8,
+    "runs_per_1000": 2.671118530884808
+   },
+   "sb": {
+    "frames_kept": 2597,
+    "flagged_pct": 17.6357335386985,
+    "p99": 0.9128388166427612,
+    "top1pct_mean": 0.9529334902763367,
+    "runs_ge_0_9": 3,
+    "runs_per_1000": 1.1551790527531767
+   },
+   "sb_filtered": {
+    "frames_kept": 2597,
+    "flagged_pct": 17.6357335386985,
+    "p99": 0.9128388166427612,
+    "top1pct_mean": 0.9529334902763367,
+    "runs_ge_0_9": 3,
+    "runs_per_1000": 1.1551790527531767
+   },
+   "ensemble_top150_mean": 0.8379126191139221,
+   "lesion_recall_top1pct": 0.3958333333333333,
+   "lesion_recall_top5pct": 0.75,
+   "lesion_recall_top10pct": 0.8541666666666666,
+   "lesion_recall_top1pct_sb_filtered": 0.4583333333333333,
+   "lesion_recall_top5pct_sb_filtered": 0.6180555555555556,
+   "lesion_recall_top10pct_sb_filtered": 0.6666666666666666
+  },
+  {
+   "video_id": "ad91cf7ca91440aa",
+   "total_frames": 32594,
+   "sampled": 3260,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Angiectasia",
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    864,
+    32536
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 3260,
+    "flagged_pct": 29.8159509202454,
+    "p99": 0.8934915661811829,
+    "top1pct_mean": 0.9294633865356445,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "filtered": {
+    "frames_kept": 3260,
+    "flagged_pct": 29.8159509202454,
+    "p99": 0.8934915661811829,
+    "top1pct_mean": 0.9294633865356445,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb": {
+    "frames_kept": 3167,
+    "flagged_pct": 29.77581307230818,
+    "p99": 0.8918471932411194,
+    "top1pct_mean": 0.9284712076187134,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb_filtered": {
+    "frames_kept": 3167,
+    "flagged_pct": 29.77581307230818,
+    "p99": 0.8918471932411194,
+    "top1pct_mean": 0.9284712076187134,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "ensemble_top150_mean": 0.7360994219779968
+  },
+  {
+   "video_id": "af9bd7d0e43741e3",
+   "total_frames": 35846,
+   "sampled": 3585,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve",
+    "Pylorus",
+    "Reduced Mucosal View"
+   ],
+   "sb_window": [
+    2084,
+    30144
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 3585,
+    "flagged_pct": 13.97489539748954,
+    "p99": 0.8755736351013184,
+    "top1pct_mean": 0.9235010147094727,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "filtered": {
+    "frames_kept": 3585,
+    "flagged_pct": 13.97489539748954,
+    "p99": 0.8755736351013184,
+    "top1pct_mean": 0.9235010147094727,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb": {
+    "frames_kept": 2806,
+    "flagged_pct": 10.762651461154668,
+    "p99": 0.8749616742134094,
+    "top1pct_mean": 0.9204368591308594,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb_filtered": {
+    "frames_kept": 2806,
+    "flagged_pct": 10.762651461154668,
+    "p99": 0.8749616742134094,
+    "top1pct_mean": 0.9204368591308594,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "ensemble_top150_mean": 0.6470142602920532
+  },
+  {
+   "video_id": "b2134f4a6f864613",
+   "total_frames": 29444,
+   "sampled": 2945,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Angiectasia",
+    "Pylorus"
+   ],
+   "sb_window": [
+    779,
+    29444
+   ],
+   "sb_window_from": "pylorus-end",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 2945,
+    "flagged_pct": 29.507640067911716,
+    "p99": 0.9006118774414062,
+    "top1pct_mean": 0.9258901476860046,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.3395585738539898
+   },
+   "filtered": {
+    "frames_kept": 2945,
+    "flagged_pct": 29.507640067911716,
+    "p99": 0.9006118774414062,
+    "top1pct_mean": 0.9258901476860046,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.3395585738539898
+   },
+   "sb": {
+    "frames_kept": 2867,
+    "flagged_pct": 29.089640739448903,
+    "p99": 0.9014209508895874,
+    "top1pct_mean": 0.9267517924308777,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.3487966515521451
+   },
+   "sb_filtered": {
+    "frames_kept": 2867,
+    "flagged_pct": 29.089640739448903,
+    "p99": 0.9014209508895874,
+    "top1pct_mean": 0.9267517924308777,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.3487966515521451
+   },
+   "ensemble_top150_mean": 0.7158434987068176
+  },
+  {
+   "video_id": "bc84479c66fe4da6",
+   "total_frames": 72699,
+   "sampled": 7270,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    9114,
+    63064
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 7270,
+    "flagged_pct": 29.147180192572215,
+    "p99": 0.9654296636581421,
+    "top1pct_mean": 0.9808558225631714,
+    "runs_ge_0_9": 22,
+    "runs_per_1000": 3.0261348005502064
+   },
+   "filtered": {
+    "frames_kept": 7270,
+    "flagged_pct": 29.147180192572215,
+    "p99": 0.9654296636581421,
+    "top1pct_mean": 0.9808558225631714,
+    "runs_ge_0_9": 22,
+    "runs_per_1000": 3.0261348005502064
+   },
+   "sb": {
+    "frames_kept": 5395,
+    "flagged_pct": 24.819277108433734,
+    "p99": 0.9290957450866699,
+    "top1pct_mean": 0.9572975635528564,
+    "runs_ge_0_9": 3,
+    "runs_per_1000": 0.5560704355885079
+   },
+   "sb_filtered": {
+    "frames_kept": 5395,
+    "flagged_pct": 24.819277108433734,
+    "p99": 0.9290957450866699,
+    "top1pct_mean": 0.9572975635528564,
+    "runs_ge_0_9": 3,
+    "runs_per_1000": 0.5560704355885079
+   },
+   "ensemble_top150_mean": 0.8417357206344604
+  },
+  {
+   "video_id": "bca26705313a4644",
+   "total_frames": 48413,
+   "sampled": 4842,
+   "expert_inflammatory_frames": 72,
+   "has_inflammatory": true,
+   "other_findings": [
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    7869,
+    46192
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": 100.0,
+   "all": {
+    "frames_kept": 4842,
+    "flagged_pct": 50.18587360594795,
+    "p99": 0.9741024374961853,
+    "top1pct_mean": 0.9832049012184143,
+    "runs_ge_0_9": 18,
+    "runs_per_1000": 3.717472118959108
+   },
+   "filtered": {
+    "frames_kept": 4842,
+    "flagged_pct": 50.18587360594795,
+    "p99": 0.9741024374961853,
+    "top1pct_mean": 0.9832049012184143,
+    "runs_ge_0_9": 18,
+    "runs_per_1000": 3.717472118959108
+   },
+   "sb": {
+    "frames_kept": 3833,
+    "flagged_pct": 42.91677537177146,
+    "p99": 0.9412984251976013,
+    "top1pct_mean": 0.9679608345031738,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.26089225150013046
+   },
+   "sb_filtered": {
+    "frames_kept": 3833,
+    "flagged_pct": 42.91677537177146,
+    "p99": 0.9412984251976013,
+    "top1pct_mean": 0.9679608345031738,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.26089225150013046
+   },
+   "ensemble_top150_mean": 0.8824558258056641,
+   "lesion_recall_top1pct": 0.0,
+   "lesion_recall_top5pct": 0.0,
+   "lesion_recall_top10pct": 0.0,
+   "lesion_recall_top1pct_sb_filtered": 0.0,
+   "lesion_recall_top5pct_sb_filtered": 0.0,
+   "lesion_recall_top10pct_sb_filtered": 0.013888888888888888
+  },
+  {
+   "video_id": "c11b28a8b2344716",
+   "total_frames": 101702,
+   "sampled": 10171,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Pylorus",
+    "Reduced Mucosal View"
+   ],
+   "sb_window": [
+    663,
+    101702
+   ],
+   "sb_window_from": "pylorus-end",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 10171,
+    "flagged_pct": 22.51499360928129,
+    "p99": 0.9090768694877625,
+    "top1pct_mean": 0.942335844039917,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.09831874938550782
+   },
+   "filtered": {
+    "frames_kept": 10171,
+    "flagged_pct": 22.51499360928129,
+    "p99": 0.9090768694877625,
+    "top1pct_mean": 0.942335844039917,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.09831874938550782
+   },
+   "sb": {
+    "frames_kept": 10104,
+    "flagged_pct": 22.179334916864608,
+    "p99": 0.9072714447975159,
+    "top1pct_mean": 0.9396122097969055,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.09897070467141726
+   },
+   "sb_filtered": {
+    "frames_kept": 10104,
+    "flagged_pct": 22.179334916864608,
+    "p99": 0.9072714447975159,
+    "top1pct_mean": 0.9396122097969055,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.09897070467141726
+   },
+   "ensemble_top150_mean": 0.7656869292259216
+  },
+  {
+   "video_id": "c7084b3556e34619",
+   "total_frames": 84324,
+   "sampled": 8433,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    16400,
+    69092
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 8433,
+    "flagged_pct": 14.004506106960749,
+    "p99": 0.8047930598258972,
+    "top1pct_mean": 0.871554970741272,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "filtered": {
+    "frames_kept": 8433,
+    "flagged_pct": 14.004506106960749,
+    "p99": 0.8047930598258972,
+    "top1pct_mean": 0.871554970741272,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb": {
+    "frames_kept": 5269,
+    "flagged_pct": 12.089580565572215,
+    "p99": 0.7624276280403137,
+    "top1pct_mean": 0.8337880373001099,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb_filtered": {
+    "frames_kept": 5269,
+    "flagged_pct": 12.089580565572215,
+    "p99": 0.7624276280403137,
+    "top1pct_mean": 0.8337880373001099,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "ensemble_top150_mean": 0.6573078036308289
+  },
+  {
+   "video_id": "d369e4f163df4aba",
+   "total_frames": 87357,
+   "sampled": 8736,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Angiectasia",
+    "Blood - fresh",
+    "Pylorus"
+   ],
+   "sb_window": [
+    1156,
+    87357
+   ],
+   "sb_window_from": "pylorus-end",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 8736,
+    "flagged_pct": 29.807692307692307,
+    "p99": 0.943406879901886,
+    "top1pct_mean": 0.963054358959198,
+    "runs_ge_0_9": 11,
+    "runs_per_1000": 1.2591575091575091
+   },
+   "filtered": {
+    "frames_kept": 8736,
+    "flagged_pct": 29.807692307692307,
+    "p99": 0.943406879901886,
+    "top1pct_mean": 0.963054358959198,
+    "runs_ge_0_9": 11,
+    "runs_per_1000": 1.2591575091575091
+   },
+   "sb": {
+    "frames_kept": 8620,
+    "flagged_pct": 29.153132250580043,
+    "p99": 0.9387357831001282,
+    "top1pct_mean": 0.9601148366928101,
+    "runs_ge_0_9": 10,
+    "runs_per_1000": 1.160092807424594
+   },
+   "sb_filtered": {
+    "frames_kept": 8620,
+    "flagged_pct": 29.153132250580043,
+    "p99": 0.9387357831001282,
+    "top1pct_mean": 0.9601148366928101,
+    "runs_ge_0_9": 10,
+    "runs_per_1000": 1.160092807424594
+   },
+   "ensemble_top150_mean": 0.8693609833717346
+  },
+  {
+   "video_id": "d626f4f4a5ac4785",
+   "total_frames": 52276,
+   "sampled": 5228,
+   "expert_inflammatory_frames": 621,
+   "has_inflammatory": true,
+   "other_findings": [
+    "Pylorus"
+   ],
+   "sb_window": [
+    7720,
+    52276
+   ],
+   "sb_window_from": "pylorus-end",
+   "inflammatory_inside_sb_window_pct": 100.0,
+   "all": {
+    "frames_kept": 5228,
+    "flagged_pct": 39.02065799540934,
+    "p99": 0.9688666462898254,
+    "top1pct_mean": 0.9788157343864441,
+    "runs_ge_0_9": 13,
+    "runs_per_1000": 2.486610558530987
+   },
+   "filtered": {
+    "frames_kept": 5228,
+    "flagged_pct": 39.02065799540934,
+    "p99": 0.9688666462898254,
+    "top1pct_mean": 0.9788157343864441,
+    "runs_ge_0_9": 13,
+    "runs_per_1000": 2.486610558530987
+   },
+   "sb": {
+    "frames_kept": 4455,
+    "flagged_pct": 35.19640852974186,
+    "p99": 0.9667234420776367,
+    "top1pct_mean": 0.9790945053100586,
+    "runs_ge_0_9": 11,
+    "runs_per_1000": 2.4691358024691357
+   },
+   "sb_filtered": {
+    "frames_kept": 4455,
+    "flagged_pct": 35.19640852974186,
+    "p99": 0.9667234420776367,
+    "top1pct_mean": 0.9790945053100586,
+    "runs_ge_0_9": 11,
+    "runs_per_1000": 2.4691358024691357
+   },
+   "ensemble_top150_mean": 0.8288476467132568,
+   "lesion_recall_top1pct": 0.2882447665056361,
+   "lesion_recall_top5pct": 0.4476650563607085,
+   "lesion_recall_top10pct": 0.7053140096618358,
+   "lesion_recall_top1pct_sb_filtered": 0.2882447665056361,
+   "lesion_recall_top5pct_sb_filtered": 0.46859903381642515,
+   "lesion_recall_top10pct_sb_filtered": 0.7181964573268921
+  },
+  {
+   "video_id": "d7a271f233ba4a40",
+   "total_frames": 34926,
+   "sampled": 3493,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    4621,
+    29875
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 3493,
+    "flagged_pct": 40.652734039507585,
+    "p99": 0.9670741558074951,
+    "top1pct_mean": 0.978378176689148,
+    "runs_ge_0_9": 11,
+    "runs_per_1000": 3.149155453764672
+   },
+   "filtered": {
+    "frames_kept": 3493,
+    "flagged_pct": 40.652734039507585,
+    "p99": 0.9670741558074951,
+    "top1pct_mean": 0.978378176689148,
+    "runs_ge_0_9": 11,
+    "runs_per_1000": 3.149155453764672
+   },
+   "sb": {
+    "frames_kept": 2525,
+    "flagged_pct": 38.613861386138616,
+    "p99": 0.9672377109527588,
+    "top1pct_mean": 0.9804123044013977,
+    "runs_ge_0_9": 10,
+    "runs_per_1000": 3.9603960396039604
+   },
+   "sb_filtered": {
+    "frames_kept": 2525,
+    "flagged_pct": 38.613861386138616,
+    "p99": 0.9672377109527588,
+    "top1pct_mean": 0.9804123044013977,
+    "runs_ge_0_9": 10,
+    "runs_per_1000": 3.9603960396039604
+   },
+   "ensemble_top150_mean": 0.7837668657302856
+  },
+  {
+   "video_id": "dac1e27f7e4d4ef5",
+   "total_frames": 31196,
+   "sampled": 3120,
+   "expert_inflammatory_frames": 36,
+   "has_inflammatory": true,
+   "other_findings": [
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    6815,
+    29170
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": 0.0,
+   "all": {
+    "frames_kept": 3120,
+    "flagged_pct": 18.78205128205128,
+    "p99": 0.877912700176239,
+    "top1pct_mean": 0.919590413570404,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.32051282051282054
+   },
+   "filtered": {
+    "frames_kept": 3120,
+    "flagged_pct": 18.78205128205128,
+    "p99": 0.877912700176239,
+    "top1pct_mean": 0.919590413570404,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.32051282051282054
+   },
+   "sb": {
+    "frames_kept": 2235,
+    "flagged_pct": 10.827740492170022,
+    "p99": 0.7433289289474487,
+    "top1pct_mean": 0.7960631847381592,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb_filtered": {
+    "frames_kept": 2235,
+    "flagged_pct": 10.827740492170022,
+    "p99": 0.7433289289474487,
+    "top1pct_mean": 0.7960631847381592,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "ensemble_top150_mean": 0.6723222136497498,
+   "lesion_recall_top1pct": 0.0,
+   "lesion_recall_top5pct": 0.2222222222222222,
+   "lesion_recall_top10pct": 0.75,
+   "lesion_recall_top1pct_sb_filtered": 0.0,
+   "lesion_recall_top5pct_sb_filtered": 0.0,
+   "lesion_recall_top10pct_sb_filtered": 0.0
+  },
+  {
+   "video_id": "dc221ccc65d34010",
+   "total_frames": 84340,
+   "sampled": 8434,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve",
+    "Reduced Mucosal View"
+   ],
+   "sb_window": [
+    0,
+    84075
+   ],
+   "sb_window_from": "start-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 8434,
+    "flagged_pct": 34.65733934076358,
+    "p99": 0.9710107445716858,
+    "top1pct_mean": 0.9849572777748108,
+    "runs_ge_0_9": 24,
+    "runs_per_1000": 2.8456248517903724
+   },
+   "filtered": {
+    "frames_kept": 8434,
+    "flagged_pct": 34.65733934076358,
+    "p99": 0.9710107445716858,
+    "top1pct_mean": 0.9849572777748108,
+    "runs_ge_0_9": 24,
+    "runs_per_1000": 2.8456248517903724
+   },
+   "sb": {
+    "frames_kept": 8407,
+    "flagged_pct": 34.63780183180683,
+    "p99": 0.9710226655006409,
+    "top1pct_mean": 0.9849572777748108,
+    "runs_ge_0_9": 24,
+    "runs_per_1000": 2.8547638872368264
+   },
+   "sb_filtered": {
+    "frames_kept": 8407,
+    "flagged_pct": 34.63780183180683,
+    "p99": 0.9710226655006409,
+    "top1pct_mean": 0.9849572777748108,
+    "runs_ge_0_9": 24,
+    "runs_per_1000": 2.8547638872368264
+   },
+   "ensemble_top150_mean": 0.9232527613639832
+  },
+  {
+   "video_id": "dca1377dec974312",
+   "total_frames": 74384,
+   "sampled": 7439,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    1566,
+    16089
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 7439,
+    "flagged_pct": 24.734507326253528,
+    "p99": 0.9242548942565918,
+    "top1pct_mean": 0.951799750328064,
+    "runs_ge_0_9": 2,
+    "runs_per_1000": 0.2688533405027557
+   },
+   "filtered": {
+    "frames_kept": 7439,
+    "flagged_pct": 24.734507326253528,
+    "p99": 0.9242548942565918,
+    "top1pct_mean": 0.951799750328064,
+    "runs_ge_0_9": 2,
+    "runs_per_1000": 0.2688533405027557
+   },
+   "sb": {
+    "frames_kept": 1452,
+    "flagged_pct": 19.62809917355372,
+    "p99": 0.9104692339897156,
+    "top1pct_mean": 0.937471866607666,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb_filtered": {
+    "frames_kept": 1452,
+    "flagged_pct": 19.62809917355372,
+    "p99": 0.9104692339897156,
+    "top1pct_mean": 0.937471866607666,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "ensemble_top150_mean": 0.7994989156723022
+  },
+  {
+   "video_id": "df6b47bafe5143f5",
+   "total_frames": 19237,
+   "sampled": 1924,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    2109,
+    19225
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 1924,
+    "flagged_pct": 20.738045738045738,
+    "p99": 0.9017818570137024,
+    "top1pct_mean": 0.9372662901878357,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.5197505197505198
+   },
+   "filtered": {
+    "frames_kept": 1924,
+    "flagged_pct": 20.738045738045738,
+    "p99": 0.9017818570137024,
+    "top1pct_mean": 0.9372662901878357,
+    "runs_ge_0_9": 1,
+    "runs_per_1000": 0.5197505197505198
+   },
+   "sb": {
+    "frames_kept": 1712,
+    "flagged_pct": 17.056074766355138,
+    "p99": 0.8746928572654724,
+    "top1pct_mean": 0.9186737537384033,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb_filtered": {
+    "frames_kept": 1712,
+    "flagged_pct": 17.056074766355138,
+    "p99": 0.8746928572654724,
+    "top1pct_mean": 0.9186737537384033,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "ensemble_top150_mean": 0.6743518710136414
+  },
+  {
+   "video_id": "eb0203196e284797",
+   "total_frames": 28383,
+   "sampled": 2839,
+   "expert_inflammatory_frames": 55,
+   "has_inflammatory": true,
+   "other_findings": [
+    "Ampulla of Vater",
+    "Angiectasia",
+    "Pylorus"
+   ],
+   "sb_window": [
+    1157,
+    28383
+   ],
+   "sb_window_from": "pylorus-end",
+   "inflammatory_inside_sb_window_pct": 87.27272727272727,
+   "all": {
+    "frames_kept": 2839,
+    "flagged_pct": 35.575907009510395,
+    "p99": 0.9416911602020264,
+    "top1pct_mean": 0.960008442401886,
+    "runs_ge_0_9": 6,
+    "runs_per_1000": 2.113420218386756
+   },
+   "filtered": {
+    "frames_kept": 2839,
+    "flagged_pct": 35.575907009510395,
+    "p99": 0.9416911602020264,
+    "top1pct_mean": 0.960008442401886,
+    "runs_ge_0_9": 6,
+    "runs_per_1000": 2.113420218386756
+   },
+   "sb": {
+    "frames_kept": 2723,
+    "flagged_pct": 34.11678295997062,
+    "p99": 0.9364480376243591,
+    "top1pct_mean": 0.9575998783111572,
+    "runs_ge_0_9": 5,
+    "runs_per_1000": 1.8362100624311422
+   },
+   "sb_filtered": {
+    "frames_kept": 2723,
+    "flagged_pct": 34.11678295997062,
+    "p99": 0.9364480376243591,
+    "top1pct_mean": 0.9575998783111572,
+    "runs_ge_0_9": 5,
+    "runs_per_1000": 1.8362100624311422
+   },
+   "ensemble_top150_mean": 0.6941230297088623,
+   "lesion_recall_top1pct": 0.0,
+   "lesion_recall_top5pct": 0.6181818181818182,
+   "lesion_recall_top10pct": 0.7090909090909091,
+   "lesion_recall_top1pct_sb_filtered": 0.0,
+   "lesion_recall_top5pct_sb_filtered": 0.6181818181818182,
+   "lesion_recall_top10pct_sb_filtered": 0.6181818181818182
+  },
+  {
+   "video_id": "ed02f27ef36f483e",
+   "total_frames": 59281,
+   "sampled": 5929,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    4490,
+    58570
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 5929,
+    "flagged_pct": 34.22162253331085,
+    "p99": 0.9431549310684204,
+    "top1pct_mean": 0.967327356338501,
+    "runs_ge_0_9": 6,
+    "runs_per_1000": 1.011975037949064
+   },
+   "filtered": {
+    "frames_kept": 5929,
+    "flagged_pct": 34.22162253331085,
+    "p99": 0.9431549310684204,
+    "top1pct_mean": 0.967327356338501,
+    "runs_ge_0_9": 6,
+    "runs_per_1000": 1.011975037949064
+   },
+   "sb": {
+    "frames_kept": 5407,
+    "flagged_pct": 32.84631033845016,
+    "p99": 0.9363046288490295,
+    "top1pct_mean": 0.9577712416648865,
+    "runs_ge_0_9": 3,
+    "runs_per_1000": 0.5548363232846311
+   },
+   "sb_filtered": {
+    "frames_kept": 5407,
+    "flagged_pct": 32.84631033845016,
+    "p99": 0.9363046288490295,
+    "top1pct_mean": 0.9577712416648865,
+    "runs_ge_0_9": 3,
+    "runs_per_1000": 0.5548363232846311
+   },
+   "ensemble_top150_mean": 0.8482651710510254
+  },
+  {
+   "video_id": "fb86bc87d3874cd7",
+   "total_frames": 67403,
+   "sampled": 6741,
+   "expert_inflammatory_frames": 32,
+   "has_inflammatory": true,
+   "other_findings": [
+    "Pylorus"
+   ],
+   "sb_window": [
+    3667,
+    67403
+   ],
+   "sb_window_from": "pylorus-end",
+   "inflammatory_inside_sb_window_pct": 0.0,
+   "all": {
+    "frames_kept": 6741,
+    "flagged_pct": 10.161697077584927,
+    "p99": 0.7612655162811279,
+    "top1pct_mean": 0.8211314678192139,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "filtered": {
+    "frames_kept": 6741,
+    "flagged_pct": 10.161697077584927,
+    "p99": 0.7612655162811279,
+    "top1pct_mean": 0.8211314678192139,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb": {
+    "frames_kept": 6374,
+    "flagged_pct": 8.220897395669908,
+    "p99": 0.7127989530563354,
+    "top1pct_mean": 0.7863102555274963,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb_filtered": {
+    "frames_kept": 6374,
+    "flagged_pct": 8.220897395669908,
+    "p99": 0.7127989530563354,
+    "top1pct_mean": 0.7863102555274963,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "ensemble_top150_mean": 0.6648814082145691,
+   "lesion_recall_top1pct": 0.03125,
+   "lesion_recall_top5pct": 0.71875,
+   "lesion_recall_top10pct": 0.8125,
+   "lesion_recall_top1pct_sb_filtered": 0.0,
+   "lesion_recall_top5pct_sb_filtered": 0.0,
+   "lesion_recall_top10pct_sb_filtered": 0.03125
+  },
+  {
+   "video_id": "fc32def0e7194981",
+   "total_frames": 89100,
+   "sampled": 8910,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve"
+   ],
+   "sb_window": [
+    0,
+    88850
+   ],
+   "sb_window_from": "start-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 8910,
+    "flagged_pct": 22.10998877665544,
+    "p99": 0.8874808549880981,
+    "top1pct_mean": 0.9286155104637146,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 0.4489337822671156
+   },
+   "filtered": {
+    "frames_kept": 8910,
+    "flagged_pct": 22.10998877665544,
+    "p99": 0.8874808549880981,
+    "top1pct_mean": 0.9286155104637146,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 0.4489337822671156
+   },
+   "sb": {
+    "frames_kept": 8884,
+    "flagged_pct": 22.163439891940566,
+    "p99": 0.8878408670425415,
+    "top1pct_mean": 0.9290603399276733,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 0.45024763619990993
+   },
+   "sb_filtered": {
+    "frames_kept": 8884,
+    "flagged_pct": 22.163439891940566,
+    "p99": 0.8878408670425415,
+    "top1pct_mean": 0.9290603399276733,
+    "runs_ge_0_9": 4,
+    "runs_per_1000": 0.45024763619990993
+   },
+   "ensemble_top150_mean": 0.8299569487571716
+  },
+  {
+   "video_id": "fe5d372e43f94f68",
+   "total_frames": 26777,
+   "sampled": 2678,
+   "expert_inflammatory_frames": 0,
+   "has_inflammatory": false,
+   "other_findings": [
+    "Ileocecal valve",
+    "Pylorus"
+   ],
+   "sb_window": [
+    988,
+    25944
+   ],
+   "sb_window_from": "pylorus-ileocecal valve",
+   "inflammatory_inside_sb_window_pct": null,
+   "all": {
+    "frames_kept": 2678,
+    "flagged_pct": 31.329350261389095,
+    "p99": 0.8878889679908752,
+    "top1pct_mean": 0.9292808771133423,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "filtered": {
+    "frames_kept": 2678,
+    "flagged_pct": 31.329350261389095,
+    "p99": 0.8878889679908752,
+    "top1pct_mean": 0.9292808771133423,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb": {
+    "frames_kept": 2496,
+    "flagged_pct": 29.126602564102566,
+    "p99": 0.8793066740036011,
+    "top1pct_mean": 0.9263017177581787,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "sb_filtered": {
+    "frames_kept": 2496,
+    "flagged_pct": 29.126602564102566,
+    "p99": 0.8793066740036011,
+    "top1pct_mean": 0.9263017177581787,
+    "runs_ge_0_9": 0,
+    "runs_per_1000": 0.0
+   },
+   "ensemble_top150_mean": 0.693943202495575
+  }
+ ],
+ "filter_applied": false,
+ "note": "Stage 1: fold-1 CrohnIPI model on every 10th frame; stage 2: 5-model ensemble on the top 150 frames. Expert labels cover only the annotated subset of frames."
+}

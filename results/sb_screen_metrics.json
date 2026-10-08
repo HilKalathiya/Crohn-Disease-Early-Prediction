@@ -1,0 +1,107 @@
+{
+ "train": "SEE-AI (18,481 images, image-level labels from expert boxes)",
+ "internal_random_cv": {
+  "ulcer_erosion": {
+   "positives": 4390,
+   "auroc": 0.819406262482927,
+   "auprc": 0.5881115501346265
+  },
+  "erythema": {
+   "positives": 915,
+   "auroc": 0.8505955369569504,
+   "auprc": 0.32037399855310655
+  },
+  "angiectasia": {
+   "positives": 825,
+   "auroc": 0.7788473314934574,
+   "auprc": 0.1896163995557013
+  },
+  "bleeding": {
+   "positives": 801,
+   "auroc": 0.9381392603137481,
+   "auprc": 0.7040425325417484
+  },
+  "lymphangiectasia": {
+   "positives": 572,
+   "auroc": 0.8657297948017697,
+   "auprc": 0.3767976315867202
+  },
+  "polyp": {
+   "positives": 2157,
+   "auroc": 0.8637388319992566,
+   "auprc": 0.5289100348434785
+  },
+  "foreign_body": {
+   "positives": 583,
+   "auroc": 0.9520040856640076,
+   "auprc": 0.6916906988376207
+  },
+  "stenosis": {
+   "positives": 442,
+   "auroc": 0.9515752571289106,
+   "auprc": 0.6624344653150772
+  }
+ },
+ "external_kvasir": {
+  "ulcer_erosion": {
+   "positives": 1360,
+   "negatives": 4000,
+   "auroc_vs_normal": 0.6113149816176471
+  },
+  "erythema": {
+   "positives": 159,
+   "negatives": 4000,
+   "auroc_vs_normal": 0.700630503144654
+  },
+  "angiectasia": {
+   "positives": 866,
+   "negatives": 4000,
+   "auroc_vs_normal": 0.789560623556582
+  },
+  "bleeding": {
+   "positives": 458,
+   "negatives": 4000,
+   "auroc_vs_normal": 0.8764664301310044
+  },
+  "lymphangiectasia": {
+   "positives": 592,
+   "negatives": 4000,
+   "auroc_vs_normal": 0.7664146959459459
+  },
+  "polyp": {
+   "positives": 55,
+   "negatives": 4000,
+   "auroc_vs_normal": 0.6006454545454545
+  },
+  "foreign_body": {
+   "positives": 776,
+   "negatives": 4000,
+   "auroc_vs_normal": 0.7506776739690721
+  },
+  "any_finding_vs_normal": {
+   "auroc": 0.6041947081575245
+  }
+ },
+ "leakage_kvasir": {
+  "random_frame_split": {
+   "balanced_accuracy": 0.9571292766863362,
+   "macro_f1": 0.9449071547256368
+  },
+  "video_grouped_split": {
+   "balanced_accuracy": 0.17912084304439632,
+   "macro_f1": 0.18241708590073427
+  },
+  "videos_per_class": {
+   "normal": 37,
+   "ulcer": 3,
+   "erosion": 9,
+   "erythema": 3,
+   "angiectasia": 6,
+   "blood": 3,
+   "lymphangiectasia": 3,
+   "foreign_body": 4,
+   "polyp": 1
+  }
+ },
+ "note": "SEE-AI has no patient IDs, so internal CV is frame-level (optimistic); the Kvasir-Capsule external test is the honest number."
+}

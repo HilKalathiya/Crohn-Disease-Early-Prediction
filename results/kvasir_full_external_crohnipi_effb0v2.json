@@ -1,0 +1,934 @@
+{
+ "A": {
+  "frames": 47238,
+  "videos": 43,
+  "normal_frames": 34338,
+  "inflammatory_frames": 1527,
+  "inflammatory_vs_normal": {
+   "auroc": 0.9149876551770882,
+   "sensitivity_at_0_5": 0.8827766863130321,
+   "specificity_at_0_5": 0.7376958471664046,
+   "auroc_ci95_video_bootstrap": [
+    0.8222864529152666,
+    0.9529986750856179
+   ]
+  },
+  "per_class": {
+   "Ampulla of Vater": {
+    "n": 11,
+    "mean_lesion_score": 0.7607755661010742,
+    "flagged_at_0_5": 1.0,
+    "tier_share": [
+     0.18181818181818182,
+     0.45454545454545453,
+     0.36363636363636365,
+     0.0
+    ],
+    "auroc_vs_normal": 0.970464738243875
+   },
+   "Angiectasia": {
+    "n": 866,
+    "mean_lesion_score": 0.6524324417114258,
+    "flagged_at_0_5": 0.8706697459584296,
+    "tier_share": [
+     0.5438799076212472,
+     0.050808314087759814,
+     0.40415704387990764,
+     0.0011547344110854503
+    ],
+    "auroc_vs_normal": 0.8766469375157465
+   },
+   "Blood - fresh": {
+    "n": 446,
+    "mean_lesion_score": 0.627196192741394,
+    "flagged_at_0_5": 0.827354260089686,
+    "tier_share": [
+     0.7107623318385651,
+     0.1031390134529148,
+     0.07399103139013453,
+     0.11210762331838565
+    ],
+    "auroc_vs_normal": 0.8520891757409264
+   },
+   "Blood - hematin": {
+    "n": 12,
+    "mean_lesion_score": 0.8127095699310303,
+    "flagged_at_0_5": 1.0,
+    "tier_share": [
+     0.16666666666666666,
+     0.6666666666666666,
+     0.16666666666666666,
+     0.0
+    ],
+    "auroc_vs_normal": 0.9761707146601433
+   },
+   "Erosion": {
+    "n": 514,
+    "mean_lesion_score": 0.7220543026924133,
+    "flagged_at_0_5": 0.8190661478599222,
+    "tier_share": [
+     0.4027237354085603,
+     0.07782101167315175,
+     0.5077821011673151,
+     0.011673151750972763
+    ],
+    "auroc_vs_normal": 0.8731397167956998
+   },
+   "Erythema": {
+    "n": 159,
+    "mean_lesion_score": 0.6350608468055725,
+    "flagged_at_0_5": 0.6981132075471698,
+    "tier_share": [
+     0.5283018867924528,
+     0.006289308176100629,
+     0.4339622641509434,
+     0.031446540880503145
+    ],
+    "auroc_vs_normal": 0.8030210035565783
+   },
+   "Foreign Body": {
+    "n": 776,
+    "mean_lesion_score": 0.40550240874290466,
+    "flagged_at_0_5": 0.21778350515463918,
+    "tier_share": [
+     0.970360824742268,
+     0.001288659793814433,
+     0.020618556701030927,
+     0.007731958762886598
+    ],
+    "auroc_vs_normal": 0.43018183245636316
+   },
+   "Ileocecal valve": {
+    "n": 4189,
+    "mean_lesion_score": 0.5169148445129395,
+    "flagged_at_0_5": 0.4497493435187396,
+    "tier_share": [
+     0.7386010981141083,
+     0.019097636667462402,
+     0.20744807830031034,
+     0.03485318691811888
+    ],
+    "auroc_vs_normal": 0.5941897019951393
+   },
+   "Lymphangiectasia": {
+    "n": 592,
+    "mean_lesion_score": 0.4900321960449219,
+    "flagged_at_0_5": 0.38344594594594594,
+    "tier_share": [
+     0.8800675675675675,
+     0.006756756756756757,
+     0.10810810810810811,
+     0.005067567567567568
+    ],
+    "auroc_vs_normal": 0.6109786917574572
+   },
+   "Normal clean mucosa": {
+    "n": 34338,
+    "mean_lesion_score": 0.43559470772743225,
+    "flagged_at_0_5": 0.2623041528335954,
+    "tier_share": [
+     0.9323198788514182,
+     0.0053584949618498455,
+     0.051226046945075425,
+     0.011095579241656474
+    ]
+   },
+   "Polyp": {
+    "n": 55,
+    "mean_lesion_score": 0.6570028066635132,
+    "flagged_at_0_5": 0.7818181818181819,
+    "tier_share": [
+     0.45454545454545453,
+     0.0,
+     0.4909090909090909,
+     0.05454545454545454
+    ],
+    "auroc_vs_normal": 0.8251023250149583
+   },
+   "Pylorus": {
+    "n": 1520,
+    "mean_lesion_score": 0.5743602514266968,
+    "flagged_at_0_5": 0.6427631578947368,
+    "tier_share": [
+     0.7210526315789474,
+     0.09868421052631579,
+     0.14736842105263157,
+     0.03289473684210526
+    ],
+    "auroc_vs_normal": 0.756832493002995
+   },
+   "Reduced Mucosal View": {
+    "n": 2906,
+    "mean_lesion_score": 0.402836412191391,
+    "flagged_at_0_5": 0.16758430832759807,
+    "tier_share": [
+     0.9762560220233999,
+     0.0027529249827942187,
+     0.02064693737095664,
+     0.00034411562284927734
+    ],
+    "auroc_vs_normal": 0.42894857194121017
+   },
+   "Ulcer": {
+    "n": 854,
+    "mean_lesion_score": 0.846572756767273,
+    "flagged_at_0_5": 0.955503512880562,
+    "tier_share": [
+     0.1358313817330211,
+     0.01990632318501171,
+     0.702576112412178,
+     0.14168618266978922
+    ],
+    "auroc_vs_normal": 0.9610210719636162
+   }
+  },
+  "pooled_triage": {
+   "top_5pct": 0.5979043876882777,
+   "top_10pct": 0.7138179436804192,
+   "top_20pct": 0.8087753765553373,
+   "top_30pct": 0.8729535036018337
+  },
+  "uncertainty": {
+   "mean_sd_lesion_frames": 0.17804986238479614,
+   "mean_sd_normal_frames": 0.12964653968811035
+  }
+ },
+ "B": {
+  "n_videos": 43,
+  "videos_with_inflammatory_lesions": 13,
+  "video_auroc_burden_index": 0.6666666666666666,
+  "video_auroc_flagged_pct": 0.6846153846153846,
+  "spearman_burden_vs_prevalence": -0.1671700392630625,
+  "median_recall_top10pct": 0.4375,
+  "median_recall_top20pct": 0.6666666666666666,
+  "median_recall_top30pct": 0.832258064516129,
+  "median_rank_first_lesion": 1.0,
+  "videos": [
+   {
+    "video_id": "2fc3db471f9d44c0",
+    "labelled_frames": 127,
+    "inflammatory_frames": 127,
+    "prevalence": 1.0,
+    "flagged_pct": 96.8503937007874,
+    "burden_index": 59.93140575884208,
+    "mean_lesion_score": 0.8325375318527222,
+    "worst_tier": 3,
+    "top_classes": {
+     "Ulcer": 127
+    },
+    "recall_top10pct": 0.09448818897637795,
+    "recall_top20pct": 0.1968503937007874,
+    "recall_top30pct": 0.2992125984251969,
+    "rank_first_lesion": 1,
+    "auroc_within_video": null
+   },
+   {
+    "video_id": "d626f4f4a5ac4785",
+    "labelled_frames": 643,
+    "inflammatory_frames": 621,
+    "prevalence": 0.9657853810264385,
+    "flagged_pct": 95.17884914463453,
+    "burden_index": 55.46562013304669,
+    "mean_lesion_score": 0.8439826369285583,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 22,
+     "Ulcer": 582,
+     "Erosion": 39
+    },
+    "recall_top10pct": 0.10305958132045089,
+    "recall_top20pct": 0.20611916264090177,
+    "recall_top30pct": 0.30917874396135264,
+    "rank_first_lesion": 1,
+    "auroc_within_video": 0.9161176987263944
+   },
+   {
+    "video_id": "131368cc17e44240",
+    "labelled_frames": 2034,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 72.91052114060965,
+    "burden_index": 42.80566567007449,
+    "mean_lesion_score": 0.63735032081604,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 101,
+     "Normal clean mucosa": 617,
+     "Polyp": 55,
+     "Ileocecal valve": 1261
+    }
+   },
+   {
+    "video_id": "d7a271f233ba4a40",
+    "labelled_frames": 945,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 68.04232804232804,
+    "burden_index": 40.27267231512322,
+    "mean_lesion_score": 0.5716503262519836,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 18,
+     "Normal clean mucosa": 886,
+     "Ileocecal valve": 41
+    }
+   },
+   {
+    "video_id": "04a78ef00c5245e0",
+    "labelled_frames": 1292,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 59.210526315789465,
+    "burden_index": 36.72127073642224,
+    "mean_lesion_score": 0.5649421215057373,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 20,
+     "Angiectasia": 108,
+     "Blood - fresh": 22,
+     "Ileocecal valve": 412,
+     "Normal clean mucosa": 656,
+     "Lymphangiectasia": 74
+    }
+   },
+   {
+    "video_id": "7a47e8eacea04e64",
+    "labelled_frames": 436,
+    "inflammatory_frames": 145,
+    "prevalence": 0.33256880733944955,
+    "flagged_pct": 49.54128440366973,
+    "burden_index": 36.54651952713774,
+    "mean_lesion_score": 0.5517634749412537,
+    "worst_tier": 3,
+    "top_classes": {
+     "Foreign Body": 6,
+     "Pylorus": 84,
+     "Ileocecal valve": 201,
+     "Ulcer": 145
+    },
+    "recall_top10pct": 0.296551724137931,
+    "recall_top20pct": 0.6,
+    "recall_top30pct": 0.7793103448275862,
+    "rank_first_lesion": 1,
+    "auroc_within_video": 0.9369119563929376
+   },
+   {
+    "video_id": "64440803f87b4843",
+    "labelled_frames": 2159,
+    "inflammatory_frames": 27,
+    "prevalence": 0.012505789717461788,
+    "flagged_pct": 61.13941639647985,
+    "burden_index": 36.50417895779136,
+    "mean_lesion_score": 0.5501587390899658,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 23,
+     "Angiectasia": 652,
+     "Ileocecal valve": 50,
+     "Normal clean mucosa": 1257,
+     "Lymphangiectasia": 150,
+     "Erythema": 27
+    },
+    "recall_top10pct": 0.2962962962962963,
+    "recall_top20pct": 0.5925925925925926,
+    "recall_top30pct": 0.6296296296296297,
+    "rank_first_lesion": 1,
+    "auroc_within_video": 0.7538565770273087
+   },
+   {
+    "video_id": "bca26705313a4644",
+    "labelled_frames": 1449,
+    "inflammatory_frames": 72,
+    "prevalence": 0.049689440993788817,
+    "flagged_pct": 48.792270531400966,
+    "burden_index": 35.78162853206907,
+    "mean_lesion_score": 0.5056516528129578,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 11,
+     "Normal clean mucosa": 1345,
+     "Ileocecal valve": 21,
+     "Erosion": 72
+    },
+    "recall_top10pct": 0.125,
+    "recall_top20pct": 0.18055555555555555,
+    "recall_top30pct": 0.2222222222222222,
+    "rank_first_lesion": 1,
+    "auroc_within_video": 0.46506092148793676
+   },
+   {
+    "video_id": "d369e4f163df4aba",
+    "labelled_frames": 1328,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 54.5933734939759,
+    "burden_index": 35.614005286605604,
+    "mean_lesion_score": 0.5360854268074036,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 10,
+     "Blood - fresh": 424,
+     "Normal clean mucosa": 873,
+     "Angiectasia": 21
+    }
+   },
+   {
+    "video_id": "39960e5e099a45ca",
+    "labelled_frames": 237,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 54.43037974683544,
+    "burden_index": 34.68012796864228,
+    "mean_lesion_score": 0.5341004133224487,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 11,
+     "Normal clean mucosa": 205,
+     "Ileocecal valve": 21
+    }
+   },
+   {
+    "video_id": "ad91cf7ca91440aa",
+    "labelled_frames": 74,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 29.72972972972973,
+    "burden_index": 34.499273452538624,
+    "mean_lesion_score": 0.48351430892944336,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 11,
+     "Angiectasia": 11,
+     "Ileocecal valve": 52
+    }
+   },
+   {
+    "video_id": "8ebf0e483cac48d6",
+    "labelled_frames": 1077,
+    "inflammatory_frames": 144,
+    "prevalence": 0.13370473537604458,
+    "flagged_pct": 44.01114206128134,
+    "burden_index": 33.57032439376005,
+    "mean_lesion_score": 0.5289387702941895,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 61,
+     "Blood - hematin": 12,
+     "Reduced Mucosal View": 187,
+     "Erosion": 144,
+     "Ileocecal valve": 41,
+     "Normal clean mucosa": 632
+    },
+    "recall_top10pct": 0.6388888888888888,
+    "recall_top20pct": 0.8958333333333334,
+    "recall_top30pct": 0.9444444444444444,
+    "rank_first_lesion": 1,
+    "auroc_within_video": 0.9565916398713826
+   },
+   {
+    "video_id": "7ad22d50ebaf4596",
+    "labelled_frames": 740,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 44.5945945945946,
+    "burden_index": 32.974977432540406,
+    "mean_lesion_score": 0.4819076955318451,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 17,
+     "Normal clean mucosa": 347,
+     "Lymphangiectasia": 368,
+     "Ileocecal valve": 8
+    }
+   },
+   {
+    "video_id": "eb0203196e284797",
+    "labelled_frames": 872,
+    "inflammatory_frames": 61,
+    "prevalence": 0.06995412844036697,
+    "flagged_pct": 47.591743119266056,
+    "burden_index": 32.355917525400805,
+    "mean_lesion_score": 0.5188078284263611,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 44,
+     "Angiectasia": 35,
+     "Erosion": 61,
+     "Ampulla of Vater": 11,
+     "Normal clean mucosa": 721
+    },
+    "recall_top10pct": 0.7213114754098361,
+    "recall_top20pct": 0.8852459016393442,
+    "recall_top30pct": 0.9180327868852459,
+    "rank_first_lesion": 1,
+    "auroc_within_video": 0.9239352347840148
+   },
+   {
+    "video_id": "48579eec79784294",
+    "labelled_frames": 1379,
+    "inflammatory_frames": 9,
+    "prevalence": 0.006526468455402465,
+    "flagged_pct": 40.02900652646846,
+    "burden_index": 31.48208864056635,
+    "mean_lesion_score": 0.4875340759754181,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 22,
+     "Reduced Mucosal View": 471,
+     "Foreign Body": 17,
+     "Ileocecal valve": 91,
+     "Normal clean mucosa": 769,
+     "Erythema": 9
+    },
+    "recall_top10pct": 0.6666666666666666,
+    "recall_top20pct": 0.6666666666666666,
+    "recall_top30pct": 0.7777777777777778,
+    "rank_first_lesion": 2,
+    "auroc_within_video": 0.8501216545012166
+   },
+   {
+    "video_id": "5e9beaf4e66142c8",
+    "labelled_frames": 464,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 31.25,
+    "burden_index": 31.353411437601025,
+    "mean_lesion_score": 0.48110249638557434,
+    "worst_tier": 3,
+    "top_classes": {
+     "Normal clean mucosa": 370,
+     "Ileocecal valve": 94
+    }
+   },
+   {
+    "video_id": "dac1e27f7e4d4ef5",
+    "labelled_frames": 2152,
+    "inflammatory_frames": 36,
+    "prevalence": 0.016728624535315983,
+    "flagged_pct": 31.59851301115242,
+    "burden_index": 30.382040189983048,
+    "mean_lesion_score": 0.4575800597667694,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 12,
+     "Normal clean mucosa": 2083,
+     "Ileocecal valve": 21,
+     "Erosion": 36
+    },
+    "recall_top10pct": 0.4166666666666667,
+    "recall_top20pct": 0.6944444444444444,
+    "recall_top30pct": 0.9444444444444444,
+    "rank_first_lesion": 1,
+    "auroc_within_video": 0.8651937618147448
+   },
+   {
+    "video_id": "3ada4222967f421d",
+    "labelled_frames": 1002,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 35.528942115768466,
+    "burden_index": 29.466395376402577,
+    "mean_lesion_score": 0.4499577283859253,
+    "worst_tier": 3,
+    "top_classes": {
+     "Foreign Body": 573,
+     "Pylorus": 6,
+     "Normal clean mucosa": 417,
+     "Ileocecal valve": 6
+    }
+   },
+   {
+    "video_id": "b2134f4a6f864613",
+    "labelled_frames": 1297,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 27.44795682343871,
+    "burden_index": 29.279546653916494,
+    "mean_lesion_score": 0.44962412118911743,
+    "worst_tier": 2,
+    "top_classes": {
+     "Pylorus": 10,
+     "Normal clean mucosa": 1248,
+     "Angiectasia": 39
+    }
+   },
+   {
+    "video_id": "c11b28a8b2344716",
+    "labelled_frames": 1000,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 31.8,
+    "burden_index": 29.236033471301198,
+    "mean_lesion_score": 0.45883819460868835,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 97,
+     "Normal clean mucosa": 449,
+     "Reduced Mucosal View": 454
+    }
+   },
+   {
+    "video_id": "6cb700585c4f4070",
+    "labelled_frames": 884,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 23.64253393665158,
+    "burden_index": 28.771685712955342,
+    "mean_lesion_score": 0.43961358070373535,
+    "worst_tier": 2,
+    "top_classes": {
+     "Normal clean mucosa": 696,
+     "Ileocecal valve": 188
+    }
+   },
+   {
+    "video_id": "4aebc5cb2d4847aa",
+    "labelled_frames": 90,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 22.22222222222222,
+    "burden_index": 28.636726168570693,
+    "mean_lesion_score": 0.43448707461357117,
+    "worst_tier": 1,
+    "top_classes": {
+     "Ileocecal valve": 90
+    }
+   },
+   {
+    "video_id": "5bb1d3cc7dc64cec",
+    "labelled_frames": 788,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 19.289340101522843,
+    "burden_index": 28.416352567472533,
+    "mean_lesion_score": 0.4082084596157074,
+    "worst_tier": 3,
+    "top_classes": {
+     "Reduced Mucosal View": 170,
+     "Normal clean mucosa": 499,
+     "Ileocecal valve": 119
+    }
+   },
+   {
+    "video_id": "0531325b64674948",
+    "labelled_frames": 1191,
+    "inflammatory_frames": 16,
+    "prevalence": 0.01343408900083963,
+    "flagged_pct": 31.905961376994124,
+    "burden_index": 28.219324264236434,
+    "mean_lesion_score": 0.44899168610572815,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 179,
+     "Normal clean mucosa": 996,
+     "Erosion": 16
+    },
+    "recall_top10pct": 0.4375,
+    "recall_top20pct": 0.5625,
+    "recall_top30pct": 0.875,
+    "rank_first_lesion": 32,
+    "auroc_within_video": 0.821968085106383
+   },
+   {
+    "video_id": "8885668afb844852",
+    "labelled_frames": 2021,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 28.005937654626422,
+    "burden_index": 28.16987911077364,
+    "mean_lesion_score": 0.4343435764312744,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 221,
+     "Reduced Mucosal View": 291,
+     "Foreign Body": 180,
+     "Ileocecal valve": 201,
+     "Normal clean mucosa": 1128
+    }
+   },
+   {
+    "video_id": "df6b47bafe5143f5",
+    "labelled_frames": 1530,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 25.555555555555554,
+    "burden_index": 28.15296987643818,
+    "mean_lesion_score": 0.4277796149253845,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 19,
+     "Normal clean mucosa": 1499,
+     "Ileocecal valve": 12
+    }
+   },
+   {
+    "video_id": "dc221ccc65d34010",
+    "labelled_frames": 1789,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 23.309111235327,
+    "burden_index": 28.011188072761342,
+    "mean_lesion_score": 0.43009382486343384,
+    "worst_tier": 3,
+    "top_classes": {
+     "Reduced Mucosal View": 1094,
+     "Normal clean mucosa": 430,
+     "Ileocecal valve": 265
+    }
+   },
+   {
+    "video_id": "ed02f27ef36f483e",
+    "labelled_frames": 587,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 18.909710391822827,
+    "burden_index": 28.006573660697942,
+    "mean_lesion_score": 0.4169842600822449,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 51,
+     "Normal clean mucosa": 495,
+     "Ileocecal valve": 41
+    }
+   },
+   {
+    "video_id": "bc84479c66fe4da6",
+    "labelled_frames": 1891,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 21.628767847699628,
+    "burden_index": 27.944218692061614,
+    "mean_lesion_score": 0.4480578303337097,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 151,
+     "Normal clean mucosa": 1699,
+     "Ileocecal valve": 41
+    }
+   },
+   {
+    "video_id": "4560e83f9afc4685",
+    "labelled_frames": 780,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 18.71794871794872,
+    "burden_index": 27.64383553105414,
+    "mean_lesion_score": 0.41929885745048523,
+    "worst_tier": 2,
+    "top_classes": {
+     "Pylorus": 41,
+     "Normal clean mucosa": 708,
+     "Ileocecal valve": 31
+    }
+   },
+   {
+    "video_id": "8a00709108cd4e2b",
+    "labelled_frames": 542,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 18.81918819188192,
+    "burden_index": 27.499730890985635,
+    "mean_lesion_score": 0.4199569821357727,
+    "worst_tier": 3,
+    "top_classes": {
+     "Normal clean mucosa": 486,
+     "Ileocecal valve": 56
+    }
+   },
+   {
+    "video_id": "3c8d5f0b90d7475d",
+    "labelled_frames": 1704,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 18.779342723004692,
+    "burden_index": 27.051923139726217,
+    "mean_lesion_score": 0.4050263464450836,
+    "worst_tier": 3,
+    "top_classes": {
+     "Normal clean mucosa": 1696,
+     "Ileocecal valve": 8
+    }
+   },
+   {
+    "video_id": "dca1377dec974312",
+    "labelled_frames": 1216,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 18.338815789473685,
+    "burden_index": 26.96059782930094,
+    "mean_lesion_score": 0.4168020784854889,
+    "worst_tier": 2,
+    "top_classes": {
+     "Pylorus": 18,
+     "Normal clean mucosa": 1177,
+     "Ileocecal valve": 21
+    }
+   },
+   {
+    "video_id": "0728084c8da942d9",
+    "labelled_frames": 1499,
+    "inflammatory_frames": 81,
+    "prevalence": 0.054036024016010674,
+    "flagged_pct": 14.543028685790526,
+    "burden_index": 26.177073700847643,
+    "mean_lesion_score": 0.40002572536468506,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 4,
+     "Normal clean mucosa": 1399,
+     "Ileocecal valve": 15,
+     "Erosion": 81
+    },
+    "recall_top10pct": 0.7283950617283951,
+    "recall_top20pct": 0.8271604938271605,
+    "recall_top30pct": 0.8888888888888888,
+    "rank_first_lesion": 1,
+    "auroc_within_video": 0.9147120792630901
+   },
+   {
+    "video_id": "fc32def0e7194981",
+    "labelled_frames": 1380,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 20.797101449275363,
+    "burden_index": 26.090850740275233,
+    "mean_lesion_score": 0.4105846881866455,
+    "worst_tier": 3,
+    "top_classes": {
+     "Normal clean mucosa": 1130,
+     "Ileocecal valve": 250
+    }
+   },
+   {
+    "video_id": "89cdd41258c542c5",
+    "labelled_frames": 1198,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 14.023372287145241,
+    "burden_index": 26.077896918382127,
+    "mean_lesion_score": 0.40388962626457214,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 51,
+     "Normal clean mucosa": 1147
+    }
+   },
+   {
+    "video_id": "495f16498db34d3c",
+    "labelled_frames": 323,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 12.38390092879257,
+    "burden_index": 25.785492775794523,
+    "mean_lesion_score": 0.3963640034198761,
+    "worst_tier": 2,
+    "top_classes": {
+     "Normal clean mucosa": 306,
+     "Ileocecal valve": 17
+    }
+   },
+   {
+    "video_id": "5e59c7fdb16c4228",
+    "labelled_frames": 2394,
+    "inflammatory_frames": 155,
+    "prevalence": 0.06474519632414369,
+    "flagged_pct": 15.121136173767752,
+    "burden_index": 25.200409008243465,
+    "mean_lesion_score": 0.38425958156585693,
+    "worst_tier": 2,
+    "top_classes": {
+     "Pylorus": 86,
+     "Erosion": 32,
+     "Ileocecal valve": 181,
+     "Normal clean mucosa": 1972,
+     "Erythema": 123
+    },
+    "recall_top10pct": 0.5548387096774193,
+    "recall_top20pct": 0.7161290322580646,
+    "recall_top30pct": 0.832258064516129,
+    "rank_first_lesion": 1,
+    "auroc_within_video": 0.8700773674883661
+   },
+   {
+    "video_id": "af9bd7d0e43741e3",
+    "labelled_frames": 431,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 17.633410672853827,
+    "burden_index": 24.658006322206404,
+    "mean_lesion_score": 0.3804008364677429,
+    "worst_tier": 2,
+    "top_classes": {
+     "Pylorus": 51,
+     "Reduced Mucosal View": 239,
+     "Ileocecal valve": 141
+    }
+   },
+   {
+    "video_id": "07c1fa15a20a4398",
+    "labelled_frames": 678,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 9.882005899705016,
+    "burden_index": 24.465959447719,
+    "mean_lesion_score": 0.37432581186294556,
+    "worst_tier": 2,
+    "top_classes": {
+     "Normal clean mucosa": 668,
+     "Ileocecal valve": 10
+    }
+   },
+   {
+    "video_id": "fe5d372e43f94f68",
+    "labelled_frames": 554,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 13.898916967509026,
+    "burden_index": 24.37638623503213,
+    "mean_lesion_score": 0.39236825704574585,
+    "worst_tier": 3,
+    "top_classes": {
+     "Pylorus": 11,
+     "Normal clean mucosa": 532,
+     "Ileocecal valve": 11
+    }
+   },
+   {
+    "video_id": "c7084b3556e34619",
+    "labelled_frames": 976,
+    "inflammatory_frames": 0,
+    "prevalence": 0.0,
+    "flagged_pct": 4.815573770491803,
+    "burden_index": 23.443058507435556,
+    "mean_lesion_score": 0.36186861991882324,
+    "worst_tier": 2,
+    "top_classes": {
+     "Pylorus": 47,
+     "Normal clean mucosa": 758,
+     "Ileocecal valve": 171
+    }
+   },
+   {
+    "video_id": "fb86bc87d3874cd7",
+    "labelled_frames": 2085,
+    "inflammatory_frames": 33,
+    "prevalence": 0.015827338129496403,
+    "flagged_pct": 6.18705035971223,
+    "burden_index": 22.508751291820374,
+    "mean_lesion_score": 0.358440101146698,
+    "worst_tier": 2,
+    "top_classes": {
+     "Pylorus": 10,
+     "Normal clean mucosa": 2042,
+     "Erosion": 33
+    },
+    "recall_top10pct": 0.8484848484848485,
+    "recall_top20pct": 0.9696969696969697,
+    "recall_top30pct": 1.0,
+    "rank_first_lesion": 1,
+    "auroc_within_video": 0.970139996455786
+   }
+  ]
+ },
+ "note": "5-fold EfficientNet-B0 ensemble trained on CrohnIPI only; single view, no TTA (same as the app); lesion score = 1 - P(normal)"
+}

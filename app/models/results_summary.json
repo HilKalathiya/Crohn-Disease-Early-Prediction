@@ -1,0 +1,5697 @@
+{
+ "totals": {
+  "images": 82330,
+  "datasets": 6,
+  "hmp2_visits": 873,
+  "videos_scanned": 43,
+  "colonoscopy_videos": 46
+ },
+ "crohnipi": {
+  "finetuned": {
+   "multiclass": {
+    "accuracy": 0.9107347876004592,
+    "balanced_accuracy": 0.840498109282363,
+    "macro_f1": 0.8367145833023623,
+    "per_class_recall": {
+     "N": 0.9759887005649718,
+     "E": 0.792,
+     "O": 0.785234899328859,
+     "AU": 0.8167330677290837,
+     "U3-10": 0.7573529411764706,
+     "U>10": 0.8484848484848485,
+     "S": 0.9076923076923077
+    },
+    "per_class_precision": {
+     "N": 0.9691444600280504,
+     "E": 0.7388059701492538,
+     "O": 0.7959183673469388,
+     "AU": 0.8333333333333334,
+     "U3-10": 0.8089005235602095,
+     "U>10": 0.8542372881355932,
+     "S": 0.8368794326241135
+    },
+    "confusion": [
+     [
+      2073,
+      17,
+      6,
+      18,
+      7,
+      1,
+      2
+     ],
+     [
+      14,
+      99,
+      1,
+      4,
+      6,
+      1,
+      0
+     ],
+     [
+      10,
+      3,
+      117,
+      1,
+      11,
+      4,
+      3
+     ],
+     [
+      18,
+      5,
+      2,
+      205,
+      21,
+      0,
+      0
+     ],
+     [
+      21,
+      10,
+      14,
+      18,
+      309,
+      31,
+      5
+     ],
+     [
+      2,
+      0,
+      6,
+      0,
+      24,
+      252,
+      13
+     ],
+     [
+      1,
+      0,
+      1,
+      0,
+      4,
+      6,
+      118
+     ]
+    ]
+   },
+   "binary": {
+    "auroc": 0.9920436606846129,
+    "accuracy": 0.9626865671641791,
+    "sensitivity": 0.9713235294117647,
+    "specificity": 0.9571563088512242,
+    "auroc_ci95": [
+     0.9888265364453847,
+     0.994510890453542
+    ],
+    "note": "image-level bootstrap (CrohnIPI release has no patient IDs)",
+    "crossfit": {
+     "accuracy": 0.9667049368541906,
+     "sensitivity": 0.9514705882352941,
+     "specificity": 0.9764595103578154,
+     "thresholds": {
+      "1": 0.715,
+      "2": 0.6599999999999999,
+      "3": 0.6599999999999999,
+      "4": 0.6599999999999999,
+      "5": 0.6599999999999999
+     },
+     "note": "threshold for each fold chosen on the other folds' out-of-fold scores"
+    }
+   },
+   "severity": {
+    "accuracy": 0.9308266360505166,
+    "macro_f1": 0.8869883543257356,
+    "qwk": 0.9418439752382551,
+    "confusion": [
+     [
+      2064,
+      26,
+      30,
+      4
+     ],
+     [
+      21,
+      226,
+      20,
+      7
+     ],
+     [
+      33,
+      28,
+      560,
+      38
+     ],
+     [
+      1,
+      7,
+      26,
+      393
+     ]
+    ],
+    "within_one": 0.9764638346727899
+   },
+   "per_fold": [
+    {
+     "fold": 1,
+     "acc7": 0.9110473457675753,
+     "bin_acc": 0.9713055954088953,
+     "auroc": 0.9895411073089408,
+     "qwk": 0.9464506118713225
+    },
+    {
+     "fold": 2,
+     "acc7": 0.9053084648493543,
+     "bin_acc": 0.9426111908177905,
+     "auroc": 0.9898943343404858,
+     "qwk": 0.9357109915449654
+    },
+    {
+     "fold": 3,
+     "acc7": 0.9225251076040172,
+     "bin_acc": 0.9612625538020086,
+     "auroc": 0.9952114717606253,
+     "qwk": 0.9478989676885075
+    },
+    {
+     "fold": 4,
+     "acc7": 0.9153515064562411,
+     "bin_acc": 0.9827833572453372,
+     "auroc": 0.9974630834907972,
+     "qwk": 0.9476860260894366
+    },
+    {
+     "fold": 5,
+     "acc7": 0.8994252873563219,
+     "bin_acc": 0.9554597701149425,
+     "auroc": 0.9883425381043054,
+     "qwk": 0.9316182048651321
+    }
+   ],
+   "severity_crossfit": {
+    "qwk": 0.9506202184016936,
+    "accuracy": 0.9150401836969001,
+    "cuts": {
+     "1": [
+      0.9,
+      1.6,
+      2.1
+     ],
+     "2": [
+      0.9,
+      1.6,
+      2.1
+     ],
+     "3": [
+      0.9,
+      1.6,
+      2.1
+     ],
+     "4": [
+      0.9,
+      1.6,
+      2.1
+     ],
+     "5": [
+      0.9,
+      1.6,
+      2.1
+     ]
+    },
+    "note": "tier = expected severity cut at points chosen on the other four folds"
+   },
+   "label": "EfficientNet-B2 320 px, 2 seeds (ours)",
+   "members": [
+    "effb2_320",
+    "effb2_320_s1"
+   ],
+   "recipe": {
+    "backbone": "efficientnet_b2.ra_in1k",
+    "input_size": 320,
+    "epochs": 40,
+    "batch": "8 x 4 accumulation",
+    "ema": 0.998,
+    "tta": "8 views",
+    "seeds": [
+     0,
+     1
+    ],
+    "decided_before_scoring": "two-seed average as final model; switch the app only if it beats v2"
+   },
+   "single_seed": {
+    "effb2_320": {
+     "multiclass": {
+      "accuracy": 0.911308840413318,
+      "balanced_accuracy": 0.8396759720627183,
+      "macro_f1": 0.8386970492234443,
+      "per_class_recall": {
+       "N": 0.975517890772128,
+       "E": 0.792,
+       "O": 0.7785234899328859,
+       "AU": 0.8286852589641435,
+       "U3-10": 0.7598039215686274,
+       "U>10": 0.8585858585858586,
+       "S": 0.8846153846153846
+      },
+      "per_class_precision": {
+       "N": 0.9682242990654205,
+       "E": 0.75,
+       "O": 0.8055555555555556,
+       "AU": 0.8353413654618473,
+       "U3-10": 0.8179419525065963,
+       "U>10": 0.8333333333333334,
+       "S": 0.8582089552238806
+      },
+      "confusion": [
+       [
+        2072,
+        16,
+        5,
+        17,
+        11,
+        3,
+        0
+       ],
+       [
+        16,
+        99,
+        1,
+        6,
+        2,
+        1,
+        0
+       ],
+       [
+        12,
+        2,
+        116,
+        1,
+        10,
+        5,
+        3
+       ],
+       [
+        16,
+        5,
+        3,
+        208,
+        19,
+        0,
+        0
+       ],
+       [
+        20,
+        10,
+        12,
+        17,
+        310,
+        33,
+        6
+       ],
+       [
+        2,
+        0,
+        6,
+        0,
+        24,
+        255,
+        10
+       ],
+       [
+        2,
+        0,
+        1,
+        0,
+        3,
+        9,
+        115
+       ]
+      ]
+     },
+     "binary": {
+      "auroc": 0.9892873462944499,
+      "accuracy": 0.9601033295063146,
+      "sensitivity": 0.9683823529411765,
+      "specificity": 0.9548022598870056,
+      "auroc_ci95": [
+       0.9853029008162679,
+       0.9925911990895877
+      ],
+      "note": "image-level bootstrap (CrohnIPI release has no patient IDs)",
+      "crossfit": {
+       "accuracy": 0.9652698048220436,
+       "sensitivity": 0.9492647058823529,
+       "specificity": 0.975517890772128,
+       "thresholds": {
+        "1": 0.72,
+        "2": 0.72,
+        "3": 0.595,
+        "4": 0.72,
+        "5": 0.625
+       },
+       "note": "threshold for each fold chosen on the other folds' out-of-fold scores"
+      }
+     },
+     "severity": {
+      "accuracy": 0.927382319173364,
+      "macro_f1": 0.8804880884730351,
+      "qwk": 0.9387098745107889,
+      "confusion": [
+       [
+        2066,
+        24,
+        32,
+        2
+       ],
+       [
+        25,
+        222,
+        18,
+        9
+       ],
+       [
+        34,
+        34,
+        552,
+        39
+       ],
+       [
+        3,
+        7,
+        26,
+        391
+       ]
+      ],
+      "within_one": 0.9750287026406429
+     },
+     "severity_crossfit": {
+      "qwk": 0.9433121150817311,
+      "accuracy": 0.9029850746268657,
+      "cuts": {
+       "1": [
+        1.0,
+        1.7,
+        2.2
+       ],
+       "2": [
+        0.8,
+        1.6,
+        2.3
+       ],
+       "3": [
+        0.8,
+        1.7,
+        2.2
+       ],
+       "4": [
+        0.8,
+        1.7,
+        2.1
+       ],
+       "5": [
+        0.8,
+        1.6,
+        2.2
+       ]
+      },
+      "note": "tier = expected severity cut at points chosen on the other four folds"
+     }
+    },
+    "effb2_320_s1": {
+     "multiclass": {
+      "accuracy": 0.9124569460390356,
+      "balanced_accuracy": 0.8392925481262592,
+      "macro_f1": 0.8366214317764596,
+      "per_class_recall": {
+       "N": 0.9769303201506592,
+       "E": 0.768,
+       "O": 0.785234899328859,
+       "AU": 0.8207171314741036,
+       "U3-10": 0.7598039215686274,
+       "U>10": 0.8720538720538721,
+       "S": 0.8923076923076924
+      },
+      "per_class_precision": {
+       "N": 0.971441947565543,
+       "E": 0.732824427480916,
+       "O": 0.785234899328859,
+       "AU": 0.8373983739837398,
+       "U3-10": 0.8072916666666666,
+       "U>10": 0.8604651162790697,
+       "S": 0.8467153284671532
+      },
+      "confusion": [
+       [
+        2075,
+        19,
+        5,
+        14,
+        9,
+        1,
+        1
+       ],
+       [
+        11,
+        96,
+        2,
+        7,
+        8,
+        1,
+        0
+       ],
+       [
+        11,
+        2,
+        117,
+        1,
+        11,
+        3,
+        4
+       ],
+       [
+        17,
+        4,
+        2,
+        206,
+        22,
+        0,
+        0
+       ],
+       [
+        19,
+        10,
+        16,
+        18,
+        310,
+        31,
+        4
+       ],
+       [
+        0,
+        0,
+        6,
+        0,
+        20,
+        259,
+        12
+       ],
+       [
+        3,
+        0,
+        1,
+        0,
+        4,
+        6,
+        116
+       ]
+      ]
+     },
+     "binary": {
+      "auroc": 0.9917833305638639,
+      "accuracy": 0.9586681974741676,
+      "sensitivity": 0.9691176470588235,
+      "specificity": 0.9519774011299436,
+      "auroc_ci95": [
+       0.9889171964233376,
+       0.994131975650167
+      ],
+      "note": "image-level bootstrap (CrohnIPI release has no patient IDs)",
+      "crossfit": {
+       "accuracy": 0.9667049368541906,
+       "sensitivity": 0.9544117647058824,
+       "specificity": 0.9745762711864406,
+       "thresholds": {
+        "1": 0.6649999999999999,
+        "2": 0.6499999999999999,
+        "3": 0.6449999999999999,
+        "4": 0.6649999999999999,
+        "5": 0.6499999999999999
+       },
+       "note": "threshold for each fold chosen on the other folds' out-of-fold scores"
+      }
+     },
+     "severity": {
+      "accuracy": 0.9285304247990815,
+      "macro_f1": 0.8804935181459976,
+      "qwk": 0.9400942299829151,
+      "confusion": [
+       [
+        2065,
+        28,
+        27,
+        4
+       ],
+       [
+        21,
+        219,
+        27,
+        7
+       ],
+       [
+        32,
+        31,
+        559,
+        37
+       ],
+       [
+        3,
+        8,
+        24,
+        392
+       ]
+      ],
+      "within_one": 0.9767508610792193
+     },
+     "severity_crossfit": {
+      "qwk": 0.9423047304777278,
+      "accuracy": 0.9104477611940298,
+      "cuts": {
+       "1": [
+        1.0,
+        1.6,
+        2.1
+       ],
+       "2": [
+        1.0,
+        1.4,
+        2.1
+       ],
+       "3": [
+        1.0,
+        1.6,
+        2.1
+       ],
+       "4": [
+        0.8,
+        1.6,
+        2.1
+       ],
+       "5": [
+        1.0,
+        1.6,
+        2.1
+       ]
+      },
+      "note": "tier = expected severity cut at points chosen on the other four folds"
+     }
+    }
+   }
+  },
+  "probe": {
+   "mnv3_21k": {
+    "multiclass": {
+     "accuracy": 0.7614810562571757,
+     "balanced_accuracy": 0.6716425209032141,
+     "macro_f1": 0.6488351941291172,
+     "per_class_recall": {
+      "N": 0.8389830508474576,
+      "E": 0.448,
+      "O": 0.6442953020134228,
+      "AU": 0.6175298804780877,
+      "U3-10": 0.571078431372549,
+      "U>10": 0.7508417508417509,
+      "S": 0.8307692307692308
+     },
+     "per_class_precision": {
+      "N": 0.9209302325581395,
+      "E": 0.3393939393939394,
+      "O": 0.6442953020134228,
+      "AU": 0.4479768786127168,
+      "U3-10": 0.5065217391304347,
+      "U>10": 0.7483221476510067,
+      "S": 0.8244274809160306
+     },
+     "confusion": [
+      [
+       1782,
+       62,
+       15,
+       131,
+       110,
+       20,
+       4
+      ],
+      [
+       25,
+       56,
+       1,
+       18,
+       22,
+       1,
+       2
+      ],
+      [
+       12,
+       1,
+       96,
+       2,
+       29,
+       7,
+       2
+      ],
+      [
+       48,
+       19,
+       4,
+       155,
+       21,
+       4,
+       0
+      ],
+      [
+       53,
+       25,
+       20,
+       37,
+       233,
+       35,
+       5
+      ],
+      [
+       12,
+       1,
+       11,
+       3,
+       37,
+       223,
+       10
+      ],
+      [
+       3,
+       1,
+       2,
+       0,
+       8,
+       8,
+       108
+      ]
+     ]
+    },
+    "binary": {
+     "auroc": 0.9470640162844797,
+     "accuracy": 0.8444316877152698,
+     "sensitivity": 0.9073529411764706,
+     "specificity": 0.8041431261770244
+    },
+    "severity": {
+     "accuracy": 0.7781285878300803,
+     "macro_f1": 0.7025004763065953,
+     "qwk": 0.74653760612521,
+     "confusion": [
+      [
+       1752,
+       78,
+       269,
+       25
+      ],
+      [
+       35,
+       150,
+       75,
+       14
+      ],
+      [
+       92,
+       63,
+       459,
+       45
+      ],
+      [
+       14,
+       16,
+       47,
+       350
+      ]
+     ]
+    }
+   },
+   "effb0_ra": {
+    "multiclass": {
+     "accuracy": 0.7531572904707233,
+     "balanced_accuracy": 0.6594998020960328,
+     "macro_f1": 0.6398950054458455,
+     "per_class_recall": {
+      "N": 0.839924670433145,
+      "E": 0.488,
+      "O": 0.6308724832214765,
+      "AU": 0.601593625498008,
+      "U3-10": 0.5245098039215687,
+      "U>10": 0.7239057239057239,
+      "S": 0.8076923076923077
+     },
+     "per_class_precision": {
+      "N": 0.9111338100102145,
+      "E": 0.37888198757763975,
+      "O": 0.6143790849673203,
+      "AU": 0.4617737003058104,
+      "U3-10": 0.4672489082969432,
+      "U>10": 0.7142857142857143,
+      "S": 0.8333333333333334
+     },
+     "confusion": [
+      [
+       1784,
+       59,
+       21,
+       114,
+       121,
+       23,
+       2
+      ],
+      [
+       27,
+       61,
+       1,
+       15,
+       18,
+       3,
+       0
+      ],
+      [
+       10,
+       2,
+       94,
+       3,
+       27,
+       11,
+       2
+      ],
+      [
+       56,
+       13,
+       1,
+       151,
+       27,
+       2,
+       1
+      ],
+      [
+       60,
+       23,
+       23,
+       39,
+       214,
+       39,
+       10
+      ],
+      [
+       13,
+       2,
+       11,
+       5,
+       45,
+       215,
+       6
+      ],
+      [
+       8,
+       1,
+       2,
+       0,
+       6,
+       8,
+       105
+      ]
+     ]
+    },
+    "binary": {
+     "auroc": 0.9355418120638086,
+     "accuracy": 0.8401262916188289,
+     "sensitivity": 0.8941176470588236,
+     "specificity": 0.8055555555555556
+    },
+    "severity": {
+     "accuracy": 0.7703788748564868,
+     "macro_f1": 0.6970495345315871,
+     "qwk": 0.7294468450711344,
+     "confusion": [
+      [
+       1749,
+       79,
+       271,
+       25
+      ],
+      [
+       35,
+       160,
+       63,
+       16
+      ],
+      [
+       112,
+       57,
+       440,
+       50
+      ],
+      [
+       19,
+       16,
+       57,
+       335
+      ]
+     ]
+    }
+   },
+   "effb0_ns": {
+    "multiclass": {
+     "accuracy": 0.7571756601607348,
+     "balanced_accuracy": 0.6621075726146489,
+     "macro_f1": 0.6308937048671004,
+     "per_class_recall": {
+      "N": 0.8436911487758946,
+      "E": 0.472,
+      "O": 0.6510067114093959,
+      "AU": 0.6215139442231076,
+      "U3-10": 0.5269607843137255,
+      "U>10": 0.7272727272727273,
+      "S": 0.7923076923076923
+     },
+     "per_class_precision": {
+      "N": 0.9270563890325918,
+      "E": 0.3597560975609756,
+      "O": 0.5672514619883041,
+      "AU": 0.46987951807228917,
+      "U3-10": 0.5,
+      "U>10": 0.6878980891719745,
+      "S": 0.7357142857142858
+     },
+     "confusion": [
+      [
+       1792,
+       64,
+       24,
+       115,
+       99,
+       24,
+       6
+      ],
+      [
+       28,
+       59,
+       1,
+       14,
+       21,
+       2,
+       0
+      ],
+      [
+       11,
+       3,
+       97,
+       4,
+       23,
+       8,
+       3
+      ],
+      [
+       44,
+       14,
+       4,
+       156,
+       31,
+       2,
+       0
+      ],
+      [
+       47,
+       23,
+       29,
+       38,
+       215,
+       45,
+       11
+      ],
+      [
+       7,
+       1,
+       16,
+       4,
+       36,
+       216,
+       17
+      ],
+      [
+       4,
+       0,
+       0,
+       1,
+       5,
+       17,
+       103
+      ]
+     ]
+    },
+    "binary": {
+     "auroc": 0.9518403123961449,
+     "accuracy": 0.8561997703788748,
+     "sensitivity": 0.9154411764705882,
+     "specificity": 0.8182674199623352
+    },
+    "severity": {
+     "accuracy": 0.7873134328358209,
+     "macro_f1": 0.7088549220068083,
+     "qwk": 0.765195340954889,
+     "confusion": [
+      [
+       1777,
+       85,
+       231,
+       31
+      ],
+      [
+       34,
+       158,
+       70,
+       12
+      ],
+      [
+       82,
+       66,
+       454,
+       57
+      ],
+      [
+       11,
+       16,
+       46,
+       354
+      ]
+     ]
+    }
+   }
+  },
+  "ablation": [
+   {
+    "label": "MobileNetV3 (IN-21k) frozen + LR",
+    "balanced_accuracy": 0.6716425209032141,
+    "auroc": 0.9470640162844797,
+    "accuracy7": 0.7614810562571757,
+    "bin_acc": 0.8444316877152698
+   },
+   {
+    "label": "EfficientNet-B0 (ImageNet) frozen + LR",
+    "balanced_accuracy": 0.6594998020960328,
+    "auroc": 0.9355418120638086,
+    "accuracy7": 0.7531572904707233,
+    "bin_acc": 0.8401262916188289
+   },
+   {
+    "label": "EfficientNet-B0 (Noisy Student) frozen + LR",
+    "balanced_accuracy": 0.6621075726146489,
+    "auroc": 0.9518403123961449,
+    "accuracy7": 0.7571756601607348,
+    "bin_acc": 0.8561997703788748
+   },
+   {
+    "label": "EfficientNet-B0 fine-tuned v1 (10 epochs)",
+    "balanced_accuracy": 0.7762699460063082,
+    "auroc": 0.9852961947490863,
+    "accuracy7": 0.8679678530424799,
+    "bin_acc": 0.927382319173364
+   },
+   {
+    "label": "EfficientNet-B0 fine-tuned v2 (15 epochs, 224 px)",
+    "balanced_accuracy": 0.7949055397959685,
+    "auroc": 0.9889761271740335,
+    "accuracy7": 0.8791618828932262,
+    "bin_acc": 0.9394374282433984
+   },
+   {
+    "label": "EfficientNet-B2 fine-tuned, 320 px, 2 seeds (ours)",
+    "balanced_accuracy": 0.840498109282363,
+    "auroc": 0.9920436606846129,
+    "accuracy7": 0.9107347876004592,
+    "bin_acc": 0.9626865671641791,
+    "ours": true
+   }
+  ],
+  "benchmarks": [
+   {
+    "label": "Recurrent attention net (de Maissin 2021)",
+    "accuracy": 0.937,
+    "sensitivity": 0.9209,
+    "specificity": 0.9476
+   },
+   {
+    "label": "ResNet-34 (de Maissin 2021)",
+    "accuracy": 0.9458
+   },
+   {
+    "label": "VGG-16 (de Maissin 2021)",
+    "accuracy": 0.944
+   },
+   {
+    "label": "VGG-19 (de Maissin 2021)",
+    "accuracy": 0.9435
+   },
+   {
+    "label": "EfficientNet-B2 x2 seeds (ours)",
+    "accuracy": 0.9667049368541906,
+    "sensitivity": 0.9514705882352941,
+    "specificity": 0.9764595103578154,
+    "ours": true
+   }
+  ],
+  "external": {
+   "kvasir": {
+    "inflammatory_vs_normal": {
+     "auroc": 0.9441427748518763,
+     "n_pos": 1519,
+     "n_neg": 4000,
+     "sensitivity": 0.7946017116524029,
+     "specificity": 0.972
+    },
+    "ulcer": {
+     "n": 854,
+     "auroc_vs_normal": 0.9884083723653396,
+     "mean_lesion_score": 0.8750467896461487
+    },
+    "erosion": {
+     "n": 506,
+     "auroc_vs_normal": 0.9193517786561265,
+     "mean_lesion_score": 0.6497467160224915
+    },
+    "erythema": {
+     "n": 159,
+     "auroc_vs_normal": 0.7852838050314466,
+     "mean_lesion_score": 0.5045959949493408
+    },
+    "angiectasia": {
+     "n": 866,
+     "auroc_vs_normal": 0.6916196593533488,
+     "mean_lesion_score": 0.3986830413341522
+    },
+    "blood_fresh": {
+     "n": 446,
+     "auroc_vs_normal": 0.9392337443946188,
+     "mean_lesion_score": 0.48870232701301575
+    },
+    "lymphangiectasia": {
+     "n": 592,
+     "auroc_vs_normal": 0.6273350929054053,
+     "mean_lesion_score": 0.34347009658813477
+    },
+    "foreign_body": {
+     "n": 776,
+     "auroc_vs_normal": 0.5698827319587629,
+     "mean_lesion_score": 0.3195858597755432
+    },
+    "polyp": {
+     "n": 55,
+     "auroc_vs_normal": 0.8688818181818182,
+     "mean_lesion_score": 0.4191852807998657
+    },
+    "normal_mean_lesion_score": 0.3046117126941681,
+    "pointing": {
+     "n": 1477,
+     "hit_rate": 0.6878808395396073,
+     "baseline": 0.04100683625684532
+    }
+   },
+   "seeai": {
+    "erosion": {
+     "n": 1427,
+     "auroc_vs_no_finding": 0.8965399439383321,
+     "sensitivity": 0.7091800981079187
+    },
+    "stenosis": {
+     "n": 442,
+     "auroc_vs_no_finding": 0.9158450226244343,
+     "sensitivity": 0.7805429864253394
+    },
+    "erythema": {
+     "n": 915,
+     "auroc_vs_no_finding": 0.8973426229508197,
+     "sensitivity": 0.6579234972677596
+    },
+    "no_finding": {
+     "n": 2000,
+     "specificity": 0.916
+    },
+    "pointing": {
+     "erosion": {
+      "n": 1427,
+      "hit_rate": 0.7778556412053259,
+      "baseline": 0.17571543262941908
+     },
+     "stenosis": {
+      "n": 442,
+      "hit_rate": 0.9276018099547512,
+      "baseline": 0.5452155404252014
+     }
+    }
+   }
+  },
+  "external_rows": [
+   {
+    "label": "Kvasir: ulcer + erosion + erythema",
+    "value": 0.9441427748518763,
+    "ours": true
+   },
+   {
+    "label": "Kvasir: ulcer",
+    "value": 0.9884083723653396
+   },
+   {
+    "label": "Kvasir: erosion",
+    "value": 0.9193517786561265
+   },
+   {
+    "label": "Kvasir: erythema",
+    "value": 0.7852838050314466
+   },
+   {
+    "label": "SEE-AI: erosion",
+    "value": 0.8965399439383321
+   },
+   {
+    "label": "SEE-AI: stenosis",
+    "value": 0.9158450226244343
+   },
+   {
+    "label": "SEE-AI: erythema",
+    "value": 0.8973426229508197
+   }
+  ],
+  "pointing": {
+   "n": 1477,
+   "hit_rate": 0.6878808395396073,
+   "baseline": 0.04100683625684532,
+   "seeai": {
+    "erosion": {
+     "n": 1427,
+     "hit_rate": 0.7778556412053259,
+     "baseline": 0.17571543262941908
+    },
+    "stenosis": {
+     "n": 442,
+     "hit_rate": 0.9276018099547512,
+     "baseline": 0.5452155404252014
+    }
+   }
+  },
+  "recipe": {
+   "model": "EfficientNet-B2 (timm efficientnet_b2.ra_in1k), 2 seeds x 5 folds",
+   "epochs": 40,
+   "batch": "8 x 4 accumulation",
+   "lr": 0.0006,
+   "optimizer": "AdamW wd 0.01, cosine, 1 warm-up epoch",
+   "loss": "cross-entropy, label smoothing 0.1, sqrt inverse-frequency class weights",
+   "input": "320x320 full frame (native size)",
+   "tta": "8 views (4 rotations x flip)",
+   "ema": "exponential moving average of weights, decay 0.998",
+   "version": "B2",
+   "hardware": "RTX 3050 laptop GPU, mixed precision"
+  },
+  "finetuned_v1": {
+   "multiclass": {
+    "accuracy": 0.8679678530424799,
+    "balanced_accuracy": 0.7762699460063082,
+    "macro_f1": 0.767612453573365,
+    "per_class_recall": {
+     "N": 0.955743879472693,
+     "E": 0.712,
+     "O": 0.7114093959731543,
+     "AU": 0.7091633466135459,
+     "U3-10": 0.6495098039215687,
+     "U>10": 0.8114478114478114,
+     "S": 0.8846153846153846
+    },
+    "per_class_precision": {
+     "N": 0.9494855004677268,
+     "E": 0.5894039735099338,
+     "O": 0.7210884353741497,
+     "AU": 0.714859437751004,
+     "U3-10": 0.742296918767507,
+     "U>10": 0.8006644518272426,
+     "S": 0.8156028368794326
+    },
+    "confusion": [
+     [
+      2030,
+      28,
+      9,
+      34,
+      19,
+      3,
+      1
+     ],
+     [
+      16,
+      89,
+      1,
+      8,
+      9,
+      2,
+      0
+     ],
+     [
+      12,
+      0,
+      106,
+      3,
+      18,
+      7,
+      3
+     ],
+     [
+      38,
+      12,
+      4,
+      178,
+      19,
+      0,
+      0
+     ],
+     [
+      32,
+      21,
+      16,
+      26,
+      265,
+      41,
+      7
+     ],
+     [
+      4,
+      1,
+      10,
+      0,
+      26,
+      241,
+      15
+     ],
+     [
+      6,
+      0,
+      1,
+      0,
+      1,
+      7,
+      115
+     ]
+    ]
+   },
+   "binary": {
+    "auroc": 0.9852961947490863,
+    "accuracy": 0.927382319173364,
+    "sensitivity": 0.9698529411764706,
+    "specificity": 0.9001883239171374,
+    "auroc_ci95": [
+     0.9810707860930187,
+     0.9887026928257648
+    ],
+    "note": "image-level bootstrap (CrohnIPI release has no patient IDs)",
+    "crossfit": {
+     "accuracy": 0.9431687715269805,
+     "sensitivity": 0.9088235294117647,
+     "specificity": 0.9651600753295668,
+     "thresholds": {
+      "1": 0.7549999999999999,
+      "2": 0.6549999999999999,
+      "3": 0.735,
+      "4": 0.705,
+      "5": 0.7549999999999999
+     },
+     "note": "threshold for each fold chosen on the other folds' out-of-fold scores"
+    }
+   },
+   "severity": {
+    "accuracy": 0.8877726750861079,
+    "macro_f1": 0.8221494615971668,
+    "qwk": 0.8926156398031923,
+    "confusion": [
+     [
+      2013,
+      43,
+      61,
+      7
+     ],
+     [
+      21,
+      204,
+      38,
+      11
+     ],
+     [
+      57,
+      57,
+      495,
+      50
+     ],
+     [
+      9,
+      13,
+      24,
+      381
+     ]
+    ]
+   },
+   "per_fold": [
+    {
+     "fold": 1,
+     "acc7": 0.8651362984218077,
+     "bin_acc": 0.9196556671449068,
+     "auroc": 0.9773361410897605,
+     "qwk": 0.8885641340787706
+    },
+    {
+     "fold": 2,
+     "acc7": 0.8493543758967002,
+     "bin_acc": 0.9196556671449068,
+     "auroc": 0.9835953636844711,
+     "qwk": 0.8750797797066378
+    },
+    {
+     "fold": 3,
+     "acc7": 0.8737446197991392,
+     "bin_acc": 0.9239598278335724,
+     "auroc": 0.9891891425514658,
+     "qwk": 0.9026432908188656
+    },
+    {
+     "fold": 4,
+     "acc7": 0.8923959827833573,
+     "bin_acc": 0.9583931133428981,
+     "auroc": 0.993001609629785,
+     "qwk": 0.9019359241608057
+    },
+    {
+     "fold": 5,
+     "acc7": 0.8591954022988506,
+     "bin_acc": 0.9152298850574713,
+     "auroc": 0.984723813790786,
+     "qwk": 0.8947325076810997
+    }
+   ],
+   "severity_crossfit": {
+    "qwk": 0.9110412504665101,
+    "accuracy": 0.8510332950631458,
+    "cuts": {
+     "1": [
+      0.9,
+      1.6,
+      2.2
+     ],
+     "2": [
+      0.9,
+      1.6,
+      2.3
+     ],
+     "3": [
+      0.9,
+      1.6,
+      2.2
+     ],
+     "4": [
+      0.9,
+      1.6,
+      2.3
+     ],
+     "5": [
+      0.9,
+      1.6,
+      2.3
+     ]
+    },
+    "note": "tier = expected severity cut at points chosen on the other four folds"
+   }
+  },
+  "external_v1": {
+   "kvasir": {
+    "inflammatory_vs_normal": {
+     "auroc": 0.9134476629361422,
+     "n_pos": 1519,
+     "n_neg": 4000,
+     "sensitivity": 0.8657011191573404,
+     "specificity": 0.784
+    },
+    "ulcer": {
+     "n": 854,
+     "auroc_vs_normal": 0.970806206088993,
+     "mean_lesion_score": 0.8362758159637451
+    },
+    "erosion": {
+     "n": 506,
+     "auroc_vs_normal": 0.8562406126482213,
+     "mean_lesion_score": 0.6819807291030884
+    },
+    "erythema": {
+     "n": 159,
+     "auroc_vs_normal": 0.7874261006289308,
+     "mean_lesion_score": 0.6161755323410034
+    },
+    "angiectasia": {
+     "n": 866,
+     "auroc_vs_normal": 0.867043013856813,
+     "mean_lesion_score": 0.6399926543235779
+    },
+    "blood_fresh": {
+     "n": 446,
+     "auroc_vs_normal": 0.9577875560538117,
+     "mean_lesion_score": 0.7533913254737854
+    },
+    "lymphangiectasia": {
+     "n": 592,
+     "auroc_vs_normal": 0.5470605996621621,
+     "mean_lesion_score": 0.43657925724983215
+    },
+    "foreign_body": {
+     "n": 776,
+     "auroc_vs_normal": 0.45593105670103096,
+     "mean_lesion_score": 0.3838823437690735
+    },
+    "polyp": {
+     "n": 55,
+     "auroc_vs_normal": 0.8412000000000001,
+     "mean_lesion_score": 0.6344207525253296
+    },
+    "normal_mean_lesion_score": 0.40003588795661926,
+    "pointing": {
+     "n": 1477,
+     "hit_rate": 0.5192958700067705,
+     "baseline": 0.04100683625684532
+    }
+   },
+   "seeai": {
+    "erosion": {
+     "n": 1427,
+     "auroc_vs_no_finding": 0.827270497547302,
+     "sensitivity": 0.629292221443588
+    },
+    "stenosis": {
+     "n": 442,
+     "auroc_vs_no_finding": 0.8454943438914027,
+     "sensitivity": 0.665158371040724
+    },
+    "erythema": {
+     "n": 915,
+     "auroc_vs_no_finding": 0.8341923497267759,
+     "sensitivity": 0.6644808743169399
+    },
+    "no_finding": {
+     "n": 2000,
+     "specificity": 0.881
+    },
+    "pointing": {
+     "erosion": {
+      "n": 1427,
+      "hit_rate": 0.6727400140154169,
+      "baseline": 0.17571543262941908
+     },
+     "stenosis": {
+      "n": 442,
+      "hit_rate": 0.8846153846153846,
+      "baseline": 0.5452155404252014
+     }
+    }
+   }
+  },
+  "finetuned_v2": {
+   "multiclass": {
+    "accuracy": 0.8791618828932262,
+    "balanced_accuracy": 0.7949055397959685,
+    "macro_f1": 0.782817939333955,
+    "per_class_recall": {
+     "N": 0.961864406779661,
+     "E": 0.76,
+     "O": 0.7651006711409396,
+     "AU": 0.7051792828685259,
+     "U3-10": 0.6838235294117647,
+     "U>10": 0.8114478114478114,
+     "S": 0.8769230769230769
+    },
+    "per_class_precision": {
+     "N": 0.9632248939179632,
+     "E": 0.6690140845070423,
+     "O": 0.7037037037037037,
+     "AU": 0.7405857740585774,
+     "U3-10": 0.7400530503978779,
+     "U>10": 0.8087248322147651,
+     "S": 0.7862068965517242
+    },
+    "confusion": [
+     [
+      2043,
+      23,
+      6,
+      28,
+      17,
+      5,
+      2
+     ],
+     [
+      9,
+      95,
+      2,
+      8,
+      11,
+      0,
+      0
+     ],
+     [
+      9,
+      2,
+      114,
+      1,
+      14,
+      5,
+      4
+     ],
+     [
+      31,
+      11,
+      3,
+      177,
+      27,
+      2,
+      0
+     ],
+     [
+      22,
+      11,
+      20,
+      25,
+      279,
+      38,
+      13
+     ],
+     [
+      2,
+      0,
+      16,
+      0,
+      26,
+      241,
+      12
+     ],
+     [
+      5,
+      0,
+      1,
+      0,
+      3,
+      7,
+      114
+     ]
+    ]
+   },
+   "binary": {
+    "auroc": 0.9889761271740335,
+    "accuracy": 0.9394374282433984,
+    "sensitivity": 0.9742647058823529,
+    "specificity": 0.9171374764595104,
+    "auroc_ci95": [
+     0.9851668912658956,
+     0.9918450158049837
+    ],
+    "note": "image-level bootstrap (CrohnIPI release has no patient IDs)",
+    "crossfit": {
+     "accuracy": 0.9552238805970149,
+     "sensitivity": 0.9360294117647059,
+     "specificity": 0.9675141242937854,
+     "thresholds": {
+      "1": 0.6599999999999999,
+      "2": 0.7499999999999999,
+      "3": 0.6549999999999999,
+      "4": 0.73,
+      "5": 0.73
+     },
+     "note": "threshold for each fold chosen on the other folds' out-of-fold scores"
+    }
+   },
+   "severity": {
+    "accuracy": 0.8998277841561424,
+    "macro_f1": 0.8389432150109617,
+    "qwk": 0.9071863242298308,
+    "confusion": [
+     [
+      2025,
+      38,
+      54,
+      7
+     ],
+     [
+      15,
+      215,
+      34,
+      10
+     ],
+     [
+      43,
+      44,
+      519,
+      53
+     ],
+     [
+      5,
+      17,
+      29,
+      376
+     ]
+    ]
+   },
+   "per_fold": [
+    {
+     "fold": 1,
+     "acc7": 0.8809182209469153,
+     "bin_acc": 0.9426111908177905,
+     "auroc": 0.9887251030973063,
+     "qwk": 0.8923324389580471
+    },
+    {
+     "fold": 2,
+     "acc7": 0.860832137733142,
+     "bin_acc": 0.9282639885222381,
+     "auroc": 0.9812737918437718,
+     "qwk": 0.8923089551013708
+    },
+    {
+     "fold": 3,
+     "acc7": 0.890961262553802,
+     "bin_acc": 0.9340028694404591,
+     "auroc": 0.9915014408724612,
+     "qwk": 0.9156499128496728
+    },
+    {
+     "fold": 4,
+     "acc7": 0.8866571018651362,
+     "bin_acc": 0.9483500717360115,
+     "auroc": 0.9972006438519141,
+     "qwk": 0.9236973323461843
+    },
+    {
+     "fold": 5,
+     "acc7": 0.8764367816091954,
+     "bin_acc": 0.9439655172413793,
+     "auroc": 0.9879806656729535,
+     "qwk": 0.9114813866911191
+    }
+   ],
+   "severity_crossfit": {
+    "qwk": 0.9194205718423005,
+    "accuracy": 0.8714121699196326,
+    "cuts": {
+     "1": [
+      1.0,
+      1.5,
+      2.2
+     ],
+     "2": [
+      0.9,
+      1.6,
+      2.2
+     ],
+     "3": [
+      1.0,
+      1.6,
+      2.2
+     ],
+     "4": [
+      0.9,
+      1.6,
+      2.2
+     ],
+     "5": [
+      1.0,
+      1.5,
+      2.2
+     ]
+    },
+    "note": "tier = expected severity cut at points chosen on the other four folds"
+   },
+   "label": "EfficientNet-B0 v2 (ours)"
+  },
+  "external_model": "B2",
+  "external_v2": {
+   "kvasir": {
+    "inflammatory_vs_normal": {
+     "auroc": 0.9207002962475314,
+     "n_pos": 1519,
+     "n_neg": 4000,
+     "sensitivity": 0.8762343647136274,
+     "specificity": 0.782
+    },
+    "ulcer": {
+     "n": 854,
+     "auroc_vs_normal": 0.9600629391100705,
+     "mean_lesion_score": 0.8381239175796509
+    },
+    "erosion": {
+     "n": 506,
+     "auroc_vs_normal": 0.8853700592885375,
+     "mean_lesion_score": 0.7181291580200195
+    },
+    "erythema": {
+     "n": 159,
+     "auroc_vs_normal": 0.8217154088050315,
+     "mean_lesion_score": 0.6318315267562866
+    },
+    "angiectasia": {
+     "n": 866,
+     "auroc_vs_normal": 0.8943625866050808,
+     "mean_lesion_score": 0.6565770506858826
+    },
+    "blood_fresh": {
+     "n": 446,
+     "auroc_vs_normal": 0.8815835201793721,
+     "mean_lesion_score": 0.6338101625442505
+    },
+    "lymphangiectasia": {
+     "n": 592,
+     "auroc_vs_normal": 0.6376201435810811,
+     "mean_lesion_score": 0.4846920967102051
+    },
+    "foreign_body": {
+     "n": 776,
+     "auroc_vs_normal": 0.4487609536082474,
+     "mean_lesion_score": 0.39882686734199524
+    },
+    "polyp": {
+     "n": 55,
+     "auroc_vs_normal": 0.8107409090909091,
+     "mean_lesion_score": 0.6304025053977966
+    },
+    "normal_mean_lesion_score": 0.41894274950027466,
+    "pointing": {
+     "n": 1477,
+     "hit_rate": 0.5240352064996615,
+     "baseline": 0.04100683625684532
+    }
+   },
+   "seeai": {
+    "erosion": {
+     "n": 1427,
+     "auroc_vs_no_finding": 0.82481271899089,
+     "sensitivity": 0.6362999299229152
+    },
+    "stenosis": {
+     "n": 442,
+     "auroc_vs_no_finding": 0.8627884615384616,
+     "sensitivity": 0.7081447963800905
+    },
+    "erythema": {
+     "n": 915,
+     "auroc_vs_no_finding": 0.8457819672131147,
+     "sensitivity": 0.6710382513661202
+    },
+    "no_finding": {
+     "n": 2000,
+     "specificity": 0.8505
+    },
+    "pointing": {
+     "erosion": {
+      "n": 1427,
+      "hit_rate": 0.7323055360896986,
+      "baseline": 0.17571543262941908
+     },
+     "stenosis": {
+      "n": 442,
+      "hit_rate": 0.9140271493212669,
+      "baseline": 0.5452155404252014
+     }
+    }
+   }
+  }
+ },
+ "uc": {
+  "internal": {
+   "dataset": "LIMUC",
+   "images": 11276,
+   "patients": 564,
+   "class_counts": [
+    6105,
+    3052,
+    1254,
+    865
+   ],
+   "cv": "5-fold StratifiedGroupKFold by patient (no patient in both train and test)",
+   "accuracy": 0.6716034054629301,
+   "macro_f1": 0.6005481105966063,
+   "qwk": 0.7416638432995951,
+   "qwk_ci95": [
+    0.7202606171020641,
+    0.7597294729590305
+   ],
+   "per_class_recall": [
+    0.7552825552825553,
+    0.5976408912188729,
+    0.474481658692185,
+    0.6277456647398844
+   ],
+   "confusion": [
+    [
+     4611,
+     1272,
+     177,
+     45
+    ],
+    [
+     706,
+     1824,
+     452,
+     70
+    ],
+    [
+     59,
+     334,
+     595,
+     266
+    ],
+    [
+     17,
+     39,
+     266,
+     543
+    ]
+   ],
+   "remission_vs_active": {
+    "auroc": 0.9427945457571122,
+    "auroc_ci95": [
+     0.9341702527694439,
+     0.9496397532912806
+    ],
+    "accuracy": 0.8989003192621497,
+    "sensitivity": 0.7848041529023124,
+    "specificity": 0.9253030468494048
+   },
+   "temperature_scaling": {
+    "nll_before": 0.9392160357316819,
+    "nll_after": 0.7578690164173206,
+    "ece_before": 0.14436892203200685,
+    "ece_after": 0.014182683976577527,
+    "T": 2.2409318462841794
+   }
+  },
+  "external": {
+   "dataset": "HyperKvasir UC subset",
+   "images": 851,
+   "grade_counts": {
+    "grade-2": 443,
+    "grade-1": 201,
+    "grade-3": 133,
+    "grade-0-1": 35,
+    "grade-2-3": 28,
+    "grade-1-2": 11
+   },
+   "spearman_expected_mayo_vs_grade": 0.44641253666951014,
+   "remission_vs_active": {
+    "n": 840,
+    "auroc": 0.7461836345268829,
+    "accuracy": 0.7226190476190476,
+    "sensitivity": 0.8195364238410596,
+    "specificity": 0.4745762711864407
+   },
+   "exact_mayo_accuracy_on_single_grade_images": 0.5070785070785071,
+   "mean_expected_mayo_by_grade": {
+    "grade-0-1": 1.258005134507792,
+    "grade-1": 1.4424300124213805,
+    "grade-1-2": 1.751354879117378,
+    "grade-2": 1.8693206997636336,
+    "grade-2-3": 2.0603105822476397,
+    "grade-3": 2.291734203216687
+   },
+   "note": "HyperKvasir has no Mayo-0 class; images labelled 1-2 are excluded from the binary test"
+  },
+  "ablation_crohnipi_features": {
+   "note": "LIMUC 5-fold patient-grouped CV, same LR head; features from the CrohnIPI fine-tuned fold-1 EfficientNet-B0 instead of ImageNet",
+   "accuracy": 0.6389677190493083,
+   "macro_f1": 0.5623959811784762,
+   "qwk": 0.7005999783789858,
+   "remission_vs_active_auroc": 0.9244595214217839
+  }
+ },
+ "screen": {
+  "train": "SEE-AI (18,481 images, image-level labels from expert boxes)",
+  "internal_random_cv": {
+   "ulcer_erosion": {
+    "positives": 4390,
+    "auroc": 0.819406262482927,
+    "auprc": 0.5881115501346265
+   },
+   "erythema": {
+    "positives": 915,
+    "auroc": 0.8505955369569504,
+    "auprc": 0.32037399855310655
+   },
+   "angiectasia": {
+    "positives": 825,
+    "auroc": 0.7788473314934574,
+    "auprc": 0.1896163995557013
+   },
+   "bleeding": {
+    "positives": 801,
+    "auroc": 0.9381392603137481,
+    "auprc": 0.7040425325417484
+   },
+   "lymphangiectasia": {
+    "positives": 572,
+    "auroc": 0.8657297948017697,
+    "auprc": 0.3767976315867202
+   },
+   "polyp": {
+    "positives": 2157,
+    "auroc": 0.8637388319992566,
+    "auprc": 0.5289100348434785
+   },
+   "foreign_body": {
+    "positives": 583,
+    "auroc": 0.9520040856640076,
+    "auprc": 0.6916906988376207
+   },
+   "stenosis": {
+    "positives": 442,
+    "auroc": 0.9515752571289106,
+    "auprc": 0.6624344653150772
+   }
+  },
+  "external_kvasir": {
+   "ulcer_erosion": {
+    "positives": 1360,
+    "negatives": 4000,
+    "auroc_vs_normal": 0.6113149816176471
+   },
+   "erythema": {
+    "positives": 159,
+    "negatives": 4000,
+    "auroc_vs_normal": 0.700630503144654
+   },
+   "angiectasia": {
+    "positives": 866,
+    "negatives": 4000,
+    "auroc_vs_normal": 0.789560623556582
+   },
+   "bleeding": {
+    "positives": 458,
+    "negatives": 4000,
+    "auroc_vs_normal": 0.8764664301310044
+   },
+   "lymphangiectasia": {
+    "positives": 592,
+    "negatives": 4000,
+    "auroc_vs_normal": 0.7664146959459459
+   },
+   "polyp": {
+    "positives": 55,
+    "negatives": 4000,
+    "auroc_vs_normal": 0.6006454545454545
+   },
+   "foreign_body": {
+    "positives": 776,
+    "negatives": 4000,
+    "auroc_vs_normal": 0.7506776739690721
+   },
+   "any_finding_vs_normal": {
+    "auroc": 0.6041947081575245
+   }
+  },
+  "leakage_kvasir": {
+   "random_frame_split": {
+    "balanced_accuracy": 0.9571292766863362,
+    "macro_f1": 0.9449071547256368
+   },
+   "video_grouped_split": {
+    "balanced_accuracy": 0.17912084304439632,
+    "macro_f1": 0.18241708590073427
+   },
+   "videos_per_class": {
+    "normal": 37,
+    "ulcer": 3,
+    "erosion": 9,
+    "erythema": 3,
+    "angiectasia": 6,
+    "blood": 3,
+    "lymphangiectasia": 3,
+    "foreign_body": 4,
+    "polyp": 1
+   }
+  },
+  "note": "SEE-AI has no patient IDs, so internal CV is frame-level (optimistic); the Kvasir-Capsule external test is the honest number."
+ },
+ "screen_rows": [
+  {
+   "label": "Ulcer / erosion",
+   "value": 0.6113149816176471,
+   "note": "1360 Kvasir frames; internal SEE-AI AUROC 0.819"
+  },
+  {
+   "label": "Erythema",
+   "value": 0.700630503144654,
+   "note": "159 Kvasir frames; internal SEE-AI AUROC 0.851"
+  },
+  {
+   "label": "Angiectasia",
+   "value": 0.789560623556582,
+   "note": "866 Kvasir frames; internal SEE-AI AUROC 0.779"
+  },
+  {
+   "label": "Bleeding",
+   "value": 0.8764664301310044,
+   "note": "458 Kvasir frames; internal SEE-AI AUROC 0.938"
+  },
+  {
+   "label": "Lymphangiectasia",
+   "value": 0.7664146959459459,
+   "note": "592 Kvasir frames; internal SEE-AI AUROC 0.866"
+  },
+  {
+   "label": "Polyp",
+   "value": 0.6006454545454545,
+   "note": "55 Kvasir frames; internal SEE-AI AUROC 0.864"
+  },
+  {
+   "label": "Foreign body",
+   "value": 0.7506776739690721,
+   "note": "776 Kvasir frames; internal SEE-AI AUROC 0.952"
+  }
+ ],
+ "leakage": {
+  "random_frame_split": {
+   "balanced_accuracy": 0.9571292766863362,
+   "macro_f1": 0.9449071547256368
+  },
+  "video_grouped_split": {
+   "balanced_accuracy": 0.17912084304439632,
+   "macro_f1": 0.18241708590073427
+  },
+  "videos_per_class": {
+   "normal": 37,
+   "ulcer": 3,
+   "erosion": 9,
+   "erythema": 3,
+   "angiectasia": 6,
+   "blood": 3,
+   "lymphangiectasia": 3,
+   "foreign_body": 4,
+   "polyp": 1
+  }
+ },
+ "flare": {
+  "summary": {
+   "patients": 66,
+   "hbi_visits": 873,
+   "pairs": 629,
+   "flares": 61,
+   "flare_rate": 0.09697933227344992,
+   "patients_with_flare": 27,
+   "median_gap_weeks": 2.0
+  },
+  "results": {
+   "Logistic regression": {
+    "auroc_mean": 0.6330985915492958,
+    "auroc_sd": 0.022167011169043425,
+    "auprc_mean": 0.14281481392525802,
+    "auprc_sd": 0.009238876244450672,
+    "brier": 0.21271592242484516,
+    "auroc_ci95": [
+     0.566967261562166,
+     0.7088449200617929
+    ],
+    "auprc_ci95": [
+     0.10513047764136631,
+     0.23187812924431186
+    ]
+   },
+   "Random forest": {
+    "auroc_mean": 0.7106211036712076,
+    "auroc_sd": 0.01758628678329018,
+    "auprc_mean": 0.16320724099036807,
+    "auprc_sd": 0.009367696068111143,
+    "brier": 0.1085613316163263,
+    "auroc_ci95": [
+     0.6494779555348559,
+     0.780817852283831
+    ],
+    "auprc_ci95": [
+     0.11116292403062056,
+     0.23550003078053705
+    ],
+    "brier_recalibrated": 0.08450877737758723
+   },
+   "XGBoost": {
+    "auroc_mean": 0.6294158392980836,
+    "auroc_sd": 0.0394232494853829,
+    "auprc_mean": 0.13197613395266275,
+    "auprc_sd": 0.01585328403918035,
+    "brier": 0.1346501581952321,
+    "auroc_ci95": [
+     0.5604717291978293,
+     0.711997201354155
+    ],
+    "auprc_ci95": [
+     0.09179753914209098,
+     0.19535579904458844
+    ]
+   },
+   "Baseline: current HBI only": {
+    "auroc_mean": 0.7106470791964905,
+    "auroc_sd": 0.0,
+    "auprc_mean": 0.18989368708177418,
+    "auprc_sd": 0.0,
+    "brier": null,
+    "auroc_ci95": [
+     0.6331838555567304,
+     0.7809932615597674
+    ],
+    "auprc_ci95": [
+     0.11870806504700462,
+     0.268538225190755
+    ]
+   }
+  },
+  "best": "Random forest",
+  "calibration": [
+   {
+    "pred": 0.05768147790177058,
+    "obs": 0.007936507936507936,
+    "n": 126
+   },
+   {
+    "pred": 0.11434301664442992,
+    "obs": 0.031746031746031744,
+    "n": 126
+   },
+   {
+    "pred": 0.2037789369020168,
+    "obs": 0.12,
+    "n": 125
+   },
+   {
+    "pred": 0.31436592178488726,
+    "obs": 0.15873015873015872,
+    "n": 126
+   },
+   {
+    "pred": 0.4417508970325379,
+    "obs": 0.16666666666666666,
+    "n": 126
+   }
+  ],
+  "calibration_recalibrated": [
+   {
+    "pred": 0.022690027356053397,
+    "obs": 0.007936507936507936,
+    "n": 126
+   },
+   {
+    "pred": 0.044203119061261696,
+    "obs": 0.031746031746031744,
+    "n": 126
+   },
+   {
+    "pred": 0.08078677070668876,
+    "obs": 0.12,
+    "n": 125
+   },
+   {
+    "pred": 0.13206560374137463,
+    "obs": 0.16666666666666666,
+    "n": 126
+   },
+   {
+    "pred": 0.2056207828805334,
+    "obs": 0.15873015873015872,
+    "n": 126
+   }
+  ],
+  "platt": {
+   "a": 0.9344596615249751,
+   "b": -1.1568151535846156
+  },
+  "importance": [
+   [
+    "Mean HBI (last 3 visits)",
+    0.054108528399645174
+   ],
+   [
+    "Max HBI (last 3 visits)",
+    0.032909910330513194
+   ],
+   [
+    "Current HBI",
+    0.032678679815779495
+   ],
+   [
+    "Male sex",
+    0.026841497783200323
+   ],
+   [
+    "General wellbeing (0 very well - 4 terrible)",
+    0.025983626026233254
+   ],
+   [
+    "Highest HBI so far",
+    0.024372362061860046
+   ],
+   [
+    "Diarrhoea (past 2 wk)",
+    0.02116359553853912
+   ],
+   [
+    "Number of prior visits",
+    0.01867087152042342
+   ],
+   [
+    "Previous HBI",
+    0.01798858954857204
+   ],
+   [
+    "Age",
+    0.01641859226787423
+   ],
+   [
+    "Last CRP (mg/L)",
+    0.016412648772345422
+   ],
+   [
+    "Last fecal calprotectin",
+    0.013645732644856558
+   ]
+  ],
+  "label_def": "Flare = HBI >= 5 at the next visit (<= 8 weeks later) for a patient currently in remission (HBI < 5)",
+  "cv": "5-fold StratifiedGroupKFold by patient, repeated 5x; 95% CI = patient-level bootstrap of averaged OOF predictions"
+ },
+ "kvasir_full": {
+  "A": {
+   "frames": 47238,
+   "videos": 43,
+   "normal_frames": 34338,
+   "inflammatory_frames": 1527,
+   "inflammatory_vs_normal": {
+    "auroc": 0.9444421844658953,
+    "sensitivity_at_0_5": 0.7943680419122462,
+    "specificity_at_0_5": 0.9739064593162094,
+    "auroc_ci95_video_bootstrap": [
+     0.8605378915333869,
+     0.9816055940419444
+    ]
+   },
+   "per_class": {
+    "Ampulla of Vater": {
+     "n": 11,
+     "mean_lesion_score": 0.5640160441398621,
+     "flagged_at_0_5": 0.5454545454545454,
+     "tier_share": [
+      0.8181818181818182,
+      0.0,
+      0.18181818181818182,
+      0.0
+     ],
+     "auroc_vs_normal": 0.9661705293367009
+    },
+    "Angiectasia": {
+     "n": 866,
+     "mean_lesion_score": 0.39867958426475525,
+     "flagged_at_0_5": 0.1997690531177829,
+     "tier_share": [
+      0.8833718244803695,
+      0.046189376443418015,
+      0.07043879907621248,
+      0.0
+     ],
+     "auroc_vs_normal": 0.6906355606007228
+    },
+    "Blood - fresh": {
+     "n": 446,
+     "mean_lesion_score": 0.4887126684188843,
+     "flagged_at_0_5": 0.42376681614349776,
+     "tier_share": [
+      0.9551569506726457,
+      0.017937219730941704,
+      0.02466367713004484,
+      0.002242152466367713
+     ],
+     "auroc_vs_normal": 0.9401934005051863
+    },
+    "Blood - hematin": {
+     "n": 12,
+     "mean_lesion_score": 0.6605134606361389,
+     "flagged_at_0_5": 0.9166666666666666,
+     "tier_share": [
+      0.4166666666666667,
+      0.5833333333333334,
+      0.0,
+      0.0
+     ],
+     "auroc_vs_normal": 0.9823252179315433
+    },
+    "Erosion": {
+     "n": 514,
+     "mean_lesion_score": 0.6506675481796265,
+     "flagged_at_0_5": 0.6614785992217899,
+     "tier_share": [
+      0.5330739299610895,
+      0.07976653696498054,
+      0.3832684824902724,
+      0.0038910505836575876
+     ],
+     "auroc_vs_normal": 0.9204696422585906
+    },
+    "Erythema": {
+     "n": 159,
+     "mean_lesion_score": 0.5046021938323975,
+     "flagged_at_0_5": 0.44654088050314467,
+     "tier_share": [
+      0.7610062893081762,
+      0.10062893081761007,
+      0.13836477987421383,
+      0.0
+     ],
+     "auroc_vs_normal": 0.7852869238143487
+    },
+    "Foreign Body": {
+     "n": 776,
+     "mean_lesion_score": 0.31958669424057007,
+     "flagged_at_0_5": 0.04252577319587629,
+     "tier_share": [
+      0.9961340206185567,
+      0.0,
+      0.003865979381443299,
+      0.0
+     ],
+     "auroc_vs_normal": 0.5685405036528915
+    },
+    "Ileocecal valve": {
+     "n": 4189,
+     "mean_lesion_score": 0.38753679394721985,
+     "flagged_at_0_5": 0.17116256863213178,
+     "tier_share": [
+      0.9591788016232992,
+      0.0014323227500596801,
+      0.0310336595846264,
+      0.0083552160420148
+     ],
+     "auroc_vs_normal": 0.732573552534581
+    },
+    "Lymphangiectasia": {
+     "n": 592,
+     "mean_lesion_score": 0.3434722125530243,
+     "flagged_at_0_5": 0.09797297297297297,
+     "tier_share": [
+      0.9628378378378378,
+      0.0016891891891891893,
+      0.03547297297297297,
+      0.0
+     ],
+     "auroc_vs_normal": 0.6259487115763326
+    },
+    "Normal clean mucosa": {
+     "n": 34338,
+     "mean_lesion_score": 0.30439624190330505,
+     "flagged_at_0_5": 0.026093540683790554,
+     "tier_share": [
+      0.9922534801094997,
+      0.0002329780418195585,
+      0.00690197448890442,
+      0.0006115673597763411
+     ]
+    },
+    "Polyp": {
+     "n": 55,
+     "mean_lesion_score": 0.4191852807998657,
+     "flagged_at_0_5": 0.18181818181818182,
+     "tier_share": [
+      0.9272727272727272,
+      0.0,
+      0.07272727272727272,
+      0.0
+     ],
+     "auroc_vs_normal": 0.8683578754520568
+    },
+    "Pylorus": {
+     "n": 1520,
+     "mean_lesion_score": 0.43583792448043823,
+     "flagged_at_0_5": 0.25263157894736843,
+     "tier_share": [
+      0.95,
+      0.006578947368421052,
+      0.03223684210526316,
+      0.01118421052631579
+     ],
+     "auroc_vs_normal": 0.8620022872465981
+    },
+    "Reduced Mucosal View": {
+     "n": 2906,
+     "mean_lesion_score": 0.3646458685398102,
+     "flagged_at_0_5": 0.09084652443220922,
+     "tier_share": [
+      0.9790089470061941,
+      0.0010323468685478321,
+      0.01995870612525809,
+      0.0
+     ],
+     "auroc_vs_normal": 0.7399843443325667
+    },
+    "Ulcer": {
+     "n": 854,
+     "mean_lesion_score": 0.8750466108322144,
+     "flagged_at_0_5": 0.9391100702576113,
+     "tier_share": [
+      0.11124121779859485,
+      0.01405152224824356,
+      0.8559718969555035,
+      0.01873536299765808
+     ],
+     "auroc_vs_normal": 0.9885025745574065
+    }
+   },
+   "pooled_triage": {
+    "top_5pct": 0.7347740667976425,
+    "top_10pct": 0.8107400130975769,
+    "top_20pct": 0.8834315651604453,
+    "top_30pct": 0.9089718402095612
+   },
+   "uncertainty": {
+    "mean_sd_lesion_frames": 0.15131156146526337,
+    "mean_sd_normal_frames": 0.0617864690721035
+   }
+  },
+  "B": {
+   "n_videos": 43,
+   "videos_with_inflammatory_lesions": 13,
+   "video_auroc_burden_index": 0.6641025641025641,
+   "video_auroc_flagged_pct": 0.7384615384615385,
+   "spearman_burden_vs_prevalence": -0.16777408637873756,
+   "median_recall_top10pct": 0.691358024691358,
+   "median_recall_top20pct": 0.8518518518518519,
+   "median_recall_top30pct": 0.9135802469135802,
+   "median_rank_first_lesion": 1.0,
+   "videos": [
+    {
+     "video_id": "2fc3db471f9d44c0",
+     "labelled_frames": 127,
+     "inflammatory_frames": 127,
+     "prevalence": 1.0,
+     "flagged_pct": 93.7007874015748,
+     "burden_index": 58.855909682086754,
+     "mean_lesion_score": 0.871388852596283,
+     "worst_tier": 3,
+     "top_classes": {
+      "Ulcer": 127
+     },
+     "recall_top10pct": 0.09448818897637795,
+     "recall_top20pct": 0.1968503937007874,
+     "recall_top30pct": 0.2992125984251969,
+     "rank_first_lesion": 1,
+     "auroc_within_video": null
+    },
+    {
+     "video_id": "d626f4f4a5ac4785",
+     "labelled_frames": 643,
+     "inflammatory_frames": 621,
+     "prevalence": 0.9657853810264385,
+     "flagged_pct": 93.46811819595645,
+     "burden_index": 57.12575377628957,
+     "mean_lesion_score": 0.868233859539032,
+     "worst_tier": 3,
+     "top_classes": {
+      "Ulcer": 582,
+      "Pylorus": 22,
+      "Erosion": 39
+     },
+     "recall_top10pct": 0.10305958132045089,
+     "recall_top20pct": 0.20611916264090177,
+     "recall_top30pct": 0.30917874396135264,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9569609134826527
+    },
+    {
+     "video_id": "7a47e8eacea04e64",
+     "labelled_frames": 436,
+     "inflammatory_frames": 145,
+     "prevalence": 0.33256880733944955,
+     "flagged_pct": 39.908256880733944,
+     "burden_index": 33.400874620229466,
+     "mean_lesion_score": 0.5215261578559875,
+     "worst_tier": 3,
+     "top_classes": {
+      "Ulcer": 145,
+      "Foreign Body": 6,
+      "Pylorus": 84,
+      "Ileocecal valve": 201
+     },
+     "recall_top10pct": 0.296551724137931,
+     "recall_top20pct": 0.6,
+     "recall_top30pct": 0.8275862068965517,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9540229885057471
+    },
+    {
+     "video_id": "131368cc17e44240",
+     "labelled_frames": 2034,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 24.139626352015732,
+     "burden_index": 27.8234760287657,
+     "mean_lesion_score": 0.41784316301345825,
+     "worst_tier": 3,
+     "top_classes": {
+      "Polyp": 55,
+      "Pylorus": 101,
+      "Ileocecal valve": 1261,
+      "Normal clean mucosa": 617
+     }
+    },
+    {
+     "video_id": "04a78ef00c5245e0",
+     "labelled_frames": 1292,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 31.269349845201237,
+     "burden_index": 27.400929839480032,
+     "mean_lesion_score": 0.43173831701278687,
+     "worst_tier": 3,
+     "top_classes": {
+      "Normal clean mucosa": 656,
+      "Lymphangiectasia": 74,
+      "Blood - fresh": 22,
+      "Angiectasia": 108,
+      "Pylorus": 20,
+      "Ileocecal valve": 412
+     }
+    },
+    {
+     "video_id": "39960e5e099a45ca",
+     "labelled_frames": 237,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 15.611814345991561,
+     "burden_index": 26.00339468248953,
+     "mean_lesion_score": 0.4066929817199707,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 11,
+      "Ileocecal valve": 21,
+      "Normal clean mucosa": 205
+     }
+    },
+    {
+     "video_id": "ad91cf7ca91440aa",
+     "labelled_frames": 74,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 16.216216216216218,
+     "burden_index": 25.991215523298795,
+     "mean_lesion_score": 0.3892257511615753,
+     "worst_tier": 3,
+     "top_classes": {
+      "Angiectasia": 11,
+      "Pylorus": 11,
+      "Ileocecal valve": 52
+     }
+    },
+    {
+     "video_id": "d369e4f163df4aba",
+     "labelled_frames": 1328,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 18.67469879518072,
+     "burden_index": 25.654682209977064,
+     "mean_lesion_score": 0.40144214034080505,
+     "worst_tier": 3,
+     "top_classes": {
+      "Angiectasia": 21,
+      "Pylorus": 10,
+      "Blood - fresh": 424,
+      "Normal clean mucosa": 873
+     }
+    },
+    {
+     "video_id": "8ebf0e483cac48d6",
+     "labelled_frames": 1077,
+     "inflammatory_frames": 144,
+     "prevalence": 0.13370473537604458,
+     "flagged_pct": 16.991643454038996,
+     "burden_index": 24.529408863438647,
+     "mean_lesion_score": 0.39198628067970276,
+     "worst_tier": 3,
+     "top_classes": {
+      "Normal clean mucosa": 632,
+      "Erosion": 144,
+      "Reduced Mucosal View": 187,
+      "Pylorus": 61,
+      "Blood - hematin": 12,
+      "Ileocecal valve": 41
+     },
+     "recall_top10pct": 0.625,
+     "recall_top20pct": 0.8611111111111112,
+     "recall_top30pct": 0.9375,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9520885435274503
+    },
+    {
+     "video_id": "d7a271f233ba4a40",
+     "labelled_frames": 945,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 9.841269841269842,
+     "burden_index": 23.500139153245474,
+     "mean_lesion_score": 0.3587935268878937,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 18,
+      "Ileocecal valve": 41,
+      "Normal clean mucosa": 886
+     }
+    },
+    {
+     "video_id": "bca26705313a4644",
+     "labelled_frames": 1449,
+     "inflammatory_frames": 72,
+     "prevalence": 0.049689440993788817,
+     "flagged_pct": 6.970324361628709,
+     "burden_index": 23.281555083775924,
+     "mean_lesion_score": 0.34498295187950134,
+     "worst_tier": 3,
+     "top_classes": {
+      "Ileocecal valve": 21,
+      "Pylorus": 11,
+      "Erosion": 72,
+      "Normal clean mucosa": 1345
+     },
+     "recall_top10pct": 0.2777777777777778,
+     "recall_top20pct": 0.4583333333333333,
+     "recall_top30pct": 0.5416666666666666,
+     "rank_first_lesion": 4,
+     "auroc_within_video": 0.6663035584604212
+    },
+    {
+     "video_id": "dc221ccc65d34010",
+     "labelled_frames": 1789,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 11.347121296813862,
+     "burden_index": 23.143798512260364,
+     "mean_lesion_score": 0.373522013425827,
+     "worst_tier": 2,
+     "top_classes": {
+      "Reduced Mucosal View": 1094,
+      "Ileocecal valve": 265,
+      "Normal clean mucosa": 430
+     }
+    },
+    {
+     "video_id": "eb0203196e284797",
+     "labelled_frames": 872,
+     "inflammatory_frames": 61,
+     "prevalence": 0.06995412844036697,
+     "flagged_pct": 10.206422018348624,
+     "burden_index": 22.054083865500463,
+     "mean_lesion_score": 0.35212910175323486,
+     "worst_tier": 2,
+     "top_classes": {
+      "Normal clean mucosa": 721,
+      "Angiectasia": 35,
+      "Pylorus": 44,
+      "Ampulla of Vater": 11,
+      "Erosion": 61
+     },
+     "recall_top10pct": 0.7213114754098361,
+     "recall_top20pct": 0.9508196721311475,
+     "recall_top30pct": 0.9836065573770492,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9565806229912474
+    },
+    {
+     "video_id": "64440803f87b4843",
+     "labelled_frames": 2159,
+     "inflammatory_frames": 27,
+     "prevalence": 0.012505789717461788,
+     "flagged_pct": 5.928670680870773,
+     "burden_index": 21.821122111771896,
+     "mean_lesion_score": 0.3378954827785492,
+     "worst_tier": 2,
+     "top_classes": {
+      "Normal clean mucosa": 1257,
+      "Erythema": 27,
+      "Lymphangiectasia": 150,
+      "Angiectasia": 652,
+      "Pylorus": 23,
+      "Ileocecal valve": 50
+     },
+     "recall_top10pct": 0.8148148148148148,
+     "recall_top20pct": 1.0,
+     "recall_top30pct": 1.0,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9540858870127162
+    },
+    {
+     "video_id": "c11b28a8b2344716",
+     "labelled_frames": 1000,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 9.2,
+     "burden_index": 21.777221733083326,
+     "mean_lesion_score": 0.3496231436729431,
+     "worst_tier": 3,
+     "top_classes": {
+      "Reduced Mucosal View": 454,
+      "Pylorus": 97,
+      "Normal clean mucosa": 449
+     }
+    },
+    {
+     "video_id": "48579eec79784294",
+     "labelled_frames": 1379,
+     "inflammatory_frames": 9,
+     "prevalence": 0.006526468455402465,
+     "flagged_pct": 4.278462654097172,
+     "burden_index": 21.36014363192002,
+     "mean_lesion_score": 0.33881911635398865,
+     "worst_tier": 3,
+     "top_classes": {
+      "Foreign Body": 17,
+      "Normal clean mucosa": 769,
+      "Erythema": 9,
+      "Reduced Mucosal View": 471,
+      "Pylorus": 22,
+      "Ileocecal valve": 91
+     },
+     "recall_top10pct": 0.7777777777777778,
+     "recall_top20pct": 0.7777777777777778,
+     "recall_top30pct": 0.7777777777777778,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.8690997566909976
+    },
+    {
+     "video_id": "7ad22d50ebaf4596",
+     "labelled_frames": 740,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 2.837837837837838,
+     "burden_index": 21.167015622932094,
+     "mean_lesion_score": 0.3253782391548157,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 17,
+      "Ileocecal valve": 8,
+      "Normal clean mucosa": 347,
+      "Lymphangiectasia": 368
+     }
+    },
+    {
+     "video_id": "af9bd7d0e43741e3",
+     "labelled_frames": 431,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 3.248259860788863,
+     "burden_index": 21.144841795777133,
+     "mean_lesion_score": 0.34290164709091187,
+     "worst_tier": 2,
+     "top_classes": {
+      "Reduced Mucosal View": 239,
+      "Pylorus": 51,
+      "Ileocecal valve": 141
+     }
+    },
+    {
+     "video_id": "dac1e27f7e4d4ef5",
+     "labelled_frames": 2152,
+     "inflammatory_frames": 36,
+     "prevalence": 0.016728624535315983,
+     "flagged_pct": 9.618959107806692,
+     "burden_index": 21.13895103718527,
+     "mean_lesion_score": 0.3301137387752533,
+     "worst_tier": 3,
+     "top_classes": {
+      "Ileocecal valve": 21,
+      "Pylorus": 12,
+      "Erosion": 36,
+      "Normal clean mucosa": 2083
+     },
+     "recall_top10pct": 0.8055555555555556,
+     "recall_top20pct": 0.9722222222222222,
+     "recall_top30pct": 1.0,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9455602814534761
+    },
+    {
+     "video_id": "8885668afb844852",
+     "labelled_frames": 2021,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 3.612073231073726,
+     "burden_index": 20.820058670688166,
+     "mean_lesion_score": 0.32950183749198914,
+     "worst_tier": 2,
+     "top_classes": {
+      "Foreign Body": 180,
+      "Normal clean mucosa": 1128,
+      "Reduced Mucosal View": 291,
+      "Pylorus": 221,
+      "Ileocecal valve": 201
+     }
+    },
+    {
+     "video_id": "6cb700585c4f4070",
+     "labelled_frames": 884,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 4.298642533936651,
+     "burden_index": 20.713358886292706,
+     "mean_lesion_score": 0.3252038061618805,
+     "worst_tier": 2,
+     "top_classes": {
+      "Ileocecal valve": 188,
+      "Normal clean mucosa": 696
+     }
+    },
+    {
+     "video_id": "5e9beaf4e66142c8",
+     "labelled_frames": 464,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 7.974137931034483,
+     "burden_index": 20.622420089918823,
+     "mean_lesion_score": 0.3232698142528534,
+     "worst_tier": 0,
+     "top_classes": {
+      "Ileocecal valve": 94,
+      "Normal clean mucosa": 370
+     }
+    },
+    {
+     "video_id": "ed02f27ef36f483e",
+     "labelled_frames": 587,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 3.577512776831346,
+     "burden_index": 20.534312852416644,
+     "mean_lesion_score": 0.31463342905044556,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 51,
+      "Ileocecal valve": 41,
+      "Normal clean mucosa": 495
+     }
+    },
+    {
+     "video_id": "0531325b64674948",
+     "labelled_frames": 1191,
+     "inflammatory_frames": 16,
+     "prevalence": 0.01343408900083963,
+     "flagged_pct": 3.6104114189756507,
+     "burden_index": 20.532571662216338,
+     "mean_lesion_score": 0.3343333303928375,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 179,
+      "Erosion": 16,
+      "Normal clean mucosa": 996
+     },
+     "recall_top10pct": 0.75,
+     "recall_top20pct": 1.0,
+     "recall_top30pct": 1.0,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9565425531914894
+    },
+    {
+     "video_id": "8a00709108cd4e2b",
+     "labelled_frames": 542,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 0.5535055350553505,
+     "burden_index": 20.386356864064968,
+     "mean_lesion_score": 0.3268314599990845,
+     "worst_tier": 2,
+     "top_classes": {
+      "Ileocecal valve": 56,
+      "Normal clean mucosa": 486
+     }
+    },
+    {
+     "video_id": "5bb1d3cc7dc64cec",
+     "labelled_frames": 788,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 0.6345177664974619,
+     "burden_index": 20.237181215608484,
+     "mean_lesion_score": 0.3183101713657379,
+     "worst_tier": 0,
+     "top_classes": {
+      "Reduced Mucosal View": 170,
+      "Ileocecal valve": 119,
+      "Normal clean mucosa": 499
+     }
+    },
+    {
+     "video_id": "4560e83f9afc4685",
+     "labelled_frames": 780,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 0.8974358974358974,
+     "burden_index": 20.181390315803707,
+     "mean_lesion_score": 0.31158432364463806,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 41,
+      "Ileocecal valve": 31,
+      "Normal clean mucosa": 708
+     }
+    },
+    {
+     "video_id": "4aebc5cb2d4847aa",
+     "labelled_frames": 90,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 1.1111111111111112,
+     "burden_index": 19.878815837480406,
+     "mean_lesion_score": 0.3213900625705719,
+     "worst_tier": 0,
+     "top_classes": {
+      "Ileocecal valve": 90
+     }
+    },
+    {
+     "video_id": "3ada4222967f421d",
+     "labelled_frames": 1002,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 3.293413173652695,
+     "burden_index": 19.830153028388384,
+     "mean_lesion_score": 0.31217923760414124,
+     "worst_tier": 3,
+     "top_classes": {
+      "Foreign Body": 573,
+      "Pylorus": 6,
+      "Ileocecal valve": 6,
+      "Normal clean mucosa": 417
+     }
+    },
+    {
+     "video_id": "89cdd41258c542c5",
+     "labelled_frames": 1198,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 3.1719532554257093,
+     "burden_index": 19.641780977862442,
+     "mean_lesion_score": 0.3135935962200165,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 51,
+      "Normal clean mucosa": 1147
+     }
+    },
+    {
+     "video_id": "bc84479c66fe4da6",
+     "labelled_frames": 1891,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 3.5959809624537287,
+     "burden_index": 19.448490543417382,
+     "mean_lesion_score": 0.30960988998413086,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 151,
+      "Ileocecal valve": 41,
+      "Normal clean mucosa": 1699
+     }
+    },
+    {
+     "video_id": "0728084c8da942d9",
+     "labelled_frames": 1499,
+     "inflammatory_frames": 81,
+     "prevalence": 0.054036024016010674,
+     "flagged_pct": 2.935290193462308,
+     "burden_index": 18.944996626696007,
+     "mean_lesion_score": 0.29832807183265686,
+     "worst_tier": 2,
+     "top_classes": {
+      "Ileocecal valve": 15,
+      "Pylorus": 4,
+      "Erosion": 81,
+      "Normal clean mucosa": 1399
+     },
+     "recall_top10pct": 0.691358024691358,
+     "recall_top20pct": 0.8518518518518519,
+     "recall_top30pct": 0.9135802469135802,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9178115586202094
+    },
+    {
+     "video_id": "fc32def0e7194981",
+     "labelled_frames": 1380,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 2.8260869565217392,
+     "burden_index": 18.76387489968596,
+     "mean_lesion_score": 0.2953673303127289,
+     "worst_tier": 2,
+     "top_classes": {
+      "Ileocecal valve": 250,
+      "Normal clean mucosa": 1130
+     }
+    },
+    {
+     "video_id": "dca1377dec974312",
+     "labelled_frames": 1216,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 1.644736842105263,
+     "burden_index": 18.69619168369753,
+     "mean_lesion_score": 0.29359665513038635,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 18,
+      "Ileocecal valve": 21,
+      "Normal clean mucosa": 1177
+     }
+    },
+    {
+     "video_id": "5e59c7fdb16c4228",
+     "labelled_frames": 2394,
+     "inflammatory_frames": 155,
+     "prevalence": 0.06474519632414369,
+     "flagged_pct": 3.5505430242272347,
+     "burden_index": 18.613328343084582,
+     "mean_lesion_score": 0.29098930954933167,
+     "worst_tier": 2,
+     "top_classes": {
+      "Normal clean mucosa": 1972,
+      "Erosion": 32,
+      "Erythema": 123,
+      "Pylorus": 86,
+      "Ileocecal valve": 181
+     },
+     "recall_top10pct": 0.5290322580645161,
+     "recall_top20pct": 0.6645161290322581,
+     "recall_top30pct": 0.7612903225806451,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.8288060626143584
+    },
+    {
+     "video_id": "fe5d372e43f94f68",
+     "labelled_frames": 554,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 0.36101083032490977,
+     "burden_index": 18.584977846175754,
+     "mean_lesion_score": 0.2936822175979614,
+     "worst_tier": 0,
+     "top_classes": {
+      "Pylorus": 11,
+      "Ileocecal valve": 11,
+      "Normal clean mucosa": 532
+     }
+    },
+    {
+     "video_id": "df6b47bafe5143f5",
+     "labelled_frames": 1530,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 1.045751633986928,
+     "burden_index": 18.529969888510006,
+     "mean_lesion_score": 0.2894144356250763,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 19,
+      "Ileocecal valve": 12,
+      "Normal clean mucosa": 1499
+     }
+    },
+    {
+     "video_id": "b2134f4a6f864613",
+     "labelled_frames": 1297,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 1.156515034695451,
+     "burden_index": 18.45374559201884,
+     "mean_lesion_score": 0.2930353283882141,
+     "worst_tier": 2,
+     "top_classes": {
+      "Angiectasia": 39,
+      "Pylorus": 10,
+      "Normal clean mucosa": 1248
+     }
+    },
+    {
+     "video_id": "3c8d5f0b90d7475d",
+     "labelled_frames": 1704,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 2.0539906103286385,
+     "burden_index": 18.261132576154527,
+     "mean_lesion_score": 0.2860971689224243,
+     "worst_tier": 2,
+     "top_classes": {
+      "Ileocecal valve": 8,
+      "Normal clean mucosa": 1696
+     }
+    },
+    {
+     "video_id": "07c1fa15a20a4398",
+     "labelled_frames": 678,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 0.4424778761061947,
+     "burden_index": 18.196111322987747,
+     "mean_lesion_score": 0.2834426164627075,
+     "worst_tier": 2,
+     "top_classes": {
+      "Ileocecal valve": 10,
+      "Normal clean mucosa": 668
+     }
+    },
+    {
+     "video_id": "c7084b3556e34619",
+     "labelled_frames": 976,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 0.9221311475409836,
+     "burden_index": 18.068042858071177,
+     "mean_lesion_score": 0.2853614389896393,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 47,
+      "Ileocecal valve": 171,
+      "Normal clean mucosa": 758
+     }
+    },
+    {
+     "video_id": "495f16498db34d3c",
+     "labelled_frames": 323,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 0.0,
+     "burden_index": 17.262849337791387,
+     "mean_lesion_score": 0.26897764205932617,
+     "worst_tier": 0,
+     "top_classes": {
+      "Ileocecal valve": 17,
+      "Normal clean mucosa": 306
+     }
+    },
+    {
+     "video_id": "fb86bc87d3874cd7",
+     "labelled_frames": 2085,
+     "inflammatory_frames": 33,
+     "prevalence": 0.015827338129496403,
+     "flagged_pct": 2.062350119904077,
+     "burden_index": 17.211513199823365,
+     "mean_lesion_score": 0.2725442051887512,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 10,
+      "Erosion": 33,
+      "Normal clean mucosa": 2042
+     },
+     "recall_top10pct": 1.0,
+     "recall_top20pct": 1.0,
+     "recall_top30pct": 1.0,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9996160434756926
+    }
+   ]
+  },
+  "note": "5-fold EfficientNet-B0 ensemble trained on CrohnIPI only; single view, no TTA (same as the app); lesion score = 1 - P(normal)"
+ },
+ "video_study": {
+  "n_videos": 43,
+  "with_inflammatory": 13,
+  "without": 30,
+  "auroc_all_flagged_pct": 0.5641025641025641,
+  "auroc_all_p99": 0.5692307692307692,
+  "auroc_all_top1pct_mean": 0.5615384615384615,
+  "auroc_all_runs_per_1000": 0.5923076923076923,
+  "auroc_filtered_flagged_pct": 0.5641025641025641,
+  "auroc_filtered_p99": 0.5692307692307692,
+  "auroc_filtered_top1pct_mean": 0.5615384615384615,
+  "auroc_filtered_runs_per_1000": 0.5923076923076923,
+  "auroc_sb_flagged_pct": 0.6025641025641025,
+  "auroc_sb_p99": 0.5025641025641026,
+  "auroc_sb_top1pct_mean": 0.49230769230769234,
+  "auroc_sb_runs_per_1000": 0.6051282051282051,
+  "auroc_sb_filtered_flagged_pct": 0.6025641025641025,
+  "auroc_sb_filtered_p99": 0.5025641025641026,
+  "auroc_sb_filtered_top1pct_mean": 0.49230769230769234,
+  "auroc_sb_filtered_runs_per_1000": 0.6051282051282051,
+  "auroc_ensemble_top150_mean": 0.5923076923076923,
+  "median_lesion_recall_top1pct": 0.21875,
+  "median_lesion_recall_top1pct_sb_filtered": 0.0,
+  "median_lesion_recall_top5pct": 0.6666666666666666,
+  "median_lesion_recall_top5pct_sb_filtered": 0.4064516129032258,
+  "median_lesion_recall_top10pct": 0.6666666666666666,
+  "median_lesion_recall_top10pct_sb_filtered": 0.6535433070866141,
+  "median_inflammatory_inside_sb_window_pct": 100.0
+ },
+ "quality_filter_rejected": {
+  "landmark_and_poor_view_dropped_pct": 54.587688734030195,
+  "inflammatory_kept_pct": 57.961783439490446,
+  "normal_dropped_pct": 9.644522144522144,
+  "ulcer_dropped_pct": 58.82352941176471,
+  "videos": 43,
+  "frames": 4728,
+  "cv": "5-fold GroupKFold by video; threshold per fold keeps >=98% of training inflammatory frames",
+  "decision": "rejected: removes too many real lesion frames on held-out videos"
+ },
+ "hyperkvasir_extra": {
+  "polyp_localisation": {
+   "n": 1000,
+   "pointing_hit_rate": 0.33,
+   "chance": 0.1560204081632653,
+   "mean_mask_area": 0.15390989411452588,
+   "mean_p_polyp": 0.15032402461431296,
+   "detected_at_0_5": 0.131,
+   "note": "findings screen trained on SEE-AI capsule frames; HyperKvasir = colonoscopy (other camera and organ)"
+  },
+  "uc_video_test": {
+   "n_colitis": 15,
+   "n_clean": 31,
+   "auroc_mean_active": 0.9806451612903225,
+   "auroc_p90_expected_mayo": 0.9612903225806452,
+   "auroc_frac_active_frames": 0.9612903225806452,
+   "mean_active_colitis": 0.7301318208376567,
+   "mean_active_clean": 0.32983564273003607,
+   "videos": [
+    {
+     "video": "07bbedb7-1d45-4655-9ccd-aeb28a2c4bab",
+     "group": "clean",
+     "frames": 16,
+     "mean_active": 0.22005367279052734,
+     "p90_expected_mayo": 1.2559336010599509,
+     "frac_active_frames": 0.125
+    },
+    {
+     "video": "11e01bb3-b9b7-466d-9187-13a60daef108",
+     "group": "clean",
+     "frames": 12,
+     "mean_active": 0.45254793763160706,
+     "p90_expected_mayo": 1.9061275907384698,
+     "frac_active_frames": 0.4166666666666667
+    },
+    {
+     "video": "17241dcf-de85-461d-9435-f5134035aacb",
+     "group": "clean",
+     "frames": 13,
+     "mean_active": 0.11308802664279938,
+     "p90_expected_mayo": 0.6099605221432286,
+     "frac_active_frames": 0.0
+    },
+    {
+     "video": "18618452-9b66-4df3-b9ac-f72f8e10f2a2",
+     "group": "clean",
+     "frames": 23,
+     "mean_active": 0.3987005352973938,
+     "p90_expected_mayo": 1.7512694998644291,
+     "frac_active_frames": 0.391304347826087
+    },
+    {
+     "video": "1c1ca45a-315e-4ad0-9343-2425d2faf648",
+     "group": "clean",
+     "frames": 17,
+     "mean_active": 0.3220350742340088,
+     "p90_expected_mayo": 1.3386076148599386,
+     "frac_active_frames": 0.11764705882352941
+    },
+    {
+     "video": "1c25af4a-8c13-474d-a34a-c6f470d4c934",
+     "group": "clean",
+     "frames": 28,
+     "mean_active": 0.5509620904922485,
+     "p90_expected_mayo": 2.0315321166068316,
+     "frac_active_frames": 0.5357142857142857
+    },
+    {
+     "video": "26d1b304-9aaa-4eb2-9eb5-2000cf259577",
+     "group": "clean",
+     "frames": 39,
+     "mean_active": 0.40477514266967773,
+     "p90_expected_mayo": 2.0325716942548757,
+     "frac_active_frames": 0.3076923076923077
+    },
+    {
+     "video": "29c2db01-5525-4fff-8768-40a8b6fa5f4d",
+     "group": "colitis",
+     "frames": 46,
+     "mean_active": 0.6895297765731812,
+     "p90_expected_mayo": 2.984116007199191,
+     "frac_active_frames": 0.6739130434782609
+    },
+    {
+     "video": "2f27d098-5f58-41b1-90ec-7ac7d34699a7",
+     "group": "colitis",
+     "frames": 36,
+     "mean_active": 0.5436304211616516,
+     "p90_expected_mayo": 2.2916408942546695,
+     "frac_active_frames": 0.5
+    },
+    {
+     "video": "30bc2ab9-f04a-47ca-ad4c-4672dcca32f1",
+     "group": "clean",
+     "frames": 8,
+     "mean_active": 0.08825314790010452,
+     "p90_expected_mayo": 0.9852518301966484,
+     "frac_active_frames": 0.0
+    },
+    {
+     "video": "31573497-b434-4c27-86ba-a53a65d5f9ce",
+     "group": "clean",
+     "frames": 600,
+     "mean_active": 0.5304439067840576,
+     "p90_expected_mayo": 1.8763810435742925,
+     "frac_active_frames": 0.5633333333333334
+    },
+    {
+     "video": "33143cb2-a5ef-4bab-b25e-148a8076e5dd",
+     "group": "clean",
+     "frames": 600,
+     "mean_active": 0.5732967257499695,
+     "p90_expected_mayo": 1.8840991524513813,
+     "frac_active_frames": 0.6533333333333333
+    },
+    {
+     "video": "3624191f-8fb3-40ba-b421-fb5d0b2e10fb",
+     "group": "clean",
+     "frames": 22,
+     "mean_active": 0.16301235556602478,
+     "p90_expected_mayo": 1.156950629549101,
+     "frac_active_frames": 0.045454545454545456
+    },
+    {
+     "video": "46e2df1d-9fb9-4fc0-b09e-0b90899350d7",
+     "group": "clean",
+     "frames": 25,
+     "mean_active": 0.19969047605991364,
+     "p90_expected_mayo": 1.4475033432245255,
+     "frac_active_frames": 0.12
+    },
+    {
+     "video": "4dd27426-9dce-4d8f-8d98-5baf4f5d0b68",
+     "group": "clean",
+     "frames": 105,
+     "mean_active": 0.2735285460948944,
+     "p90_expected_mayo": 1.6241867721080787,
+     "frac_active_frames": 0.18095238095238095
+    },
+    {
+     "video": "4fc1a16d-ccab-4b82-9c2c-df113a22cfa1",
+     "group": "clean",
+     "frames": 17,
+     "mean_active": 0.3430887758731842,
+     "p90_expected_mayo": 1.7468594279373066,
+     "frac_active_frames": 0.29411764705882354
+    },
+    {
+     "video": "584f1fa0-9bb9-49d3-b412-c42819d0a200",
+     "group": "colitis",
+     "frames": 120,
+     "mean_active": 0.6895542144775391,
+     "p90_expected_mayo": 2.883036587550305,
+     "frac_active_frames": 0.7083333333333334
+    },
+    {
+     "video": "661d59a9-9873-445f-a3d9-d2789d279f82",
+     "group": "clean",
+     "frames": 41,
+     "mean_active": 0.24839314818382263,
+     "p90_expected_mayo": 1.594829760491848,
+     "frac_active_frames": 0.14634146341463414
+    },
+    {
+     "video": "698f130b-41ff-414d-908c-8d8c0f82d4a8",
+     "group": "colitis",
+     "frames": 127,
+     "mean_active": 0.7276692986488342,
+     "p90_expected_mayo": 2.902699106838554,
+     "frac_active_frames": 0.7401574803149606
+    },
+    {
+     "video": "6ea4d1d9-ad4f-44a8-a79b-8cc692f043f1",
+     "group": "colitis",
+     "frames": 61,
+     "mean_active": 0.7615768909454346,
+     "p90_expected_mayo": 2.768934051739052,
+     "frac_active_frames": 0.8032786885245902
+    },
+    {
+     "video": "6eb1b0c6-2b6f-408f-b1f2-577012da57c7",
+     "group": "clean",
+     "frames": 49,
+     "mean_active": 0.3423732817173004,
+     "p90_expected_mayo": 1.7195915108546616,
+     "frac_active_frames": 0.22448979591836735
+    },
+    {
+     "video": "742d790e-0fec-4461-97e6-50be81625380",
+     "group": "colitis",
+     "frames": 63,
+     "mean_active": 0.851830780506134,
+     "p90_expected_mayo": 2.9804001393669752,
+     "frac_active_frames": 0.9206349206349206
+    },
+    {
+     "video": "7fe9e5ab-4e01-44f0-9139-604649b237e9",
+     "group": "clean",
+     "frames": 16,
+     "mean_active": 0.1516890525817871,
+     "p90_expected_mayo": 1.2484401063848054,
+     "frac_active_frames": 0.0
+    },
+    {
+     "video": "8ca9db2d-4ccc-4b15-bf80-60198b86b047",
+     "group": "clean",
+     "frames": 66,
+     "mean_active": 0.3773852288722992,
+     "p90_expected_mayo": 1.7238982919807313,
+     "frac_active_frames": 0.3333333333333333
+    },
+    {
+     "video": "9bdfbfa0-7497-40cb-8a71-d4ed5279ad49",
+     "group": "colitis",
+     "frames": 24,
+     "mean_active": 0.8817575573921204,
+     "p90_expected_mayo": 2.7841906554531306,
+     "frac_active_frames": 0.9166666666666666
+    },
+    {
+     "video": "a30ca29e-02e0-4662-9272-f68ceb10bfec",
+     "group": "clean",
+     "frames": 16,
+     "mean_active": 0.4507145285606384,
+     "p90_expected_mayo": 1.843568958484866,
+     "frac_active_frames": 0.375
+    },
+    {
+     "video": "a75bc3f1-949c-4629-bc66-c31c139be6df",
+     "group": "clean",
+     "frames": 13,
+     "mean_active": 0.06836170703172684,
+     "p90_expected_mayo": 0.8241133095696569,
+     "frac_active_frames": 0.0
+    },
+    {
+     "video": "a9abfe79-568e-4192-9d1c-79709ef23b8a",
+     "group": "clean",
+     "frames": 32,
+     "mean_active": 0.39026564359664917,
+     "p90_expected_mayo": 1.6912653094022971,
+     "frac_active_frames": 0.3125
+    },
+    {
+     "video": "ae68bef5-8ca4-42fd-a275-d34ee4ea8c14",
+     "group": "colitis",
+     "frames": 120,
+     "mean_active": 0.5675460696220398,
+     "p90_expected_mayo": 2.0844211340416225,
+     "frac_active_frames": 0.5916666666666667
+    },
+    {
+     "video": "b2bf57d2-e9c9-45a7-856b-fd45574b0f94",
+     "group": "colitis",
+     "frames": 84,
+     "mean_active": 0.8826219439506531,
+     "p90_expected_mayo": 2.992059263655392,
+     "frac_active_frames": 0.9047619047619048
+    },
+    {
+     "video": "b2ce7754-73b2-472e-99be-201c6105bbd1",
+     "group": "colitis",
+     "frames": 42,
+     "mean_active": 0.7114467024803162,
+     "p90_expected_mayo": 2.5189589019864798,
+     "frac_active_frames": 0.8095238095238095
+    },
+    {
+     "video": "baa6b87a-ff86-4306-9be2-c518956ae4ee",
+     "group": "clean",
+     "frames": 10,
+     "mean_active": 0.23335865139961243,
+     "p90_expected_mayo": 1.5060191355645653,
+     "frac_active_frames": 0.1
+    },
+    {
+     "video": "c205ec73-4652-4f91-8711-ddb6a50e1d16",
+     "group": "clean",
+     "frames": 58,
+     "mean_active": 0.6580482721328735,
+     "p90_expected_mayo": 1.9685270431444224,
+     "frac_active_frames": 0.7241379310344828
+    },
+    {
+     "video": "c8eba477-8f93-4adb-b3d4-351a866d37ce",
+     "group": "colitis",
+     "frames": 120,
+     "mean_active": 0.6382765173912048,
+     "p90_expected_mayo": 2.7658026054501534,
+     "frac_active_frames": 0.65
+    },
+    {
+     "video": "cba869d8-497e-474c-9f17-7c50ae8b738d",
+     "group": "clean",
+     "frames": 18,
+     "mean_active": 0.15921081602573395,
+     "p90_expected_mayo": 1.0951008032076062,
+     "frac_active_frames": 0.05555555555555555
+    },
+    {
+     "video": "da5d2629-3a74-4ec0-9ace-57dbc6ebddad",
+     "group": "clean",
+     "frames": 22,
+     "mean_active": 0.6003353595733643,
+     "p90_expected_mayo": 2.3627670701593164,
+     "frac_active_frames": 0.6818181818181818
+    },
+    {
+     "video": "dc7d389f-4c20-47d2-bf1b-1da475ef4a14",
+     "group": "clean",
+     "frames": 56,
+     "mean_active": 0.3227992057800293,
+     "p90_expected_mayo": 1.8395691900514066,
+     "frac_active_frames": 0.2857142857142857
+    },
+    {
+     "video": "df584e0e-f487-4de1-b658-e849320337e3",
+     "group": "clean",
+     "frames": 26,
+     "mean_active": 0.1370319426059723,
+     "p90_expected_mayo": 1.0631870981305838,
+     "frac_active_frames": 0.038461538461538464
+    },
+    {
+     "video": "dfcb8d4c-a3c1-4410-961b-d7a70b68d9c3",
+     "group": "clean",
+     "frames": 31,
+     "mean_active": 0.2822447419166565,
+     "p90_expected_mayo": 1.908236987888813,
+     "frac_active_frames": 0.22580645161290322
+    },
+    {
+     "video": "ec65d14e-4460-40fb-bc48-973ec5f4ae60",
+     "group": "colitis",
+     "frames": 111,
+     "mean_active": 0.6006032824516296,
+     "p90_expected_mayo": 2.6503946371376514,
+     "frac_active_frames": 0.6036036036036037
+    },
+    {
+     "video": "f0325856-fad4-448c-82f5-11c5e2ffabef",
+     "group": "colitis",
+     "frames": 1,
+     "mean_active": 0.7800430655479431,
+     "p90_expected_mayo": 1.7234136157203466,
+     "frac_active_frames": 1.0
+    },
+    {
+     "video": "f1dfa843-1e53-4a5d-b3b1-d29dc08e968a",
+     "group": "clean",
+     "frames": 40,
+     "mean_active": 0.5177473425865173,
+     "p90_expected_mayo": 2.0867212984710934,
+     "frac_active_frames": 0.525
+    },
+    {
+     "video": "f4e1327e-f634-4768-90eb-f42e38f525b5",
+     "group": "clean",
+     "frames": 16,
+     "mean_active": 0.21913743019104004,
+     "p90_expected_mayo": 1.354046258609742,
+     "frac_active_frames": 0.125
+    },
+    {
+     "video": "f655d0eb-2225-48e4-9eed-11cab20c5df5",
+     "group": "colitis",
+     "frames": 35,
+     "mean_active": 0.7647838592529297,
+     "p90_expected_mayo": 2.9833637707168235,
+     "frac_active_frames": 0.7714285714285715
+    },
+    {
+     "video": "f82fb1e7-ecbb-46d6-ba90-a4624a1b1577",
+     "group": "clean",
+     "frames": 41,
+     "mean_active": 0.4323321580886841,
+     "p90_expected_mayo": 1.845361366868019,
+     "frac_active_frames": 0.43902439024390244
+    },
+    {
+     "video": "fc79c489-b358-4368-b965-330615af73d4",
+     "group": "colitis",
+     "frames": 27,
+     "mean_active": 0.8611069321632385,
+     "p90_expected_mayo": 2.999693195823693,
+     "frac_active_frames": 0.8888888888888888
+    }
+   ],
+   "note": "UC grader trained on LIMUC; HyperKvasir colitis videos (type not specified) vs BBPS 2-3 clean-bowel videos; 1 frame/s"
+  }
+ },
+ "kvasir_full_v1": {
+  "A": {
+   "frames": 47238,
+   "videos": 43,
+   "normal_frames": 34338,
+   "inflammatory_frames": 1527,
+   "inflammatory_vs_normal": {
+    "auroc": 0.9069294966411761,
+    "sensitivity_at_0_5": 0.8722986247544204,
+    "specificity_at_0_5": 0.7552565670685538,
+    "auroc_ci95_video_bootstrap": [
+     0.785074488719416,
+     0.956634018252279
+    ]
+   },
+   "per_class": {
+    "Ampulla of Vater": {
+     "n": 11,
+     "mean_lesion_score": 0.69820636510849,
+     "flagged_at_0_5": 1.0,
+     "tier_share": [
+      0.6363636363636364,
+      0.09090909090909091,
+      0.2727272727272727,
+      0.0
+     ],
+     "auroc_vs_normal": 0.9390047601649908
+    },
+    "Angiectasia": {
+     "n": 866,
+     "mean_lesion_score": 0.6340848207473755,
+     "flagged_at_0_5": 0.815242494226328,
+     "tier_share": [
+      0.5831408775981525,
+      0.04503464203233257,
+      0.29445727482678985,
+      0.07736720554272518
+     ],
+     "auroc_vs_normal": 0.8527067118525695
+    },
+    "Blood - fresh": {
+     "n": 446,
+     "mean_lesion_score": 0.752866804599762,
+     "flagged_at_0_5": 0.968609865470852,
+     "tier_share": [
+      0.23094170403587444,
+      0.11659192825112108,
+      0.03587443946188341,
+      0.6165919282511211
+     ],
+     "auroc_vs_normal": 0.9535897032063473
+    },
+    "Blood - hematin": {
+     "n": 12,
+     "mean_lesion_score": 0.9045490622520447,
+     "flagged_at_0_5": 1.0,
+     "tier_share": [
+      0.0,
+      0.3333333333333333,
+      0.5,
+      0.16666666666666666
+     ],
+     "auroc_vs_normal": 0.9976192556351564
+    },
+    "Erosion": {
+     "n": 514,
+     "mean_lesion_score": 0.6769019961357117,
+     "flagged_at_0_5": 0.7840466926070039,
+     "tier_share": [
+      0.46108949416342415,
+      0.07976653696498054,
+      0.42217898832684825,
+      0.03696498054474708
+     ],
+     "auroc_vs_normal": 0.8438043421849125
+    },
+    "Erythema": {
+     "n": 159,
+     "mean_lesion_score": 0.5964255332946777,
+     "flagged_at_0_5": 0.6226415094339622,
+     "tier_share": [
+      0.559748427672956,
+      0.012578616352201259,
+      0.37735849056603776,
+      0.050314465408805034
+     ],
+     "auroc_vs_normal": 0.7619382014754543
+    },
+    "Foreign Body": {
+     "n": 776,
+     "mean_lesion_score": 0.39611029624938965,
+     "flagged_at_0_5": 0.20231958762886598,
+     "tier_share": [
+      0.9497422680412371,
+      0.001288659793814433,
+      0.030927835051546393,
+      0.01804123711340206
+     ],
+     "auroc_vs_normal": 0.46308632181713266
+    },
+    "Ileocecal valve": {
+     "n": 4189,
+     "mean_lesion_score": 0.5350345373153687,
+     "flagged_at_0_5": 0.4633564096443065,
+     "tier_share": [
+      0.6672236810694676,
+      0.011458582000477441,
+      0.18071138696586297,
+      0.14060634996419194
+     ],
+     "auroc_vs_normal": 0.6343593064223116
+    },
+    "Lymphangiectasia": {
+     "n": 592,
+     "mean_lesion_score": 0.45479631423950195,
+     "flagged_at_0_5": 0.3108108108108108,
+     "tier_share": [
+      0.8800675675675675,
+      0.0,
+      0.09628378378378379,
+      0.02364864864864865
+     ],
+     "auroc_vs_normal": 0.5664714491706454
+    },
+    "Normal clean mucosa": {
+     "n": 34338,
+     "mean_lesion_score": 0.41252586245536804,
+     "flagged_at_0_5": 0.2447434329314462,
+     "tier_share": [
+      0.9251849263206943,
+      0.0065233851709476385,
+      0.051954103325761544,
+      0.01633758518259654
+     ]
+    },
+    "Polyp": {
+     "n": 55,
+     "mean_lesion_score": 0.6789334416389465,
+     "flagged_at_0_5": 0.8727272727272727,
+     "tier_share": [
+      0.36363636363636365,
+      0.0,
+      0.34545454545454546,
+      0.2909090909090909
+     ],
+     "auroc_vs_normal": 0.8810636506600162
+    },
+    "Pylorus": {
+     "n": 1520,
+     "mean_lesion_score": 0.6017919182777405,
+     "flagged_at_0_5": 0.7078947368421052,
+     "tier_share": [
+      0.6730263157894737,
+      0.06118421052631579,
+      0.16907894736842105,
+      0.09671052631578947
+     ],
+     "auroc_vs_normal": 0.800579437082134
+    },
+    "Reduced Mucosal View": {
+     "n": 2906,
+     "mean_lesion_score": 0.40486615896224976,
+     "flagged_at_0_5": 0.20750172057811425,
+     "tier_share": [
+      0.9583620096352374,
+      0.014108740536820371,
+      0.02615278733654508,
+      0.0013764624913971094
+     ],
+     "auroc_vs_normal": 0.4955140202313289
+    },
+    "Ulcer": {
+     "n": 854,
+     "mean_lesion_score": 0.84270840883255,
+     "flagged_at_0_5": 0.9718969555035128,
+     "tier_share": [
+      0.10187353629976581,
+      0.01522248243559719,
+      0.6721311475409836,
+      0.2107728337236534
+     ],
+     "auroc_vs_normal": 0.9719177230133882
+    }
+   },
+   "pooled_triage": {
+    "top_5pct": 0.4950884086444008,
+    "top_10pct": 0.6712508185985593,
+    "top_20pct": 0.7982973149967256,
+    "top_30pct": 0.8637851997380485
+   },
+   "uncertainty": {
+    "mean_sd_lesion_frames": 0.17445522546768188,
+    "mean_sd_normal_frames": 0.14480192959308624
+   }
+  },
+  "B": {
+   "n_videos": 43,
+   "videos_with_inflammatory_lesions": 13,
+   "video_auroc_burden_index": 0.658974358974359,
+   "video_auroc_flagged_pct": 0.6923076923076923,
+   "spearman_burden_vs_prevalence": -0.18212020537601933,
+   "median_recall_top10pct": 0.5416666666666666,
+   "median_recall_top20pct": 0.7049180327868853,
+   "median_recall_top30pct": 0.7806451612903226,
+   "median_rank_first_lesion": 1.0,
+   "videos": [
+    {
+     "video_id": "2fc3db471f9d44c0",
+     "labelled_frames": 127,
+     "inflammatory_frames": 127,
+     "prevalence": 1.0,
+     "flagged_pct": 97.63779527559055,
+     "burden_index": 59.48480099312511,
+     "mean_lesion_score": 0.7986286282539368,
+     "worst_tier": 3,
+     "top_classes": {
+      "Ulcer": 127
+     },
+     "recall_top10pct": 0.09448818897637795,
+     "recall_top20pct": 0.1968503937007874,
+     "recall_top30pct": 0.2992125984251969,
+     "rank_first_lesion": 1,
+     "auroc_within_video": null
+    },
+    {
+     "video_id": "d626f4f4a5ac4785",
+     "labelled_frames": 643,
+     "inflammatory_frames": 621,
+     "prevalence": 0.9657853810264385,
+     "flagged_pct": 96.26749611197512,
+     "burden_index": 55.791375021551126,
+     "mean_lesion_score": 0.8385385870933533,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 22,
+      "Ulcer": 582,
+      "Erosion": 39
+     },
+     "recall_top10pct": 0.10305958132045089,
+     "recall_top20pct": 0.20611916264090177,
+     "recall_top30pct": 0.30917874396135264,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9349290001463915
+    },
+    {
+     "video_id": "131368cc17e44240",
+     "labelled_frames": 2034,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 74.68043264503441,
+     "burden_index": 48.458738425781355,
+     "mean_lesion_score": 0.6774122714996338,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 101,
+      "Normal clean mucosa": 617,
+      "Ileocecal valve": 1261,
+      "Polyp": 55
+     }
+    },
+    {
+     "video_id": "7a47e8eacea04e64",
+     "labelled_frames": 436,
+     "inflammatory_frames": 145,
+     "prevalence": 0.33256880733944955,
+     "flagged_pct": 55.27522935779816,
+     "burden_index": 41.892690146883055,
+     "mean_lesion_score": 0.6014023423194885,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 84,
+      "Ileocecal valve": 201,
+      "Foreign Body": 6,
+      "Ulcer": 145
+     },
+     "recall_top10pct": 0.296551724137931,
+     "recall_top20pct": 0.5724137931034483,
+     "recall_top30pct": 0.7448275862068966,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9374096456926176
+    },
+    {
+     "video_id": "d369e4f163df4aba",
+     "labelled_frames": 1328,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 60.391566265060234,
+     "burden_index": 39.937027173217786,
+     "mean_lesion_score": 0.5759212374687195,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 10,
+      "Angiectasia": 21,
+      "Normal clean mucosa": 873,
+      "Blood - fresh": 424
+     }
+    },
+    {
+     "video_id": "04a78ef00c5245e0",
+     "labelled_frames": 1292,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 56.811145510835914,
+     "burden_index": 38.64290809164629,
+     "mean_lesion_score": 0.5625770092010498,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 20,
+      "Ileocecal valve": 412,
+      "Lymphangiectasia": 74,
+      "Angiectasia": 108,
+      "Normal clean mucosa": 656,
+      "Blood - fresh": 22
+     }
+    },
+    {
+     "video_id": "d7a271f233ba4a40",
+     "labelled_frames": 945,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 56.4021164021164,
+     "burden_index": 37.86128361743909,
+     "mean_lesion_score": 0.5388128161430359,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 18,
+      "Normal clean mucosa": 886,
+      "Ileocecal valve": 41
+     }
+    },
+    {
+     "video_id": "bca26705313a4644",
+     "labelled_frames": 1449,
+     "inflammatory_frames": 72,
+     "prevalence": 0.049689440993788817,
+     "flagged_pct": 47.757073844030366,
+     "burden_index": 36.62111428970129,
+     "mean_lesion_score": 0.49520713090896606,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 11,
+      "Normal clean mucosa": 1345,
+      "Ileocecal valve": 21,
+      "Erosion": 72
+     },
+     "recall_top10pct": 0.1111111111111111,
+     "recall_top20pct": 0.1388888888888889,
+     "recall_top30pct": 0.18055555555555555,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.41159323811829257
+    },
+    {
+     "video_id": "ad91cf7ca91440aa",
+     "labelled_frames": 74,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 40.54054054054054,
+     "burden_index": 36.34425895540296,
+     "mean_lesion_score": 0.4960515797138214,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 11,
+      "Angiectasia": 11,
+      "Ileocecal valve": 52
+     }
+    },
+    {
+     "video_id": "64440803f87b4843",
+     "labelled_frames": 2159,
+     "inflammatory_frames": 27,
+     "prevalence": 0.012505789717461788,
+     "flagged_pct": 52.47799907364521,
+     "burden_index": 35.75771609627508,
+     "mean_lesion_score": 0.5172351002693176,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 23,
+      "Erythema": 27,
+      "Ileocecal valve": 50,
+      "Lymphangiectasia": 150,
+      "Angiectasia": 652,
+      "Normal clean mucosa": 1257
+     },
+     "recall_top10pct": 0.37037037037037035,
+     "recall_top20pct": 0.5925925925925926,
+     "recall_top30pct": 0.6666666666666666,
+     "rank_first_lesion": 7,
+     "auroc_within_video": 0.7767702035994719
+    },
+    {
+     "video_id": "39960e5e099a45ca",
+     "labelled_frames": 237,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 44.303797468354425,
+     "burden_index": 33.22814353813749,
+     "mean_lesion_score": 0.5022227168083191,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 11,
+      "Normal clean mucosa": 205,
+      "Ileocecal valve": 21
+     }
+    },
+    {
+     "video_id": "3ada4222967f421d",
+     "labelled_frames": 1002,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 42.91417165668663,
+     "burden_index": 31.83769287921969,
+     "mean_lesion_score": 0.4760884642601013,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 6,
+      "Normal clean mucosa": 417,
+      "Ileocecal valve": 6,
+      "Foreign Body": 573
+     }
+    },
+    {
+     "video_id": "5e9beaf4e66142c8",
+     "labelled_frames": 464,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 29.95689655172414,
+     "burden_index": 31.79192960117783,
+     "mean_lesion_score": 0.46625059843063354,
+     "worst_tier": 3,
+     "top_classes": {
+      "Normal clean mucosa": 370,
+      "Ileocecal valve": 94
+     }
+    },
+    {
+     "video_id": "b2134f4a6f864613",
+     "labelled_frames": 1297,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 32.99922898997687,
+     "burden_index": 31.18436185581324,
+     "mean_lesion_score": 0.4620515704154968,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 10,
+      "Angiectasia": 39,
+      "Normal clean mucosa": 1248
+     }
+    },
+    {
+     "video_id": "eb0203196e284797",
+     "labelled_frames": 872,
+     "inflammatory_frames": 61,
+     "prevalence": 0.06995412844036697,
+     "flagged_pct": 42.201834862385326,
+     "burden_index": 30.723728293578628,
+     "mean_lesion_score": 0.48852643370628357,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 44,
+      "Ampulla of Vater": 11,
+      "Angiectasia": 35,
+      "Normal clean mucosa": 721,
+      "Erosion": 61
+     },
+     "recall_top10pct": 0.6065573770491803,
+     "recall_top20pct": 0.7049180327868853,
+     "recall_top30pct": 0.7868852459016393,
+     "rank_first_lesion": 2,
+     "auroc_within_video": 0.8830223767459724
+    },
+    {
+     "video_id": "8ebf0e483cac48d6",
+     "labelled_frames": 1077,
+     "inflammatory_frames": 144,
+     "prevalence": 0.13370473537604458,
+     "flagged_pct": 43.546889507892296,
+     "burden_index": 30.702755039806288,
+     "mean_lesion_score": 0.4971454441547394,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 61,
+      "Ileocecal valve": 41,
+      "Normal clean mucosa": 632,
+      "Erosion": 144,
+      "Blood - hematin": 12,
+      "Reduced Mucosal View": 187
+     },
+     "recall_top10pct": 0.5416666666666666,
+     "recall_top20pct": 0.7847222222222222,
+     "recall_top30pct": 0.875,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9172546742884363
+    },
+    {
+     "video_id": "7ad22d50ebaf4596",
+     "labelled_frames": 740,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 28.64864864864865,
+     "burden_index": 30.57388956482346,
+     "mean_lesion_score": 0.44074323773384094,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 17,
+      "Normal clean mucosa": 347,
+      "Ileocecal valve": 8,
+      "Lymphangiectasia": 368
+     }
+    },
+    {
+     "video_id": "48579eec79784294",
+     "labelled_frames": 1379,
+     "inflammatory_frames": 9,
+     "prevalence": 0.006526468455402465,
+     "flagged_pct": 37.41841914430747,
+     "burden_index": 30.39646374400735,
+     "mean_lesion_score": 0.4633064866065979,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 22,
+      "Erythema": 9,
+      "Ileocecal valve": 91,
+      "Normal clean mucosa": 769,
+      "Foreign Body": 17,
+      "Reduced Mucosal View": 471
+     },
+     "recall_top10pct": 0.6666666666666666,
+     "recall_top20pct": 0.7777777777777778,
+     "recall_top30pct": 0.7777777777777778,
+     "rank_first_lesion": 2,
+     "auroc_within_video": 0.8251419302514194
+    },
+    {
+     "video_id": "0531325b64674948",
+     "labelled_frames": 1191,
+     "inflammatory_frames": 16,
+     "prevalence": 0.01343408900083963,
+     "flagged_pct": 40.050377833753146,
+     "burden_index": 30.313818801007802,
+     "mean_lesion_score": 0.4776292145252228,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 179,
+      "Normal clean mucosa": 996,
+      "Erosion": 16
+     },
+     "recall_top10pct": 0.5625,
+     "recall_top20pct": 0.8125,
+     "recall_top30pct": 0.9375,
+     "rank_first_lesion": 24,
+     "auroc_within_video": 0.8842553191489362
+    },
+    {
+     "video_id": "dac1e27f7e4d4ef5",
+     "labelled_frames": 2152,
+     "inflammatory_frames": 36,
+     "prevalence": 0.016728624535315983,
+     "flagged_pct": 31.226765799256505,
+     "burden_index": 29.080329471483566,
+     "mean_lesion_score": 0.4411405026912689,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 12,
+      "Normal clean mucosa": 2083,
+      "Ileocecal valve": 21,
+      "Erosion": 36
+     },
+     "recall_top10pct": 0.6111111111111112,
+     "recall_top20pct": 0.9444444444444444,
+     "recall_top30pct": 0.9722222222222222,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9095778197857592
+    },
+    {
+     "video_id": "ed02f27ef36f483e",
+     "labelled_frames": 587,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 20.442930153321974,
+     "burden_index": 29.01693408772527,
+     "mean_lesion_score": 0.4132480025291443,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 51,
+      "Normal clean mucosa": 495,
+      "Ileocecal valve": 41
+     }
+    },
+    {
+     "video_id": "8885668afb844852",
+     "labelled_frames": 2021,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 25.72983671449777,
+     "burden_index": 27.827849365806454,
+     "mean_lesion_score": 0.4339171051979065,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 221,
+      "Ileocecal valve": 201,
+      "Normal clean mucosa": 1128,
+      "Foreign Body": 180,
+      "Reduced Mucosal View": 291
+     }
+    },
+    {
+     "video_id": "5bb1d3cc7dc64cec",
+     "labelled_frames": 788,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 18.274111675126903,
+     "burden_index": 27.629535719586844,
+     "mean_lesion_score": 0.40316829085350037,
+     "worst_tier": 3,
+     "top_classes": {
+      "Normal clean mucosa": 499,
+      "Ileocecal valve": 119,
+      "Reduced Mucosal View": 170
+     }
+    },
+    {
+     "video_id": "6cb700585c4f4070",
+     "labelled_frames": 884,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 22.963800904977376,
+     "burden_index": 26.4507200005977,
+     "mean_lesion_score": 0.40157946944236755,
+     "worst_tier": 3,
+     "top_classes": {
+      "Normal clean mucosa": 696,
+      "Ileocecal valve": 188
+     }
+    },
+    {
+     "video_id": "3c8d5f0b90d7475d",
+     "labelled_frames": 1704,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 16.549295774647888,
+     "burden_index": 26.28825725907393,
+     "mean_lesion_score": 0.4018329083919525,
+     "worst_tier": 3,
+     "top_classes": {
+      "Normal clean mucosa": 1696,
+      "Ileocecal valve": 8
+     }
+    },
+    {
+     "video_id": "dc221ccc65d34010",
+     "labelled_frames": 1789,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 23.64449413079933,
+     "burden_index": 26.261058063646292,
+     "mean_lesion_score": 0.41419491171836853,
+     "worst_tier": 3,
+     "top_classes": {
+      "Normal clean mucosa": 430,
+      "Ileocecal valve": 265,
+      "Reduced Mucosal View": 1094
+     }
+    },
+    {
+     "video_id": "89cdd41258c542c5",
+     "labelled_frames": 1198,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 19.69949916527546,
+     "burden_index": 26.25406489344226,
+     "mean_lesion_score": 0.40953898429870605,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 51,
+      "Normal clean mucosa": 1147
+     }
+    },
+    {
+     "video_id": "dca1377dec974312",
+     "labelled_frames": 1216,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 20.641447368421055,
+     "burden_index": 26.060008123698807,
+     "mean_lesion_score": 0.40359434485435486,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 18,
+      "Normal clean mucosa": 1177,
+      "Ileocecal valve": 21
+     }
+    },
+    {
+     "video_id": "0728084c8da942d9",
+     "labelled_frames": 1499,
+     "inflammatory_frames": 81,
+     "prevalence": 0.054036024016010674,
+     "flagged_pct": 19.61307538358906,
+     "burden_index": 26.02779069094889,
+     "mean_lesion_score": 0.39531025290489197,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 4,
+      "Normal clean mucosa": 1399,
+      "Ileocecal valve": 15,
+      "Erosion": 81
+     },
+     "recall_top10pct": 0.6790123456790124,
+     "recall_top20pct": 0.8271604938271605,
+     "recall_top30pct": 0.8888888888888888,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9103849971268871
+    },
+    {
+     "video_id": "fc32def0e7194981",
+     "labelled_frames": 1380,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 24.057971014492754,
+     "burden_index": 25.594502897564197,
+     "mean_lesion_score": 0.40157005190849304,
+     "worst_tier": 3,
+     "top_classes": {
+      "Normal clean mucosa": 1130,
+      "Ileocecal valve": 250
+     }
+    },
+    {
+     "video_id": "c11b28a8b2344716",
+     "labelled_frames": 1000,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 29.7,
+     "burden_index": 25.26204521190375,
+     "mean_lesion_score": 0.42347174882888794,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 97,
+      "Normal clean mucosa": 449,
+      "Reduced Mucosal View": 454
+     }
+    },
+    {
+     "video_id": "4560e83f9afc4685",
+     "labelled_frames": 780,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 15.897435897435896,
+     "burden_index": 25.12316698303972,
+     "mean_lesion_score": 0.37181344628334045,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 41,
+      "Normal clean mucosa": 708,
+      "Ileocecal valve": 31
+     }
+    },
+    {
+     "video_id": "4aebc5cb2d4847aa",
+     "labelled_frames": 90,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 17.77777777777778,
+     "burden_index": 25.05439910347815,
+     "mean_lesion_score": 0.390950083732605,
+     "worst_tier": 0,
+     "top_classes": {
+      "Ileocecal valve": 90
+     }
+    },
+    {
+     "video_id": "af9bd7d0e43741e3",
+     "labelled_frames": 431,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 22.96983758700696,
+     "burden_index": 24.480803620735756,
+     "mean_lesion_score": 0.39972570538520813,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 51,
+      "Ileocecal valve": 141,
+      "Reduced Mucosal View": 239
+     }
+    },
+    {
+     "video_id": "fe5d372e43f94f68",
+     "labelled_frames": 554,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 11.913357400722022,
+     "burden_index": 24.183402191533762,
+     "mean_lesion_score": 0.3736434280872345,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 11,
+      "Normal clean mucosa": 532,
+      "Ileocecal valve": 11
+     }
+    },
+    {
+     "video_id": "df6b47bafe5143f5",
+     "labelled_frames": 1530,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 21.176470588235293,
+     "burden_index": 24.062029272236725,
+     "mean_lesion_score": 0.37022826075553894,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 19,
+      "Normal clean mucosa": 1499,
+      "Ileocecal valve": 12
+     }
+    },
+    {
+     "video_id": "8a00709108cd4e2b",
+     "labelled_frames": 542,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 19.74169741697417,
+     "burden_index": 23.914646132085082,
+     "mean_lesion_score": 0.37255004048347473,
+     "worst_tier": 3,
+     "top_classes": {
+      "Normal clean mucosa": 486,
+      "Ileocecal valve": 56
+     }
+    },
+    {
+     "video_id": "495f16498db34d3c",
+     "labelled_frames": 323,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 10.526315789473683,
+     "burden_index": 23.898801329988753,
+     "mean_lesion_score": 0.3606238067150116,
+     "worst_tier": 3,
+     "top_classes": {
+      "Normal clean mucosa": 306,
+      "Ileocecal valve": 17
+     }
+    },
+    {
+     "video_id": "5e59c7fdb16c4228",
+     "labelled_frames": 2394,
+     "inflammatory_frames": 155,
+     "prevalence": 0.06474519632414369,
+     "flagged_pct": 12.656641604010025,
+     "burden_index": 22.358485126068576,
+     "mean_lesion_score": 0.35106074810028076,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 86,
+      "Ileocecal valve": 181,
+      "Erythema": 123,
+      "Normal clean mucosa": 1972,
+      "Erosion": 32
+     },
+     "recall_top10pct": 0.4838709677419355,
+     "recall_top20pct": 0.6645161290322581,
+     "recall_top30pct": 0.7806451612903226,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.8242850350819058
+    },
+    {
+     "video_id": "bc84479c66fe4da6",
+     "labelled_frames": 1891,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 10.576414595452142,
+     "burden_index": 22.296986836928884,
+     "mean_lesion_score": 0.36191290616989136,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 151,
+      "Normal clean mucosa": 1699,
+      "Ileocecal valve": 41
+     }
+    },
+    {
+     "video_id": "07c1fa15a20a4398",
+     "labelled_frames": 678,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 8.849557522123893,
+     "burden_index": 22.12306140796552,
+     "mean_lesion_score": 0.33244314789772034,
+     "worst_tier": 2,
+     "top_classes": {
+      "Normal clean mucosa": 668,
+      "Ileocecal valve": 10
+     }
+    },
+    {
+     "video_id": "c7084b3556e34619",
+     "labelled_frames": 976,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 5.635245901639344,
+     "burden_index": 21.11566827633759,
+     "mean_lesion_score": 0.3348591923713684,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 47,
+      "Normal clean mucosa": 758,
+      "Ileocecal valve": 171
+     }
+    },
+    {
+     "video_id": "fb86bc87d3874cd7",
+     "labelled_frames": 2085,
+     "inflammatory_frames": 33,
+     "prevalence": 0.015827338129496403,
+     "flagged_pct": 8.29736211031175,
+     "burden_index": 20.69883234012756,
+     "mean_lesion_score": 0.3515137732028961,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 10,
+      "Normal clean mucosa": 2042,
+      "Erosion": 33
+     },
+     "recall_top10pct": 0.6060606060606061,
+     "recall_top20pct": 0.7575757575757576,
+     "recall_top30pct": 0.8484848484848485,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.8651131194990844
+    }
+   ]
+  },
+  "note": "5-fold EfficientNet-B0 ensemble trained on CrohnIPI only; single view, no TTA (same as the app); lesion score = 1 - P(normal)"
+ },
+ "video_study_v1": {
+  "n_videos": 43,
+  "with_inflammatory": 13,
+  "without": 30,
+  "auroc_all_flagged_pct": 0.5512820512820513,
+  "auroc_all_p99": 0.5487179487179488,
+  "auroc_all_top1pct_mean": 0.5282051282051282,
+  "auroc_all_runs_per_1000": 0.5833333333333334,
+  "auroc_filtered_flagged_pct": 0.5512820512820513,
+  "auroc_filtered_p99": 0.5487179487179488,
+  "auroc_filtered_top1pct_mean": 0.5282051282051282,
+  "auroc_filtered_runs_per_1000": 0.5833333333333334,
+  "auroc_sb_flagged_pct": 0.5461538461538461,
+  "auroc_sb_p99": 0.5256410256410257,
+  "auroc_sb_top1pct_mean": 0.5282051282051282,
+  "auroc_sb_runs_per_1000": 0.5564102564102564,
+  "auroc_sb_filtered_flagged_pct": 0.5461538461538461,
+  "auroc_sb_filtered_p99": 0.5256410256410257,
+  "auroc_sb_filtered_top1pct_mean": 0.5282051282051282,
+  "auroc_sb_filtered_runs_per_1000": 0.5564102564102564,
+  "auroc_ensemble_top150_mean": 0.5384615384615384,
+  "median_lesion_recall_top1pct": 0.15483870967741936,
+  "median_lesion_recall_top1pct_sb_filtered": 0.0,
+  "median_lesion_recall_top5pct": 0.5625,
+  "median_lesion_recall_top5pct_sb_filtered": 0.46859903381642515,
+  "median_lesion_recall_top10pct": 0.7053140096618358,
+  "median_lesion_recall_top10pct_sb_filtered": 0.6181818181818182,
+  "median_inflammatory_inside_sb_window_pct": 100.0
+ },
+ "kvasir_full_v2": {
+  "A": {
+   "frames": 47238,
+   "videos": 43,
+   "normal_frames": 34338,
+   "inflammatory_frames": 1527,
+   "inflammatory_vs_normal": {
+    "auroc": 0.9149876551770882,
+    "sensitivity_at_0_5": 0.8827766863130321,
+    "specificity_at_0_5": 0.7376958471664046,
+    "auroc_ci95_video_bootstrap": [
+     0.8222864529152666,
+     0.9529986750856179
+    ]
+   },
+   "per_class": {
+    "Ampulla of Vater": {
+     "n": 11,
+     "mean_lesion_score": 0.7607755661010742,
+     "flagged_at_0_5": 1.0,
+     "tier_share": [
+      0.18181818181818182,
+      0.45454545454545453,
+      0.36363636363636365,
+      0.0
+     ],
+     "auroc_vs_normal": 0.970464738243875
+    },
+    "Angiectasia": {
+     "n": 866,
+     "mean_lesion_score": 0.6524324417114258,
+     "flagged_at_0_5": 0.8706697459584296,
+     "tier_share": [
+      0.5438799076212472,
+      0.050808314087759814,
+      0.40415704387990764,
+      0.0011547344110854503
+     ],
+     "auroc_vs_normal": 0.8766469375157465
+    },
+    "Blood - fresh": {
+     "n": 446,
+     "mean_lesion_score": 0.627196192741394,
+     "flagged_at_0_5": 0.827354260089686,
+     "tier_share": [
+      0.7107623318385651,
+      0.1031390134529148,
+      0.07399103139013453,
+      0.11210762331838565
+     ],
+     "auroc_vs_normal": 0.8520891757409264
+    },
+    "Blood - hematin": {
+     "n": 12,
+     "mean_lesion_score": 0.8127095699310303,
+     "flagged_at_0_5": 1.0,
+     "tier_share": [
+      0.16666666666666666,
+      0.6666666666666666,
+      0.16666666666666666,
+      0.0
+     ],
+     "auroc_vs_normal": 0.9761707146601433
+    },
+    "Erosion": {
+     "n": 514,
+     "mean_lesion_score": 0.7220543026924133,
+     "flagged_at_0_5": 0.8190661478599222,
+     "tier_share": [
+      0.4027237354085603,
+      0.07782101167315175,
+      0.5077821011673151,
+      0.011673151750972763
+     ],
+     "auroc_vs_normal": 0.8731397167956998
+    },
+    "Erythema": {
+     "n": 159,
+     "mean_lesion_score": 0.6350608468055725,
+     "flagged_at_0_5": 0.6981132075471698,
+     "tier_share": [
+      0.5283018867924528,
+      0.006289308176100629,
+      0.4339622641509434,
+      0.031446540880503145
+     ],
+     "auroc_vs_normal": 0.8030210035565783
+    },
+    "Foreign Body": {
+     "n": 776,
+     "mean_lesion_score": 0.40550240874290466,
+     "flagged_at_0_5": 0.21778350515463918,
+     "tier_share": [
+      0.970360824742268,
+      0.001288659793814433,
+      0.020618556701030927,
+      0.007731958762886598
+     ],
+     "auroc_vs_normal": 0.43018183245636316
+    },
+    "Ileocecal valve": {
+     "n": 4189,
+     "mean_lesion_score": 0.5169148445129395,
+     "flagged_at_0_5": 0.4497493435187396,
+     "tier_share": [
+      0.7386010981141083,
+      0.019097636667462402,
+      0.20744807830031034,
+      0.03485318691811888
+     ],
+     "auroc_vs_normal": 0.5941897019951393
+    },
+    "Lymphangiectasia": {
+     "n": 592,
+     "mean_lesion_score": 0.4900321960449219,
+     "flagged_at_0_5": 0.38344594594594594,
+     "tier_share": [
+      0.8800675675675675,
+      0.006756756756756757,
+      0.10810810810810811,
+      0.005067567567567568
+     ],
+     "auroc_vs_normal": 0.6109786917574572
+    },
+    "Normal clean mucosa": {
+     "n": 34338,
+     "mean_lesion_score": 0.43559470772743225,
+     "flagged_at_0_5": 0.2623041528335954,
+     "tier_share": [
+      0.9323198788514182,
+      0.0053584949618498455,
+      0.051226046945075425,
+      0.011095579241656474
+     ]
+    },
+    "Polyp": {
+     "n": 55,
+     "mean_lesion_score": 0.6570028066635132,
+     "flagged_at_0_5": 0.7818181818181819,
+     "tier_share": [
+      0.45454545454545453,
+      0.0,
+      0.4909090909090909,
+      0.05454545454545454
+     ],
+     "auroc_vs_normal": 0.8251023250149583
+    },
+    "Pylorus": {
+     "n": 1520,
+     "mean_lesion_score": 0.5743602514266968,
+     "flagged_at_0_5": 0.6427631578947368,
+     "tier_share": [
+      0.7210526315789474,
+      0.09868421052631579,
+      0.14736842105263157,
+      0.03289473684210526
+     ],
+     "auroc_vs_normal": 0.756832493002995
+    },
+    "Reduced Mucosal View": {
+     "n": 2906,
+     "mean_lesion_score": 0.402836412191391,
+     "flagged_at_0_5": 0.16758430832759807,
+     "tier_share": [
+      0.9762560220233999,
+      0.0027529249827942187,
+      0.02064693737095664,
+      0.00034411562284927734
+     ],
+     "auroc_vs_normal": 0.42894857194121017
+    },
+    "Ulcer": {
+     "n": 854,
+     "mean_lesion_score": 0.846572756767273,
+     "flagged_at_0_5": 0.955503512880562,
+     "tier_share": [
+      0.1358313817330211,
+      0.01990632318501171,
+      0.702576112412178,
+      0.14168618266978922
+     ],
+     "auroc_vs_normal": 0.9610210719636162
+    }
+   },
+   "pooled_triage": {
+    "top_5pct": 0.5979043876882777,
+    "top_10pct": 0.7138179436804192,
+    "top_20pct": 0.8087753765553373,
+    "top_30pct": 0.8729535036018337
+   },
+   "uncertainty": {
+    "mean_sd_lesion_frames": 0.17804986238479614,
+    "mean_sd_normal_frames": 0.12964653968811035
+   }
+  },
+  "B": {
+   "n_videos": 43,
+   "videos_with_inflammatory_lesions": 13,
+   "video_auroc_burden_index": 0.6666666666666666,
+   "video_auroc_flagged_pct": 0.6846153846153846,
+   "spearman_burden_vs_prevalence": -0.1671700392630625,
+   "median_recall_top10pct": 0.4375,
+   "median_recall_top20pct": 0.6666666666666666,
+   "median_recall_top30pct": 0.832258064516129,
+   "median_rank_first_lesion": 1.0,
+   "videos": [
+    {
+     "video_id": "2fc3db471f9d44c0",
+     "labelled_frames": 127,
+     "inflammatory_frames": 127,
+     "prevalence": 1.0,
+     "flagged_pct": 96.8503937007874,
+     "burden_index": 59.93140575884208,
+     "mean_lesion_score": 0.8325375318527222,
+     "worst_tier": 3,
+     "top_classes": {
+      "Ulcer": 127
+     },
+     "recall_top10pct": 0.09448818897637795,
+     "recall_top20pct": 0.1968503937007874,
+     "recall_top30pct": 0.2992125984251969,
+     "rank_first_lesion": 1,
+     "auroc_within_video": null
+    },
+    {
+     "video_id": "d626f4f4a5ac4785",
+     "labelled_frames": 643,
+     "inflammatory_frames": 621,
+     "prevalence": 0.9657853810264385,
+     "flagged_pct": 95.17884914463453,
+     "burden_index": 55.46562013304669,
+     "mean_lesion_score": 0.8439826369285583,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 22,
+      "Ulcer": 582,
+      "Erosion": 39
+     },
+     "recall_top10pct": 0.10305958132045089,
+     "recall_top20pct": 0.20611916264090177,
+     "recall_top30pct": 0.30917874396135264,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9161176987263944
+    },
+    {
+     "video_id": "131368cc17e44240",
+     "labelled_frames": 2034,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 72.91052114060965,
+     "burden_index": 42.80566567007449,
+     "mean_lesion_score": 0.63735032081604,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 101,
+      "Normal clean mucosa": 617,
+      "Polyp": 55,
+      "Ileocecal valve": 1261
+     }
+    },
+    {
+     "video_id": "d7a271f233ba4a40",
+     "labelled_frames": 945,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 68.04232804232804,
+     "burden_index": 40.27267231512322,
+     "mean_lesion_score": 0.5716503262519836,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 18,
+      "Normal clean mucosa": 886,
+      "Ileocecal valve": 41
+     }
+    },
+    {
+     "video_id": "04a78ef00c5245e0",
+     "labelled_frames": 1292,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 59.210526315789465,
+     "burden_index": 36.72127073642224,
+     "mean_lesion_score": 0.5649421215057373,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 20,
+      "Angiectasia": 108,
+      "Blood - fresh": 22,
+      "Ileocecal valve": 412,
+      "Normal clean mucosa": 656,
+      "Lymphangiectasia": 74
+     }
+    },
+    {
+     "video_id": "7a47e8eacea04e64",
+     "labelled_frames": 436,
+     "inflammatory_frames": 145,
+     "prevalence": 0.33256880733944955,
+     "flagged_pct": 49.54128440366973,
+     "burden_index": 36.54651952713774,
+     "mean_lesion_score": 0.5517634749412537,
+     "worst_tier": 3,
+     "top_classes": {
+      "Foreign Body": 6,
+      "Pylorus": 84,
+      "Ileocecal valve": 201,
+      "Ulcer": 145
+     },
+     "recall_top10pct": 0.296551724137931,
+     "recall_top20pct": 0.6,
+     "recall_top30pct": 0.7793103448275862,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9369119563929376
+    },
+    {
+     "video_id": "64440803f87b4843",
+     "labelled_frames": 2159,
+     "inflammatory_frames": 27,
+     "prevalence": 0.012505789717461788,
+     "flagged_pct": 61.13941639647985,
+     "burden_index": 36.50417895779136,
+     "mean_lesion_score": 0.5501587390899658,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 23,
+      "Angiectasia": 652,
+      "Ileocecal valve": 50,
+      "Normal clean mucosa": 1257,
+      "Lymphangiectasia": 150,
+      "Erythema": 27
+     },
+     "recall_top10pct": 0.2962962962962963,
+     "recall_top20pct": 0.5925925925925926,
+     "recall_top30pct": 0.6296296296296297,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.7538565770273087
+    },
+    {
+     "video_id": "bca26705313a4644",
+     "labelled_frames": 1449,
+     "inflammatory_frames": 72,
+     "prevalence": 0.049689440993788817,
+     "flagged_pct": 48.792270531400966,
+     "burden_index": 35.78162853206907,
+     "mean_lesion_score": 0.5056516528129578,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 11,
+      "Normal clean mucosa": 1345,
+      "Ileocecal valve": 21,
+      "Erosion": 72
+     },
+     "recall_top10pct": 0.125,
+     "recall_top20pct": 0.18055555555555555,
+     "recall_top30pct": 0.2222222222222222,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.46506092148793676
+    },
+    {
+     "video_id": "d369e4f163df4aba",
+     "labelled_frames": 1328,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 54.5933734939759,
+     "burden_index": 35.614005286605604,
+     "mean_lesion_score": 0.5360854268074036,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 10,
+      "Blood - fresh": 424,
+      "Normal clean mucosa": 873,
+      "Angiectasia": 21
+     }
+    },
+    {
+     "video_id": "39960e5e099a45ca",
+     "labelled_frames": 237,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 54.43037974683544,
+     "burden_index": 34.68012796864228,
+     "mean_lesion_score": 0.5341004133224487,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 11,
+      "Normal clean mucosa": 205,
+      "Ileocecal valve": 21
+     }
+    },
+    {
+     "video_id": "ad91cf7ca91440aa",
+     "labelled_frames": 74,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 29.72972972972973,
+     "burden_index": 34.499273452538624,
+     "mean_lesion_score": 0.48351430892944336,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 11,
+      "Angiectasia": 11,
+      "Ileocecal valve": 52
+     }
+    },
+    {
+     "video_id": "8ebf0e483cac48d6",
+     "labelled_frames": 1077,
+     "inflammatory_frames": 144,
+     "prevalence": 0.13370473537604458,
+     "flagged_pct": 44.01114206128134,
+     "burden_index": 33.57032439376005,
+     "mean_lesion_score": 0.5289387702941895,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 61,
+      "Blood - hematin": 12,
+      "Reduced Mucosal View": 187,
+      "Erosion": 144,
+      "Ileocecal valve": 41,
+      "Normal clean mucosa": 632
+     },
+     "recall_top10pct": 0.6388888888888888,
+     "recall_top20pct": 0.8958333333333334,
+     "recall_top30pct": 0.9444444444444444,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9565916398713826
+    },
+    {
+     "video_id": "7ad22d50ebaf4596",
+     "labelled_frames": 740,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 44.5945945945946,
+     "burden_index": 32.974977432540406,
+     "mean_lesion_score": 0.4819076955318451,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 17,
+      "Normal clean mucosa": 347,
+      "Lymphangiectasia": 368,
+      "Ileocecal valve": 8
+     }
+    },
+    {
+     "video_id": "eb0203196e284797",
+     "labelled_frames": 872,
+     "inflammatory_frames": 61,
+     "prevalence": 0.06995412844036697,
+     "flagged_pct": 47.591743119266056,
+     "burden_index": 32.355917525400805,
+     "mean_lesion_score": 0.5188078284263611,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 44,
+      "Angiectasia": 35,
+      "Erosion": 61,
+      "Ampulla of Vater": 11,
+      "Normal clean mucosa": 721
+     },
+     "recall_top10pct": 0.7213114754098361,
+     "recall_top20pct": 0.8852459016393442,
+     "recall_top30pct": 0.9180327868852459,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9239352347840148
+    },
+    {
+     "video_id": "48579eec79784294",
+     "labelled_frames": 1379,
+     "inflammatory_frames": 9,
+     "prevalence": 0.006526468455402465,
+     "flagged_pct": 40.02900652646846,
+     "burden_index": 31.48208864056635,
+     "mean_lesion_score": 0.4875340759754181,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 22,
+      "Reduced Mucosal View": 471,
+      "Foreign Body": 17,
+      "Ileocecal valve": 91,
+      "Normal clean mucosa": 769,
+      "Erythema": 9
+     },
+     "recall_top10pct": 0.6666666666666666,
+     "recall_top20pct": 0.6666666666666666,
+     "recall_top30pct": 0.7777777777777778,
+     "rank_first_lesion": 2,
+     "auroc_within_video": 0.8501216545012166
+    },
+    {
+     "video_id": "5e9beaf4e66142c8",
+     "labelled_frames": 464,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 31.25,
+     "burden_index": 31.353411437601025,
+     "mean_lesion_score": 0.48110249638557434,
+     "worst_tier": 3,
+     "top_classes": {
+      "Normal clean mucosa": 370,
+      "Ileocecal valve": 94
+     }
+    },
+    {
+     "video_id": "dac1e27f7e4d4ef5",
+     "labelled_frames": 2152,
+     "inflammatory_frames": 36,
+     "prevalence": 0.016728624535315983,
+     "flagged_pct": 31.59851301115242,
+     "burden_index": 30.382040189983048,
+     "mean_lesion_score": 0.4575800597667694,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 12,
+      "Normal clean mucosa": 2083,
+      "Ileocecal valve": 21,
+      "Erosion": 36
+     },
+     "recall_top10pct": 0.4166666666666667,
+     "recall_top20pct": 0.6944444444444444,
+     "recall_top30pct": 0.9444444444444444,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.8651937618147448
+    },
+    {
+     "video_id": "3ada4222967f421d",
+     "labelled_frames": 1002,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 35.528942115768466,
+     "burden_index": 29.466395376402577,
+     "mean_lesion_score": 0.4499577283859253,
+     "worst_tier": 3,
+     "top_classes": {
+      "Foreign Body": 573,
+      "Pylorus": 6,
+      "Normal clean mucosa": 417,
+      "Ileocecal valve": 6
+     }
+    },
+    {
+     "video_id": "b2134f4a6f864613",
+     "labelled_frames": 1297,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 27.44795682343871,
+     "burden_index": 29.279546653916494,
+     "mean_lesion_score": 0.44962412118911743,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 10,
+      "Normal clean mucosa": 1248,
+      "Angiectasia": 39
+     }
+    },
+    {
+     "video_id": "c11b28a8b2344716",
+     "labelled_frames": 1000,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 31.8,
+     "burden_index": 29.236033471301198,
+     "mean_lesion_score": 0.45883819460868835,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 97,
+      "Normal clean mucosa": 449,
+      "Reduced Mucosal View": 454
+     }
+    },
+    {
+     "video_id": "6cb700585c4f4070",
+     "labelled_frames": 884,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 23.64253393665158,
+     "burden_index": 28.771685712955342,
+     "mean_lesion_score": 0.43961358070373535,
+     "worst_tier": 2,
+     "top_classes": {
+      "Normal clean mucosa": 696,
+      "Ileocecal valve": 188
+     }
+    },
+    {
+     "video_id": "4aebc5cb2d4847aa",
+     "labelled_frames": 90,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 22.22222222222222,
+     "burden_index": 28.636726168570693,
+     "mean_lesion_score": 0.43448707461357117,
+     "worst_tier": 1,
+     "top_classes": {
+      "Ileocecal valve": 90
+     }
+    },
+    {
+     "video_id": "5bb1d3cc7dc64cec",
+     "labelled_frames": 788,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 19.289340101522843,
+     "burden_index": 28.416352567472533,
+     "mean_lesion_score": 0.4082084596157074,
+     "worst_tier": 3,
+     "top_classes": {
+      "Reduced Mucosal View": 170,
+      "Normal clean mucosa": 499,
+      "Ileocecal valve": 119
+     }
+    },
+    {
+     "video_id": "0531325b64674948",
+     "labelled_frames": 1191,
+     "inflammatory_frames": 16,
+     "prevalence": 0.01343408900083963,
+     "flagged_pct": 31.905961376994124,
+     "burden_index": 28.219324264236434,
+     "mean_lesion_score": 0.44899168610572815,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 179,
+      "Normal clean mucosa": 996,
+      "Erosion": 16
+     },
+     "recall_top10pct": 0.4375,
+     "recall_top20pct": 0.5625,
+     "recall_top30pct": 0.875,
+     "rank_first_lesion": 32,
+     "auroc_within_video": 0.821968085106383
+    },
+    {
+     "video_id": "8885668afb844852",
+     "labelled_frames": 2021,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 28.005937654626422,
+     "burden_index": 28.16987911077364,
+     "mean_lesion_score": 0.4343435764312744,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 221,
+      "Reduced Mucosal View": 291,
+      "Foreign Body": 180,
+      "Ileocecal valve": 201,
+      "Normal clean mucosa": 1128
+     }
+    },
+    {
+     "video_id": "df6b47bafe5143f5",
+     "labelled_frames": 1530,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 25.555555555555554,
+     "burden_index": 28.15296987643818,
+     "mean_lesion_score": 0.4277796149253845,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 19,
+      "Normal clean mucosa": 1499,
+      "Ileocecal valve": 12
+     }
+    },
+    {
+     "video_id": "dc221ccc65d34010",
+     "labelled_frames": 1789,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 23.309111235327,
+     "burden_index": 28.011188072761342,
+     "mean_lesion_score": 0.43009382486343384,
+     "worst_tier": 3,
+     "top_classes": {
+      "Reduced Mucosal View": 1094,
+      "Normal clean mucosa": 430,
+      "Ileocecal valve": 265
+     }
+    },
+    {
+     "video_id": "ed02f27ef36f483e",
+     "labelled_frames": 587,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 18.909710391822827,
+     "burden_index": 28.006573660697942,
+     "mean_lesion_score": 0.4169842600822449,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 51,
+      "Normal clean mucosa": 495,
+      "Ileocecal valve": 41
+     }
+    },
+    {
+     "video_id": "bc84479c66fe4da6",
+     "labelled_frames": 1891,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 21.628767847699628,
+     "burden_index": 27.944218692061614,
+     "mean_lesion_score": 0.4480578303337097,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 151,
+      "Normal clean mucosa": 1699,
+      "Ileocecal valve": 41
+     }
+    },
+    {
+     "video_id": "4560e83f9afc4685",
+     "labelled_frames": 780,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 18.71794871794872,
+     "burden_index": 27.64383553105414,
+     "mean_lesion_score": 0.41929885745048523,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 41,
+      "Normal clean mucosa": 708,
+      "Ileocecal valve": 31
+     }
+    },
+    {
+     "video_id": "8a00709108cd4e2b",
+     "labelled_frames": 542,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 18.81918819188192,
+     "burden_index": 27.499730890985635,
+     "mean_lesion_score": 0.4199569821357727,
+     "worst_tier": 3,
+     "top_classes": {
+      "Normal clean mucosa": 486,
+      "Ileocecal valve": 56
+     }
+    },
+    {
+     "video_id": "3c8d5f0b90d7475d",
+     "labelled_frames": 1704,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 18.779342723004692,
+     "burden_index": 27.051923139726217,
+     "mean_lesion_score": 0.4050263464450836,
+     "worst_tier": 3,
+     "top_classes": {
+      "Normal clean mucosa": 1696,
+      "Ileocecal valve": 8
+     }
+    },
+    {
+     "video_id": "dca1377dec974312",
+     "labelled_frames": 1216,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 18.338815789473685,
+     "burden_index": 26.96059782930094,
+     "mean_lesion_score": 0.4168020784854889,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 18,
+      "Normal clean mucosa": 1177,
+      "Ileocecal valve": 21
+     }
+    },
+    {
+     "video_id": "0728084c8da942d9",
+     "labelled_frames": 1499,
+     "inflammatory_frames": 81,
+     "prevalence": 0.054036024016010674,
+     "flagged_pct": 14.543028685790526,
+     "burden_index": 26.177073700847643,
+     "mean_lesion_score": 0.40002572536468506,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 4,
+      "Normal clean mucosa": 1399,
+      "Ileocecal valve": 15,
+      "Erosion": 81
+     },
+     "recall_top10pct": 0.7283950617283951,
+     "recall_top20pct": 0.8271604938271605,
+     "recall_top30pct": 0.8888888888888888,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.9147120792630901
+    },
+    {
+     "video_id": "fc32def0e7194981",
+     "labelled_frames": 1380,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 20.797101449275363,
+     "burden_index": 26.090850740275233,
+     "mean_lesion_score": 0.4105846881866455,
+     "worst_tier": 3,
+     "top_classes": {
+      "Normal clean mucosa": 1130,
+      "Ileocecal valve": 250
+     }
+    },
+    {
+     "video_id": "89cdd41258c542c5",
+     "labelled_frames": 1198,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 14.023372287145241,
+     "burden_index": 26.077896918382127,
+     "mean_lesion_score": 0.40388962626457214,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 51,
+      "Normal clean mucosa": 1147
+     }
+    },
+    {
+     "video_id": "495f16498db34d3c",
+     "labelled_frames": 323,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 12.38390092879257,
+     "burden_index": 25.785492775794523,
+     "mean_lesion_score": 0.3963640034198761,
+     "worst_tier": 2,
+     "top_classes": {
+      "Normal clean mucosa": 306,
+      "Ileocecal valve": 17
+     }
+    },
+    {
+     "video_id": "5e59c7fdb16c4228",
+     "labelled_frames": 2394,
+     "inflammatory_frames": 155,
+     "prevalence": 0.06474519632414369,
+     "flagged_pct": 15.121136173767752,
+     "burden_index": 25.200409008243465,
+     "mean_lesion_score": 0.38425958156585693,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 86,
+      "Erosion": 32,
+      "Ileocecal valve": 181,
+      "Normal clean mucosa": 1972,
+      "Erythema": 123
+     },
+     "recall_top10pct": 0.5548387096774193,
+     "recall_top20pct": 0.7161290322580646,
+     "recall_top30pct": 0.832258064516129,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.8700773674883661
+    },
+    {
+     "video_id": "af9bd7d0e43741e3",
+     "labelled_frames": 431,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 17.633410672853827,
+     "burden_index": 24.658006322206404,
+     "mean_lesion_score": 0.3804008364677429,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 51,
+      "Reduced Mucosal View": 239,
+      "Ileocecal valve": 141
+     }
+    },
+    {
+     "video_id": "07c1fa15a20a4398",
+     "labelled_frames": 678,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 9.882005899705016,
+     "burden_index": 24.465959447719,
+     "mean_lesion_score": 0.37432581186294556,
+     "worst_tier": 2,
+     "top_classes": {
+      "Normal clean mucosa": 668,
+      "Ileocecal valve": 10
+     }
+    },
+    {
+     "video_id": "fe5d372e43f94f68",
+     "labelled_frames": 554,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 13.898916967509026,
+     "burden_index": 24.37638623503213,
+     "mean_lesion_score": 0.39236825704574585,
+     "worst_tier": 3,
+     "top_classes": {
+      "Pylorus": 11,
+      "Normal clean mucosa": 532,
+      "Ileocecal valve": 11
+     }
+    },
+    {
+     "video_id": "c7084b3556e34619",
+     "labelled_frames": 976,
+     "inflammatory_frames": 0,
+     "prevalence": 0.0,
+     "flagged_pct": 4.815573770491803,
+     "burden_index": 23.443058507435556,
+     "mean_lesion_score": 0.36186861991882324,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 47,
+      "Normal clean mucosa": 758,
+      "Ileocecal valve": 171
+     }
+    },
+    {
+     "video_id": "fb86bc87d3874cd7",
+     "labelled_frames": 2085,
+     "inflammatory_frames": 33,
+     "prevalence": 0.015827338129496403,
+     "flagged_pct": 6.18705035971223,
+     "burden_index": 22.508751291820374,
+     "mean_lesion_score": 0.358440101146698,
+     "worst_tier": 2,
+     "top_classes": {
+      "Pylorus": 10,
+      "Normal clean mucosa": 2042,
+      "Erosion": 33
+     },
+     "recall_top10pct": 0.8484848484848485,
+     "recall_top20pct": 0.9696969696969697,
+     "recall_top30pct": 1.0,
+     "rank_first_lesion": 1,
+     "auroc_within_video": 0.970139996455786
+    }
+   ]
+  },
+  "note": "5-fold EfficientNet-B0 ensemble trained on CrohnIPI only; single view, no TTA (same as the app); lesion score = 1 - P(normal)"
+ },
+ "hard_negative_head": {
+  "summary": {
+   "base": {
+    "study_auroc_p99": 0.5692307692307692,
+    "study_auroc_top1pct": 0.5615384615384615,
+    "study_auroc_flagged": 0.5641025641025641,
+    "median_flagged_pct_lesion_free": 24.58967663878711,
+    "median_flagged_pct_lesion": 22.474410324877613,
+    "median_recall_top1": 0.21875,
+    "median_recall_top5": 0.6666666666666666,
+    "median_recall_top10": 0.6666666666666666
+   },
+   "head_ipi": {
+    "study_auroc_p99": 0.5794871794871795,
+    "study_auroc_top1pct": 0.5692307692307692,
+    "study_auroc_flagged": 0.5974358974358974,
+    "median_flagged_pct_lesion_free": 3.129892120491028,
+    "median_flagged_pct_lesion": 4.641068447412354,
+    "median_recall_top1": 0.21875,
+    "median_recall_top5": 0.6666666666666666,
+    "median_recall_top10": 0.7777777777777778
+   },
+   "head_hn": {
+    "study_auroc_p99": 0.7384615384615385,
+    "study_auroc_top1pct": 0.7512820512820513,
+    "study_auroc_flagged": 0.6435897435897436,
+    "median_flagged_pct_lesion_free": 0.0,
+    "median_flagged_pct_lesion": 0.0,
+    "median_recall_top1": 0.16535433070866143,
+    "median_recall_top5": 0.5905511811023622,
+    "median_recall_top10": 0.654320987654321
+   },
+   "auroc_p99_gain_ci95": [
+    0.029544930875576123,
+    0.3410349462365591
+   ]
+  },
+  "crohnipi_fold1": {
+   "base": {
+    "auroc": 0.9824164253750987,
+    "acc_at_0_5": 0.921090387374462,
+    "acc7": 0.8637015781922525,
+    "sensitivity": 0.9656488549618321,
+    "specificity": 0.8942528735632184
+   },
+   "head_ipi": {
+    "auroc": 0.9838729490216723,
+    "acc_at_0_5": 0.9512195121951219,
+    "acc7": 0.8708751793400287,
+    "sensitivity": 0.9045801526717557,
+    "specificity": 0.9793103448275862
+   },
+   "head_hn_A": {
+    "auroc": 0.9831622356760551,
+    "acc_at_0_5": 0.9469153515064562,
+    "acc7": 0.8651362984218077,
+    "sensitivity": 0.9083969465648855,
+    "specificity": 0.9701149425287356
+   },
+   "head_hn_B": {
+    "auroc": 0.9835219794682811,
+    "acc_at_0_5": 0.9483500717360115,
+    "acc7": 0.8680057388809183,
+    "sensitivity": 0.9122137404580153,
+    "specificity": 0.9701149425287356
+   }
+  },
+  "settings": {
+   "neg_per_video": 400,
+   "C": 0.1,
+   "seed": 0,
+   "negatives_A": 6000,
+   "negatives_B": 6000
+  },
+  "note": "Frozen v2 fold-1 backbone; only the final layer retrained. Every 10th frame of the 43 labelled Kvasir-Capsule videos; each video scored by the head trained with the OTHER half's negatives. Settings fixed before the first run."
+ },
+ "hard_negative_gpu": {
+  "note": "Every 50th frame of the 43 labelled Kvasir-Capsule videos; each video scored by the model trained WITHOUT its half; baseline = original CrohnIPI fold-1 model on the same frames",
+  "baseline": {
+   "n_videos": 43,
+   "auroc_p99": 0.5102564102564102,
+   "auroc_top1pct": 0.5,
+   "auroc_flagged": 0.5564102564102564,
+   "median_flagged_lesion_free": 0.2869975853209979,
+   "median_lesion_recall_top5pct": 0.1,
+   "median_lesion_recall_top10pct": 0.1
+  },
+  "hard_negative": {
+   "n_videos": 43,
+   "auroc_p99": 0.6128205128205129,
+   "auroc_top1pct": 0.7205128205128205,
+   "auroc_flagged": 0.6743589743589744,
+   "median_flagged_lesion_free": 0.0,
+   "median_lesion_recall_top5pct": 0.0,
+   "median_lesion_recall_top10pct": 0.2
+  },
+  "labelled_frames": {
+   "n": 35857,
+   "inflammatory": 1519,
+   "auroc_hard_negative": 0.772198386324143,
+   "auroc_original_ensemble": 0.9074151646082275,
+   "specificity_at_0_5_hard_negative": 0.9991263323431766,
+   "specificity_at_0_5_original": 0.7552565670685538,
+   "sensitivity_at_0_5_hard_negative": 0.28110599078341014,
+   "sensitivity_at_0_5_original": 0.8722843976300197
+  }
+ },
+ "hard_negative_head_v2": {
+  "base": {
+   "study_auroc_p99": 0.5692307692307692,
+   "study_auroc_p99_ci95": [
+    0.3522167487684729,
+    0.7606060606060606
+   ],
+   "study_auroc_top1pct": 0.5615384615384615,
+   "median_recall_top5": 0.6666666666666666,
+   "median_recall_top10": 0.6666666666666666,
+   "heldout_frames_auroc": 0.7451826720698647,
+   "heldout_frames_sensitivity_0_5": 0.6518518518518519,
+   "heldout_frames_specificity_0_5": 0.757986994628216
+  },
+  "head_ipi": {
+   "study_auroc_p99": 0.5794871794871795,
+   "study_auroc_p99_ci95": [
+    0.37498460591133004,
+    0.7692307692307693
+   ],
+   "study_auroc_top1pct": 0.5692307692307692,
+   "median_recall_top5": 0.6666666666666666,
+   "median_recall_top10": 0.7777777777777778,
+   "heldout_frames_auroc": 0.7485083613440978,
+   "heldout_frames_sensitivity_0_5": 0.4,
+   "heldout_frames_specificity_0_5": 0.9722929035906135
+  },
+  "head_hn": {
+   "study_auroc_p99": 0.7435897435897436,
+   "study_auroc_p99_ci95": [
+    0.5624897875816993,
+    0.904770171957672
+   ],
+   "study_auroc_top1pct": 0.7538461538461538,
+   "median_recall_top5": 0.5793103448275863,
+   "median_recall_top10": 0.654320987654321,
+   "heldout_frames_auroc": 0.6803128828574121,
+   "heldout_frames_sensitivity_0_5": 0.018518518518518517,
+   "heldout_frames_specificity_0_5": 1.0
+  },
+  "head_bal": {
+   "study_auroc_p99": 0.48717948717948717,
+   "study_auroc_p99_ci95": [
+    0.27494318181818184,
+    0.6951966208133971
+   ],
+   "study_auroc_top1pct": 0.5102564102564102,
+   "median_recall_top5": 0.21900161030595813,
+   "median_recall_top10": 0.4691358024691358,
+   "heldout_frames_auroc": 0.6536403522549974,
+   "heldout_frames_sensitivity_0_5": 0.05185185185185185,
+   "heldout_frames_specificity_0_5": 0.9963245688436528
+  }
+ }
+}

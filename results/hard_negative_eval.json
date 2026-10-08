@@ -1,0 +1,31 @@
+{
+ "note": "Every 50th frame of the 43 labelled Kvasir-Capsule videos; each video scored by the model trained WITHOUT its half; baseline = original CrohnIPI fold-1 model on the same frames",
+ "baseline": {
+  "n_videos": 43,
+  "auroc_p99": 0.5102564102564102,
+  "auroc_top1pct": 0.5,
+  "auroc_flagged": 0.5564102564102564,
+  "median_flagged_lesion_free": 0.2869975853209979,
+  "median_lesion_recall_top5pct": 0.1,
+  "median_lesion_recall_top10pct": 0.1
+ },
+ "hard_negative": {
+  "n_videos": 43,
+  "auroc_p99": 0.6128205128205129,
+  "auroc_top1pct": 0.7205128205128205,
+  "auroc_flagged": 0.6743589743589744,
+  "median_flagged_lesion_free": 0.0,
+  "median_lesion_recall_top5pct": 0.0,
+  "median_lesion_recall_top10pct": 0.2
+ },
+ "labelled_frames": {
+  "n": 35857,
+  "inflammatory": 1519,
+  "auroc_hard_negative": 0.772198386324143,
+  "auroc_original_ensemble": 0.9074151646082275,
+  "specificity_at_0_5_hard_negative": 0.9991263323431766,
+  "specificity_at_0_5_original": 0.7552565670685538,
+  "sensitivity_at_0_5_hard_negative": 0.28110599078341014,
+  "sensitivity_at_0_5_original": 0.8722843976300197
+ }
+}

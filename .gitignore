@@ -1,0 +1,52 @@
+# ---------------------------------------------------------------------------
+# CrohnSight - what is NOT pushed to GitHub
+# Datasets are never pushed (licences + size): download them yourself (README, "Data").
+# ---------------------------------------------------------------------------
+
+# Data copies, transfer archives and intermediates (laptop only)
+/_*/
+/data_kvasir_video_frames/
+/artifacts/
+/models/
+/results/bulk/
+
+# GPU training runs: checkpoints (*.pt, 31 MB each) and cached 1 GB image arrays.
+# The out-of-fold predictions of the final model are kept in results/b2_oof/.
+/gpu/runs_gpu/
+*.pt
+
+# Older Crohn's model versions (v1, v2) stay on the laptop; the app uses the B2 models
+/app/models/crohnipi_effb0_fold*
+/app/models/crohnipi_effb0v2_fold*
+/app/models/results_summary.before_full_data.json
+/app/models/video_timelines_crohnipi_effb0v2.json
+
+# Research-use-only sample images are not redistributed (CrohnIPI: CC BY-NC-ND, research use only;
+# SEE-AI: Kaggle licence). The app skips gallery entries whose file is missing.
+/app/samples/capsule/crohnipi_*
+/app/samples/capsule/seeai_*
+
+# Videos users put in the app's scan folder
+/app/user_videos/*
+!/app/user_videos/.gitkeep
+
+# Python / Node build output
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+/app/frontend/.next/
+/app/frontend/out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local backup of the old README (not part of the repository)
+/docs/README_interim_build_old.md

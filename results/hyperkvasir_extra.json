@@ -1,0 +1,391 @@
+{
+ "polyp_localisation": {
+  "n": 1000,
+  "pointing_hit_rate": 0.33,
+  "chance": 0.1560204081632653,
+  "mean_mask_area": 0.15390989411452588,
+  "mean_p_polyp": 0.15032402461431296,
+  "detected_at_0_5": 0.131,
+  "note": "findings screen trained on SEE-AI capsule frames; HyperKvasir = colonoscopy (other camera and organ)"
+ },
+ "uc_video_test": {
+  "n_colitis": 15,
+  "n_clean": 31,
+  "auroc_mean_active": 0.9806451612903225,
+  "auroc_p90_expected_mayo": 0.9612903225806452,
+  "auroc_frac_active_frames": 0.9612903225806452,
+  "mean_active_colitis": 0.7301318208376567,
+  "mean_active_clean": 0.32983564273003607,
+  "videos": [
+   {
+    "video": "07bbedb7-1d45-4655-9ccd-aeb28a2c4bab",
+    "group": "clean",
+    "frames": 16,
+    "mean_active": 0.22005367279052734,
+    "p90_expected_mayo": 1.2559336010599509,
+    "frac_active_frames": 0.125
+   },
+   {
+    "video": "11e01bb3-b9b7-466d-9187-13a60daef108",
+    "group": "clean",
+    "frames": 12,
+    "mean_active": 0.45254793763160706,
+    "p90_expected_mayo": 1.9061275907384698,
+    "frac_active_frames": 0.4166666666666667
+   },
+   {
+    "video": "17241dcf-de85-461d-9435-f5134035aacb",
+    "group": "clean",
+    "frames": 13,
+    "mean_active": 0.11308802664279938,
+    "p90_expected_mayo": 0.6099605221432286,
+    "frac_active_frames": 0.0
+   },
+   {
+    "video": "18618452-9b66-4df3-b9ac-f72f8e10f2a2",
+    "group": "clean",
+    "frames": 23,
+    "mean_active": 0.3987005352973938,
+    "p90_expected_mayo": 1.7512694998644291,
+    "frac_active_frames": 0.391304347826087
+   },
+   {
+    "video": "1c1ca45a-315e-4ad0-9343-2425d2faf648",
+    "group": "clean",
+    "frames": 17,
+    "mean_active": 0.3220350742340088,
+    "p90_expected_mayo": 1.3386076148599386,
+    "frac_active_frames": 0.11764705882352941
+   },
+   {
+    "video": "1c25af4a-8c13-474d-a34a-c6f470d4c934",
+    "group": "clean",
+    "frames": 28,
+    "mean_active": 0.5509620904922485,
+    "p90_expected_mayo": 2.0315321166068316,
+    "frac_active_frames": 0.5357142857142857
+   },
+   {
+    "video": "26d1b304-9aaa-4eb2-9eb5-2000cf259577",
+    "group": "clean",
+    "frames": 39,
+    "mean_active": 0.40477514266967773,
+    "p90_expected_mayo": 2.0325716942548757,
+    "frac_active_frames": 0.3076923076923077
+   },
+   {
+    "video": "29c2db01-5525-4fff-8768-40a8b6fa5f4d",
+    "group": "colitis",
+    "frames": 46,
+    "mean_active": 0.6895297765731812,
+    "p90_expected_mayo": 2.984116007199191,
+    "frac_active_frames": 0.6739130434782609
+   },
+   {
+    "video": "2f27d098-5f58-41b1-90ec-7ac7d34699a7",
+    "group": "colitis",
+    "frames": 36,
+    "mean_active": 0.5436304211616516,
+    "p90_expected_mayo": 2.2916408942546695,
+    "frac_active_frames": 0.5
+   },
+   {
+    "video": "30bc2ab9-f04a-47ca-ad4c-4672dcca32f1",
+    "group": "clean",
+    "frames": 8,
+    "mean_active": 0.08825314790010452,
+    "p90_expected_mayo": 0.9852518301966484,
+    "frac_active_frames": 0.0
+   },
+   {
+    "video": "31573497-b434-4c27-86ba-a53a65d5f9ce",
+    "group": "clean",
+    "frames": 600,
+    "mean_active": 0.5304439067840576,
+    "p90_expected_mayo": 1.8763810435742925,
+    "frac_active_frames": 0.5633333333333334
+   },
+   {
+    "video": "33143cb2-a5ef-4bab-b25e-148a8076e5dd",
+    "group": "clean",
+    "frames": 600,
+    "mean_active": 0.5732967257499695,
+    "p90_expected_mayo": 1.8840991524513813,
+    "frac_active_frames": 0.6533333333333333
+   },
+   {
+    "video": "3624191f-8fb3-40ba-b421-fb5d0b2e10fb",
+    "group": "clean",
+    "frames": 22,
+    "mean_active": 0.16301235556602478,
+    "p90_expected_mayo": 1.156950629549101,
+    "frac_active_frames": 0.045454545454545456
+   },
+   {
+    "video": "46e2df1d-9fb9-4fc0-b09e-0b90899350d7",
+    "group": "clean",
+    "frames": 25,
+    "mean_active": 0.19969047605991364,
+    "p90_expected_mayo": 1.4475033432245255,
+    "frac_active_frames": 0.12
+   },
+   {
+    "video": "4dd27426-9dce-4d8f-8d98-5baf4f5d0b68",
+    "group": "clean",
+    "frames": 105,
+    "mean_active": 0.2735285460948944,
+    "p90_expected_mayo": 1.6241867721080787,
+    "frac_active_frames": 0.18095238095238095
+   },
+   {
+    "video": "4fc1a16d-ccab-4b82-9c2c-df113a22cfa1",
+    "group": "clean",
+    "frames": 17,
+    "mean_active": 0.3430887758731842,
+    "p90_expected_mayo": 1.7468594279373066,
+    "frac_active_frames": 0.29411764705882354
+   },
+   {
+    "video": "584f1fa0-9bb9-49d3-b412-c42819d0a200",
+    "group": "colitis",
+    "frames": 120,
+    "mean_active": 0.6895542144775391,
+    "p90_expected_mayo": 2.883036587550305,
+    "frac_active_frames": 0.7083333333333334
+   },
+   {
+    "video": "661d59a9-9873-445f-a3d9-d2789d279f82",
+    "group": "clean",
+    "frames": 41,
+    "mean_active": 0.24839314818382263,
+    "p90_expected_mayo": 1.594829760491848,
+    "frac_active_frames": 0.14634146341463414
+   },
+   {
+    "video": "698f130b-41ff-414d-908c-8d8c0f82d4a8",
+    "group": "colitis",
+    "frames": 127,
+    "mean_active": 0.7276692986488342,
+    "p90_expected_mayo": 2.902699106838554,
+    "frac_active_frames": 0.7401574803149606
+   },
+   {
+    "video": "6ea4d1d9-ad4f-44a8-a79b-8cc692f043f1",
+    "group": "colitis",
+    "frames": 61,
+    "mean_active": 0.7615768909454346,
+    "p90_expected_mayo": 2.768934051739052,
+    "frac_active_frames": 0.8032786885245902
+   },
+   {
+    "video": "6eb1b0c6-2b6f-408f-b1f2-577012da57c7",
+    "group": "clean",
+    "frames": 49,
+    "mean_active": 0.3423732817173004,
+    "p90_expected_mayo": 1.7195915108546616,
+    "frac_active_frames": 0.22448979591836735
+   },
+   {
+    "video": "742d790e-0fec-4461-97e6-50be81625380",
+    "group": "colitis",
+    "frames": 63,
+    "mean_active": 0.851830780506134,
+    "p90_expected_mayo": 2.9804001393669752,
+    "frac_active_frames": 0.9206349206349206
+   },
+   {
+    "video": "7fe9e5ab-4e01-44f0-9139-604649b237e9",
+    "group": "clean",
+    "frames": 16,
+    "mean_active": 0.1516890525817871,
+    "p90_expected_mayo": 1.2484401063848054,
+    "frac_active_frames": 0.0
+   },
+   {
+    "video": "8ca9db2d-4ccc-4b15-bf80-60198b86b047",
+    "group": "clean",
+    "frames": 66,
+    "mean_active": 0.3773852288722992,
+    "p90_expected_mayo": 1.7238982919807313,
+    "frac_active_frames": 0.3333333333333333
+   },
+   {
+    "video": "9bdfbfa0-7497-40cb-8a71-d4ed5279ad49",
+    "group": "colitis",
+    "frames": 24,
+    "mean_active": 0.8817575573921204,
+    "p90_expected_mayo": 2.7841906554531306,
+    "frac_active_frames": 0.9166666666666666
+   },
+   {
+    "video": "a30ca29e-02e0-4662-9272-f68ceb10bfec",
+    "group": "clean",
+    "frames": 16,
+    "mean_active": 0.4507145285606384,
+    "p90_expected_mayo": 1.843568958484866,
+    "frac_active_frames": 0.375
+   },
+   {
+    "video": "a75bc3f1-949c-4629-bc66-c31c139be6df",
+    "group": "clean",
+    "frames": 13,
+    "mean_active": 0.06836170703172684,
+    "p90_expected_mayo": 0.8241133095696569,
+    "frac_active_frames": 0.0
+   },
+   {
+    "video": "a9abfe79-568e-4192-9d1c-79709ef23b8a",
+    "group": "clean",
+    "frames": 32,
+    "mean_active": 0.39026564359664917,
+    "p90_expected_mayo": 1.6912653094022971,
+    "frac_active_frames": 0.3125
+   },
+   {
+    "video": "ae68bef5-8ca4-42fd-a275-d34ee4ea8c14",
+    "group": "colitis",
+    "frames": 120,
+    "mean_active": 0.5675460696220398,
+    "p90_expected_mayo": 2.0844211340416225,
+    "frac_active_frames": 0.5916666666666667
+   },
+   {
+    "video": "b2bf57d2-e9c9-45a7-856b-fd45574b0f94",
+    "group": "colitis",
+    "frames": 84,
+    "mean_active": 0.8826219439506531,
+    "p90_expected_mayo": 2.992059263655392,
+    "frac_active_frames": 0.9047619047619048
+   },
+   {
+    "video": "b2ce7754-73b2-472e-99be-201c6105bbd1",
+    "group": "colitis",
+    "frames": 42,
+    "mean_active": 0.7114467024803162,
+    "p90_expected_mayo": 2.5189589019864798,
+    "frac_active_frames": 0.8095238095238095
+   },
+   {
+    "video": "baa6b87a-ff86-4306-9be2-c518956ae4ee",
+    "group": "clean",
+    "frames": 10,
+    "mean_active": 0.23335865139961243,
+    "p90_expected_mayo": 1.5060191355645653,
+    "frac_active_frames": 0.1
+   },
+   {
+    "video": "c205ec73-4652-4f91-8711-ddb6a50e1d16",
+    "group": "clean",
+    "frames": 58,
+    "mean_active": 0.6580482721328735,
+    "p90_expected_mayo": 1.9685270431444224,
+    "frac_active_frames": 0.7241379310344828
+   },
+   {
+    "video": "c8eba477-8f93-4adb-b3d4-351a866d37ce",
+    "group": "colitis",
+    "frames": 120,
+    "mean_active": 0.6382765173912048,
+    "p90_expected_mayo": 2.7658026054501534,
+    "frac_active_frames": 0.65
+   },
+   {
+    "video": "cba869d8-497e-474c-9f17-7c50ae8b738d",
+    "group": "clean",
+    "frames": 18,
+    "mean_active": 0.15921081602573395,
+    "p90_expected_mayo": 1.0951008032076062,
+    "frac_active_frames": 0.05555555555555555
+   },
+   {
+    "video": "da5d2629-3a74-4ec0-9ace-57dbc6ebddad",
+    "group": "clean",
+    "frames": 22,
+    "mean_active": 0.6003353595733643,
+    "p90_expected_mayo": 2.3627670701593164,
+    "frac_active_frames": 0.6818181818181818
+   },
+   {
+    "video": "dc7d389f-4c20-47d2-bf1b-1da475ef4a14",
+    "group": "clean",
+    "frames": 56,
+    "mean_active": 0.3227992057800293,
+    "p90_expected_mayo": 1.8395691900514066,
+    "frac_active_frames": 0.2857142857142857
+   },
+   {
+    "video": "df584e0e-f487-4de1-b658-e849320337e3",
+    "group": "clean",
+    "frames": 26,
+    "mean_active": 0.1370319426059723,
+    "p90_expected_mayo": 1.0631870981305838,
+    "frac_active_frames": 0.038461538461538464
+   },
+   {
+    "video": "dfcb8d4c-a3c1-4410-961b-d7a70b68d9c3",
+    "group": "clean",
+    "frames": 31,
+    "mean_active": 0.2822447419166565,
+    "p90_expected_mayo": 1.908236987888813,
+    "frac_active_frames": 0.22580645161290322
+   },
+   {
+    "video": "ec65d14e-4460-40fb-bc48-973ec5f4ae60",
+    "group": "colitis",
+    "frames": 111,
+    "mean_active": 0.6006032824516296,
+    "p90_expected_mayo": 2.6503946371376514,
+    "frac_active_frames": 0.6036036036036037
+   },
+   {
+    "video": "f0325856-fad4-448c-82f5-11c5e2ffabef",
+    "group": "colitis",
+    "frames": 1,
+    "mean_active": 0.7800430655479431,
+    "p90_expected_mayo": 1.7234136157203466,
+    "frac_active_frames": 1.0
+   },
+   {
+    "video": "f1dfa843-1e53-4a5d-b3b1-d29dc08e968a",
+    "group": "clean",
+    "frames": 40,
+    "mean_active": 0.5177473425865173,
+    "p90_expected_mayo": 2.0867212984710934,
+    "frac_active_frames": 0.525
+   },
+   {
+    "video": "f4e1327e-f634-4768-90eb-f42e38f525b5",
+    "group": "clean",
+    "frames": 16,
+    "mean_active": 0.21913743019104004,
+    "p90_expected_mayo": 1.354046258609742,
+    "frac_active_frames": 0.125
+   },
+   {
+    "video": "f655d0eb-2225-48e4-9eed-11cab20c5df5",
+    "group": "colitis",
+    "frames": 35,
+    "mean_active": 0.7647838592529297,
+    "p90_expected_mayo": 2.9833637707168235,
+    "frac_active_frames": 0.7714285714285715
+   },
+   {
+    "video": "f82fb1e7-ecbb-46d6-ba90-a4624a1b1577",
+    "group": "clean",
+    "frames": 41,
+    "mean_active": 0.4323321580886841,
+    "p90_expected_mayo": 1.845361366868019,
+    "frac_active_frames": 0.43902439024390244
+   },
+   {
+    "video": "fc79c489-b358-4368-b965-330615af73d4",
+    "group": "colitis",
+    "frames": 27,
+    "mean_active": 0.8611069321632385,
+    "p90_expected_mayo": 2.999693195823693,
+    "frac_active_frames": 0.8888888888888888
+   }
+  ],
+  "note": "UC grader trained on LIMUC; HyperKvasir colitis videos (type not specified) vs BBPS 2-3 clean-bowel videos; 1 frame/s"
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "kvasir": {
+  "inflammatory_vs_normal": {
+   "auroc": 0.9207002962475314,
+   "n_pos": 1519,
+   "n_neg": 4000,
+   "sensitivity": 0.8762343647136274,
+   "specificity": 0.782
+  },
+  "ulcer": {
+   "n": 854,
+   "auroc_vs_normal": 0.9600629391100705,
+   "mean_lesion_score": 0.8381239175796509
+  },
+  "erosion": {
+   "n": 506,
+   "auroc_vs_normal": 0.8853700592885375,
+   "mean_lesion_score": 0.7181291580200195
+  },
+  "erythema": {
+   "n": 159,
+   "auroc_vs_normal": 0.8217154088050315,
+   "mean_lesion_score": 0.6318315267562866
+  },
+  "angiectasia": {
+   "n": 866,
+   "auroc_vs_normal": 0.8943625866050808,
+   "mean_lesion_score": 0.6565770506858826
+  },
+  "blood_fresh": {
+   "n": 446,
+   "auroc_vs_normal": 0.8815835201793721,
+   "mean_lesion_score": 0.6338101625442505
+  },
+  "lymphangiectasia": {
+   "n": 592,
+   "auroc_vs_normal": 0.6376201435810811,
+   "mean_lesion_score": 0.4846920967102051
+  },
+  "foreign_body": {
+   "n": 776,
+   "auroc_vs_normal": 0.4487609536082474,
+   "mean_lesion_score": 0.39882686734199524
+  },
+  "polyp": {
+   "n": 55,
+   "auroc_vs_normal": 0.8107409090909091,
+   "mean_lesion_score": 0.6304025053977966
+  },
+  "normal_mean_lesion_score": 0.41894274950027466,
+  "pointing": {
+   "n": 1477,
+   "hit_rate": 0.5240352064996615,
+   "baseline": 0.04100683625684532
+  }
+ },
+ "seeai": {
+  "erosion": {
+   "n": 1427,
+   "auroc_vs_no_finding": 0.82481271899089,
+   "sensitivity": 0.6362999299229152
+  },
+  "stenosis": {
+   "n": 442,
+   "auroc_vs_no_finding": 0.8627884615384616,
+   "sensitivity": 0.7081447963800905
+  },
+  "erythema": {
+   "n": 915,
+   "auroc_vs_no_finding": 0.8457819672131147,
+   "sensitivity": 0.6710382513661202
+  },
+  "no_finding": {
+   "n": 2000,
+   "specificity": 0.8505
+  },
+  "pointing": {
+   "erosion": {
+    "n": 1427,
+    "hit_rate": 0.7323055360896986,
+    "baseline": 0.17571543262941908
+   },
+   "stenosis": {
+    "n": 442,
+    "hit_rate": 0.9140271493212669,
+    "baseline": 0.5452155404252014
+   }
+  }
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "lesion_threshold": 0.5,
+ "threshold_rule": "0.5 favours sensitivity, as a screening/triage tool should",
+ "oof_sensitivity_at_0_5": 0.9706,
+ "oof_specificity_at_0_5": 0.9567,
+ "classes": [
+  "N",
+  "E",
+  "O",
+  "AU",
+  "U3-10",
+  "U>10",
+  "S"
+ ],
+ "model_prefix": "crohnipi_effb2s0",
+ "backbone": "efficientnet_b2.ra_in1k",
+ "input_size": 320,
+ "n_folds": 5,
+ "version": "B2 (EfficientNet-B2, 320 px, 40 epochs, EMA, 8-view TTA in CV, 2 seeds; GPU)",
+ "model_prefixes": [
+  "crohnipi_effb2s0",
+  "crohnipi_effb2s1"
+ ],
+ "n_models": 10,
+ "previous_model": "crohnipi_effb0v2 (set model_prefixes to [\"crohnipi_effb0v2\"] and input_size to 224 to go back)",
+ "screening_threshold": 0.3097,
+ "screening_rule": "score at which CrohnIPI out-of-fold lesion frames reach 99% sensitivity; fixed on training data only, before any external test",
+ "operating_points": {
+  "balanced": {
+   "threshold": 0.5,
+   "crohnipi": {
+    "sensitivity": 0.971,
+    "specificity": 0.957
+   },
+   "kvasir_47k": {
+    "sensitivity": 0.794,
+    "specificity": 0.974
+   },
+   "seeai": {
+    "erosion": 0.709,
+    "stenosis": 0.781,
+    "erythema": 0.658,
+    "no_finding_specificity": 0.916
+   }
+  },
+  "screening": {
+   "threshold": 0.3097,
+   "crohnipi": {
+    "sensitivity": 0.988,
+    "specificity": 0.856
+   },
+   "kvasir_47k": {
+    "sensitivity": 0.934,
+    "specificity": 0.684
+   },
+   "seeai": {
+    "erosion": 0.882,
+    "stenosis": 0.9,
+    "erythema": 0.898,
+    "no_finding_specificity": 0.688
+   }
+  }
+ }
+}
