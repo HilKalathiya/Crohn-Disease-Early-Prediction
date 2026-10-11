@@ -50,3 +50,6 @@ desktop.ini
 
 # Local backup of the old README (not part of the repository)
 /docs/README_interim_build_old.md
+
+# Docker helper logs
+/app/docker_*_log.txt

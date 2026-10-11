@@ -10,3 +10,7 @@ models/crohnipi_effb0_fold*
 models/crohnipi_effb0v2_fold*
 models/results_summary.before_full_data.json
 models/video_timelines_crohnipi_effb0v2.json
+# Windows helper scripts and their logs
+*.bat
+*.ps1
+docker_*_log.txt

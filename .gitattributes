@@ -5,3 +5,5 @@
 *.jpg binary
 *.png binary
 *.svg text
+*.bat text eol=crlf
+*.ps1 text eol=crlf

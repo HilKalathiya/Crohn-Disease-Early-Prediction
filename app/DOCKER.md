@@ -17,7 +17,10 @@ Open http://localhost:8000 and stop it with `docker compose down`. Videos you wa
 The image contains models trained on research-use-only data (CrohnIPI), so keep the repository **private**.
 
 1. Sign in at https://hub.docker.com as `hilkalathiya59`, choose **Create repository**, name it `crohnsight`, set visibility to **Private**, and create it. Create it before the first push: a push to a repository that does not exist yet creates it with your account's default visibility, which is usually public.
-2. In PowerShell, in this folder:
+2. With Docker Desktop running and signed in as `hilkalathiya59`, double-click `docker_build_test.bat` in this folder. It builds the image, test-runs it on port 8765, checks the health endpoint and the main pages, and ends with `RESULT: BUILD AND TEST OK` (the first build takes 5–10 minutes; everything is also written to `docker_build_log.txt`).
+3. Double-click `docker_push.bat`. It refuses to push if `hilkalathiya59/crohnsight` is publicly visible, pushes, checks the visibility again and ends with `RESULT: PUSH OK (private)` (log: `docker_push_log.txt`).
+
+The same by hand, in PowerShell in this folder:
 
 ```powershell
 docker login -u hilkalathiya59
