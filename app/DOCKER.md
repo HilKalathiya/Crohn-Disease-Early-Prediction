@@ -1,57 +1,50 @@
-# Run CrohnSight in Docker (any computer) and put it online
+# Run CrohnSight in Docker (any computer)
 
-The image holds the whole app: FastAPI backend, ONNX models, sample images and the built website. It needs no GPU and no internet at run time.
+The image holds the whole app: FastAPI backend, the 10 ONNX models, sample images and the built website (about 0.7 GB). It needs no GPU, no datasets and no internet at run time. Datasets are not part of the image: they live in the private Hugging Face dataset (see `DATA_RESTORE.md` / `hf_upload/README.md`).
 
 ## 1. Build and run on your laptop
 
-Install **Docker Desktop** (Windows/macOS) or Docker Engine (Linux), then in this folder (`interim_build/app`):
+Install **Docker Desktop** (Windows/macOS) or Docker Engine (Linux), then in this folder (`interim_build\app`):
 
 ```powershell
 docker compose up -d --build
 ```
 
-Open http://localhost:8000 . Stop it with `docker compose down`.
-Without compose: `docker build -t crohnsight:1.0 .` then `docker run -d -p 8000:8000 --name crohnsight crohnsight:1.0`.
+Open http://localhost:8000 and stop it with `docker compose down`. Videos you want to scan go in `app\user_videos`, which is shared with the container.
 
-The first build downloads the `python:3.11-slim` base image and the Python packages (about 250 MB). Later builds are cached.
+## 2. Put the image on Docker Hub as a private image
 
-## 2. Use it from anywhere
+The image contains models trained on research-use-only data (CrohnIPI), so keep the repository **private**.
 
-### Option A - Hugging Face Spaces (free, gives a public or private https link)
-
-1. Create an account at https://huggingface.co and click **New Space**.
-2. Space SDK: **Docker** (blank template). Hardware: **CPU basic (free)**. Visibility: **Private** is recommended (see the licence note below).
-3. Upload the contents of this `app` folder **except `frontend/`** (web upload, or `huggingface-cli upload <user>/<space> . --repo-type space`).
-4. Add this block at the very top of the Space's `README.md`:
-
-   ```
-   ---
-   title: CrohnSight
-   sdk: docker
-   app_port: 7860
-   ---
-   ```
-
-5. Add one line to the `Dockerfile` just before `EXPOSE`:  `ENV PORT=7860`
-6. The Space builds by itself. Your link is `https://huggingface.co/spaces/<user>/<space>`.
-
-### Option B - Docker Hub (anyone with Docker can pull it)
+1. Sign in at https://hub.docker.com as `hilkalathiya59`, choose **Create repository**, name it `crohnsight`, set visibility to **Private**, and create it. Create it before the first push: a push to a repository that does not exist yet creates it with your account's default visibility, which is usually public.
+2. In PowerShell, in this folder:
 
 ```powershell
-docker login
-docker tag crohnsight:1.0 <your-dockerhub-user>/crohnsight:1.0
-docker push <your-dockerhub-user>/crohnsight:1.0
-# on any other computer
-docker run -d -p 8000:8000 <your-dockerhub-user>/crohnsight:1.0
+docker login -u hilkalathiya59
+docker compose build
+docker push hilkalathiya59/crohnsight:1.0
 ```
 
-## 3. GPU inside Docker (optional)
+If Docker Hub says your plan has no private repository left, do not push it as public; keep the image on your laptop (step 1) instead.
 
-Not needed: the CPU image analyses a frame in under a second. For a GPU container you need the NVIDIA Container Toolkit,
-a CUDA base image and `onnxruntime-gpu` instead of `onnxruntime`; then run with `--gpus all -e CROHNSIGHT_DEVICE=auto`.
+## 3. Run it on any other computer
 
-## Licence note before making it public
+```powershell
+docker login -u hilkalathiya59
+mkdir user_videos
+docker run -d -p 8000:8000 -v "${PWD}\user_videos:/app/user_videos" --name crohnsight hilkalathiya59/crohnsight:1.0
+```
 
-The image contains sample frames from CrohnIPI (CC BY-NC-ND), Kvasir-Capsule, HyperKvasir, LIMUC (CC BY 4.0) and SEE-AI (Kaggle licence),
-and models trained on them. Non-commercial academic use with attribution is fine; keep a public deployment non-commercial,
-keep the attribution on the Data & Methods page, or keep the Space private and share it only with your evaluators.
+(On Linux or macOS use `-v "$PWD/user_videos:/app/user_videos"`.) Open http://localhost:8000. Update later with `docker pull hilkalathiya59/crohnsight:1.0`, then remove and re-run the container.
+
+## 4. GPU inside Docker (optional)
+
+Not needed: the CPU image analyses a frame in about a second. For a GPU container you need the NVIDIA Container Toolkit, a CUDA base image and `onnxruntime-gpu` instead of `onnxruntime`; then run with `--gpus all -e CROHNSIGHT_DEVICE=auto`.
+
+## 5. Free hosting with a link (optional)
+
+Hugging Face Spaces can run the same Dockerfile: create a **private** Docker Space, upload this folder except `frontend/`, add `app_port: 7860` to the Space's README header and `ENV PORT=7860` to the Dockerfile before `EXPOSE`.
+
+## Licence note
+
+The image contains sample frames from CrohnIPI (CC BY-NC-ND, research use only), Kvasir-Capsule, HyperKvasir, LIMUC (CC BY 4.0) and SEE-AI (Kaggle licence), and models trained on them. Keep any copy private or share it only with your evaluators, non-commercially and with the attribution on the Data & Methods page.

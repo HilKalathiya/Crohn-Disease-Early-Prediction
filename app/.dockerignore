@@ -1,5 +1,12 @@
+# Build context = this app folder. Only what the running app needs goes into the image.
 frontend/
+user_videos/
 **/__pycache__/
 **/*.pyc
 *.log
 .git
+# older Crohn's model versions stay on the laptop (the app loads the 10 EfficientNet-B2 models)
+models/crohnipi_effb0_fold*
+models/crohnipi_effb0v2_fold*
+models/results_summary.before_full_data.json
+models/video_timelines_crohnipi_effb0v2.json

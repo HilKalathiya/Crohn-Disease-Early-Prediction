@@ -1,8 +1,11 @@
 # docker compose up -d   ->  http://localhost:8000
+# Capsule videos to scan: put them in ./user_videos (shared with the container).
 services:
   crohnsight:
     build: .
-    image: crohnsight:1.0
+    image: hilkalathiya59/crohnsight:1.0
     ports:
       - "8000:8000"
+    volumes:
+      - ./user_videos:/app/user_videos
     restart: unless-stopped
