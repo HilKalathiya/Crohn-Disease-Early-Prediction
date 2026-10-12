@@ -2,7 +2,7 @@
 
 **Project:** AI-Based Early Prediction of Crohn's Disease Severity Using Machine Learning (Minor Project 2026-27, PDEU, topic T-6)
 **Team:** Hil Kalathiya (23BIT092), Sahaj Saliya (23BIT128) · **Guide:** Prof. Dr. Babalu Kumar Singh
-**App name:** CrohnSight · **Guide written:** 8 Oct 2026, the night before the 9 Oct evaluation
+**App name:** CrohnSight · **Guide written:** 8 Oct 2026, the night before the 9 Oct evaluation · **Updated:** 12 Oct 2026 (storage clean-up in 2.11 and 5.8, test videos in 12.2)
 
 This guide explains every corner of the project: what we built, why we chose each piece, how the ideas developed, what went wrong and how we fixed it, and how to run or rebuild anything. It is long on purpose. For the short version, read sections 1 and 2.
 
@@ -145,6 +145,10 @@ At the fixed 0.5 cut-off, B2 caught 79% of Kvasir lesion frames, v2 caught 88%. 
 
 Upload a capsule video in the browser, or drop it in `app/user_videos/`, and the app scans it in two stages (fast pass on every Nth frame, then the full 10-model ensemble on the top 24 frames). Tested on a real 16,151-frame Kvasir video: 38 seconds on the laptop's 2-core Linux VM.
 
+### 2.11 Running out of disk space (10–12 Oct)
+
+After the evaluation, the laptop's E: drive had only 32 GB free. The downloaded datasets took about 156 GB, `interim_build` about 16 GB, and MIMIC-IV was still to come. Yet the code reads only about 10 GB of that data. So we moved everything that was unused or already finished into a `_TO_DELETE` folder, re-tested the app, backed up the working set to a private Hugging Face dataset, checked the backup, and only then deleted. E: now has 264 GB free. Section 5.8 lists what went, why it was safe, and how to get any of it back; section 12.2 explains how to test "Scan your own video" with the videos that are left.
+
 ---
 
 ## 3. Medical background you need
@@ -236,7 +240,7 @@ Total: 82,330 images across 5 image datasets (3,484 + 47,238 + 18,481 + 11,276 +
 
 * 47,238 labelled frames in 14 classes: Normal 34,338 · Ileocecal valve 4,189 · Reduced mucosal view 2,906 · Pylorus 1,529 · Angiectasia 866 · Ulcer 854 · Foreign body 776 · Lymphangiectasia 592 · Erosion 506 · Blood (fresh) 446 · Erythema 159 · Polyp 55 · Blood (hematin) 12 · Ampulla of Vater 10.
 * "Inflammatory" (what our model should flag) = ulcer + erosion + erythema: 1,519 frames in the 8,266-frame test subset (854 + 506 + 159), 1,527 in the all-frames analysis.
-* 43 labelled videos (32 GB) and 71 unlabelled videos (55 GB).
+* 43 labelled videos (32 GB) and 71 unlabelled videos (55 GB). Since 11 Oct only 3 labelled videos are kept on the laptop; the results of scanning all 43 are saved (5.8).
 * **Key fact:** lesion frames come from very few videos (ulcer: 3 videos, erythema: 3, erosion: 9). This explains the leakage result and why video-level work is hard.
 
 ### 5.4 SEE-AI
@@ -252,11 +256,68 @@ Total: 82,330 images across 5 image datasets (3,484 + 47,238 + 18,481 + 11,276 +
 
 ### 5.6 What we did not use, on purpose
 
-71 unlabelled Kvasir videos and 99,417 unlabelled HyperKvasir images (nothing to test against), HyperKvasir classes unrelated to IBD (polyps for grading, oesophagitis), box coordinates (we use image-level labels; heat-maps are checked against boxes).
+71 unlabelled Kvasir videos and 99,417 unlabelled HyperKvasir images (nothing to test against), HyperKvasir classes unrelated to IBD (polyps for grading, oesophagitis), box coordinates (we use image-level labels; heat-maps are checked against boxes). The unlabelled videos and images were deleted from the laptop on 11 Oct (5.8).
 
 ### 5.7 What is in this repository
 
 No dataset is in the repository (licences and size). The repo holds code, trained models, metrics and small out-of-fold prediction files. Sample images included in the app are only from CC BY 4.0 datasets (Kvasir-Capsule, HyperKvasir, LIMUC). See the README for download links and the expected folder layout.
+
+### 5.8 Storage clean-up (10–11 Oct 2026): what we deleted and why
+
+**The problem.** The E: drive, where the project lives, had 32 GB free. The raw datasets in `temorary solution` took about 156 GB and `interim_build` about 16 GB, and MIMIC-IV (tens of GB) was still to come. The code reads only about 10 GB of all that data.
+
+**The rule.** A file could go only if at least one of these was true: (a) the project never used it, (b) the result it produced is already saved, or (c) it can be downloaded again from the official source or rebuilt by one of our scripts. Nothing was deleted straight away:
+
+1. Everything was first *moved* into `MP_Cohn Disease\_TO_DELETE\`, keeping its original folder path, and listed with its size and the reason in `DATA_RESTORE_moved_items.tsv`.
+2. The app was re-tested: all 10 models load, every page and the demo study respond.
+3. The working set was backed up to a private Hugging Face dataset and the backup was checked: repository private, all 15 parts present, a test restore byte-identical to the originals (303 files compared).
+4. Only then did Hil delete `_TO_DELETE` (Shift+Delete) and the local copies of the backup.
+
+**What was deleted**
+
+| Group | Size | Why it was safe to delete | How to get it back |
+| --- | --- | --- | --- |
+| Kvasir-Capsule unlabelled videos (71) | 55 GB | Never used: no labels, nothing to test against | [OSF dv2ag](https://osf.io/dv2ag/), folder `unlabelled_videos` |
+| HyperKvasir unlabelled images (99,417) | 30.2 GB | Never used | [OSF mh9sj](https://osf.io/mh9sj/) or datasets.simula.no/hyper-kvasir, `unlabeled-images` |
+| HyperKvasir labelled videos, 328 of 374 | 28.6 GB | Not used; the 46 videos of the UC video test are kept | Same HyperKvasir source, `labeled-videos` |
+| Kvasir-Capsule labelled videos, 40 of 43 | 31.2 GB | The 43-video scan (8.5) is finished and its results are kept: `app/models/video_timelines.json` and the thumbnails in `app/samples/videos/` (in the repository) and the per-video score files `results/bulk/kvasir_videos*/*.npz` (on the laptop). The Video Scan page still shows all 43 timelines. 3 videos are kept for testing (12.2) | [OSF dv2ag](https://osf.io/dv2ag/), folder `labelled_videos` (single files can be downloaded) |
+| Duplicate zips (LIMUC ×2, SEE-AI, CrohnIPI) | 5.2 GB | Already unzipped next to the zip | Zenodo 5827695 (LIMUC), Kaggle `capsuleyokote/the-see-ai-project-dataset`, Zenodo 14616507 (CrohnIPI) |
+| `results/bulk/kvasir_videos*/segments` | 9.4 GB | Partial chunks of the video scan; the merged per-video files are kept | Re-run `ml_device/scan_kvasir_videos.py` (needs the videos) |
+| `gpu/runs_gpu/*/crohnipi_*.npy` | 3.2 GB | Cached image arrays | `train_gpu.py` rebuilds them on the next run |
+| `_packed` zips | 0.5 GB | 224-px transfer zips; the `*_index.csv` files are kept | `ml_device/pack2.py` |
+| `_features`, `_external` (v1), older caches, stale website builds | 1.2 GB | Caches and old model versions' scores | Scripts named in the `.tsv` file |
+| LIMUC `.bmp` originals (11,277) | 3.4 GB | Replaced by pixel-identical `.png` files (1.3 GB); every PNG was decoded and compared with its BMP before the BMP went | Zenodo 5827695 |
+| MIMIC-IV raw CSVs (`data/MIMIC IV`) | 52 GB | No module uses it; removed by Hil. MIMIC-IV is credentialed data: we use it only after our own PhysioNet approval, and it is never uploaded anywhere or given to online AI tools | physionet.org, after credentialing |
+
+That is about 171 GB from the project folders plus the 52 GB MIMIC-IV copy; E: went from 32 GB to 264 GB free. The full list is in `DATA_RESTORE_moved_items.tsv`, and the restore steps for each group are in `DATA_RESTORE.md` (both in the `MP_Cohn Disease` folder).
+
+**What stays on the laptop (about 10.6 GB of data)**
+
+| Kept | Size | Used for |
+| --- | --- | --- |
+| CrohnIPI images + CSV | 0.08 GB | Training and internal test |
+| Kvasir-Capsule labelled images + metadata, 3 labelled videos | 1.4 GB | External test; testing the video feature |
+| SEE-AI images, box files, annotation CSV, 5 short sample videos | 1.3 GB | External test, findings screen |
+| LIMUC images (lossless PNG since 11 Oct) | 1.3 GB | UC grader |
+| HyperKvasir labelled images, polyp masks, 46 videos | 6.4 GB | UC external test, heat-map check |
+| HMP2 metadata | 0.01 GB | Flare model |
+| `interim_build` (app, models, checkpoints, results, code) | about 3 GB | Everything the app and the analyses need |
+
+**Why we did not simply zip the datasets.** We measured samples: zipping keeps 99.4% of CrohnIPI's size, 97.6% of Kvasir's, 97.7% of SEE-AI's, 99.3% of HyperKvasir's and 100% of the videos. JPEG and MP4 are already compressed. Making them smaller would mean re-encoding at lower quality, which changes the pixels the models were trained and tested on. LIMUC was the exception: it was stored as uncompressed BMP, so lossless PNG cut it from 3.43 GB to 1.32 GB with identical pixels (`ml_device/limuc_bmp_to_png.py`).
+
+**The online backup.** All the kept data (everything in the table above except `interim_build`, which is on GitHub) is in the **private** Hugging Face dataset `hilkalathiya59/crohnsight-data`: 15 tar files, 7.49 GB, each with a SHA-256 checksum in `MANIFEST.json`. It must stay private, because CrohnIPI and SEE-AI do not allow redistribution. To restore it on any computer (the script is in `MP_Cohn Disease\hf_upload\` and in the dataset itself):
+
+```bat
+pip install "huggingface_hub>=0.34,<1.0"
+hf auth login
+python get_data.py --repo hilkalathiya59/crohnsight-data --dest "temorary solution"
+:: only some parts, e.g. the 3 Kvasir test videos (0.8 GB):
+python get_data.py --repo hilkalathiya59/crohnsight-data --dest "temorary solution" --only kvasir_capsule_videos3
+```
+
+Part names: `crohnipi`, `kvasir_capsule_images`, `kvasir_capsule_videos3`, `seeai_meta`, `seeai_images_1`/`_2`, `hyperkvasir_uc`, `hyperkvasir_videos46_1`/`_2`/`_3`, `limuc_1`…`_4`, `hmp2`. The script checks every checksum before unpacking. (huggingface_hub 1.x or newer also works for the script, but in the same Python it breaks `transformers` 4.57, which needs a version below 1.0.)
+
+**What changes for the project.** None of the numbers in section 8: every result was computed before the clean-up, and the result files are kept. Two things now need a download first: re-running the 43-video Kvasir scan (8.5) needs the 40 deleted videos (31 GB), and anything with the unlabelled data, which we never used.
 
 ---
 
@@ -520,6 +581,8 @@ Negative results are part of the project. Each one below was tested properly, re
 | 27 | A slide fact was wrong (erythema count) | Cross-check against the CSV | Fixed to 125; every headline number is now generated from one results file |
 | 28 | Dataset licences (CrohnIPI: research use only) | Licence review before publishing | No datasets in the repository; only CC BY 4.0 sample images; trained weights marked research/non-commercial |
 | 29 | The demo study took 1.5–3 minutes with 10 B2 networks on a laptop CPU | Fresh-clone test before the evaluation | Result of the fixed demo study cached once per model set (now loads in under a second); uploaded studies are still scored live |
+| 30 | Laptop drive almost full: 32 GB free, ~156 GB of datasets of which ~10 GB is used | Measured the folders before MIMIC-IV arrived | Moved unused or finished data to `_TO_DELETE`, re-tested the app, backed up the working set to a private Hugging Face dataset, checked the backup, then deleted (5.8). 264 GB free |
+| 31 | After the clean-up, few capsule videos left to test "Scan your own video" | Clean-up review | Kept 3 Kvasir videos and 5 SEE-AI clips; a 1-second ffmpeg recipe for 30-s test clips; tested a lesion clip against a normal clip; lesion-rich videos listed for re-download (12.2) |
 
 ---
 
@@ -644,6 +707,8 @@ python run.py --no-browser    # server only;  set PORT=8080 (Windows) / PORT=808
 
 Docker: `cd app && docker compose up -d --build`, then http://localhost:8000 (details in `app/DOCKER.md`).
 
+The image is also on Docker Hub as the **private** image `hilkalathiya59/crohnsight:1.0` (built, tested and pushed on 12 Oct with `app/docker_build_test.bat` and `app/docker_push.bat`; 774 MB download). On another computer: `docker login -u hilkalathiya59`, then `docker run -d -p 8000:8000 -v "${PWD}\user_videos:/app/user_videos" hilkalathiya59/crohnsight:1.0`. No datasets and no GPU are needed to run it.
+
 ### 12.2 Scan your own capsule video
 
 1. Open **Video Scan**. Either drag a video onto the upload box, or copy it into `app/user_videos/` and press **Refresh**.
@@ -651,6 +716,86 @@ Docker: `cd app && docker compose up -d --build`, then http://localhost:8000 (de
 3. Press **Scan**. Watch the progress; the result shows the score timeline (with the cut-off line), the top 24 frames ranked by the full ensemble, and a heat-map when you click a frame.
 
 Formats: mp4, avi, mov, mkv, mpg, mpeg, wmv, m4v, webm. If the page says no decoder was found: `pip install imageio-ffmpeg`. A different folder can be used by setting the environment variable `CROHNSIGHT_VIDEO_DIR`.
+
+#### Test videos after the clean-up (12 Oct)
+
+You do not need to download anything to test the feature. These videos are still on the laptop, in `temorary solution`:
+
+| Video | Size, length | What is in it | Use it for |
+| --- | --- | --- | --- |
+| `Kvasir-Capsule\labelled_videos\0531325b64674948.mp4` | 264 MB, 9 min, 16,151 frames | 16 frames labelled **erosion** at frames 232–248 (7.7–8.3 s). The first ~2 minutes are stomach (pylorus at 1:53), then normal small bowel | Positive test: cut the first 30 s (below) |
+| `Kvasir-Capsule\labelled_videos\8a00709108cd4e2b.mp4` | 251 MB, 9.8 min, 17,634 frames | Normal small bowel; ileocecal valve at the very end | Negative test |
+| `Kvasir-Capsule\labelled_videos\df6b47bafe5143f5.mp4` | 295 MB, 10.7 min, 19,237 frames | Pylorus at 1:10, normal small bowel, ileocecal valve at the end | Negative test |
+| `The SEE-AI Project Dataset\detected_samplevideo_short\detected_samplevideo_short\VideoNo1…5_detected_short.mp4` | 1–6 MB, 60 s each | Capsule clips with SEE-AI's detection boxes already drawn on them | A quick check that upload and decoding work. The drawn boxes make the scores unreliable |
+| `hyper-kvasir\labeled-videos\...\*.avi` (46) | 1–390 MB | Colonoscopy, not capsule | Checks that `.avi` files decode. The Crohn's model was never trained on colonoscopy, so its scores mean nothing here |
+
+The Kvasir videos are 336 × 336 px at 30 frames per second, so time in seconds = frame number ÷ 30 (frame numbers are in `Kvasir-Capsule\metadata.csv`).
+
+**Three ways to give the app a video**
+
+1. Copy it into `app\user_videos\` and press **Refresh** on the Video Scan page. Best for big files.
+2. Drag it onto the upload box. The browser sends it to the app running on your own computer, which saves a copy in `app\user_videos\` and starts the scan. That is a second copy of the file, so empty that folder after testing (keep `.gitkeep`; the folder is ignored by Git, so test videos never reach GitHub).
+3. Point the app at the dataset folder, so no copy is made. In the window you start the app from:
+
+```bat
+:: Command Prompt
+set "CROHNSIGHT_VIDEO_DIR=E:\D\study\MP_Cohn Disease\temorary solution\Kvasir-Capsule\labelled_videos"
+python run.py
+```
+
+```powershell
+# PowerShell
+$env:CROHNSIGHT_VIDEO_DIR = "E:\D\study\MP_Cohn Disease\temorary solution\Kvasir-Capsule\labelled_videos"
+python run.py
+```
+
+The page then lists the three Kvasir videos. While the variable is set, uploads also go into that folder.
+
+With Docker (`docker compose up`), `app\user_videos` on the laptop is shared with the container, so ways 1 and 2 work the same. On another computer, create a `user_videos` folder and start the container with `-v "${PWD}\user_videos:/app/user_videos"` (see `app/DOCKER.md`).
+
+**Make a short test clip (faster, and with a lesion in it)**
+
+A 9-minute video takes a while to upload and scan on a laptop. ffmpeg cuts a 30-second clip in under a second without re-encoding. ffmpeg comes with `imageio-ffmpeg`, which is already in `requirements.txt`. Find its path with:
+
+```bat
+python -c "import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())"
+```
+
+Use that full path (in quotes) in place of `ffmpeg` below, or install ffmpeg itself.
+
+```bat
+cd "E:\D\study\MP_Cohn Disease\temorary solution\Kvasir-Capsule\labelled_videos"
+:: positive clip: first 30 s, includes the labelled erosion at 7.7-8.3 s (14 MB, 900 frames)
+ffmpeg -i 0531325b64674948.mp4 -t 30 -c copy "E:\D\study\MP_Cohn Disease\interim_build\app\user_videos\erosion_30s.mp4"
+:: negative clip: 30 s of normal small bowel starting at 5:00
+ffmpeg -ss 00:05:00 -i df6b47bafe5143f5.mp4 -t 30 -c copy "E:\D\study\MP_Cohn Disease\interim_build\app\user_videos\normal_30s.mp4"
+```
+
+`-ss` is the start time, `-t` the length in seconds, and `-c copy` copies without re-encoding (the cut snaps to the nearest key frame, which is fine for testing).
+
+**What we got with these two clips** (12 Oct, laptop's 2-core Linux VM, every 3rd frame scored = 300 frames, then the top 24 re-scored by all 10 models):
+
+| Clip | Stage-1 frames above the balanced cut-off (0.5) | Top 24 | Time |
+| --- | --- | --- | --- |
+| `erosion_30s.mp4` | 23.7% | The two labelled-erosion moments (frame 246 at 8.2 s and frame 228 at 7.6 s) ranked 3rd and 7th, both "Moderate" (aphthoid ulceration) | 106 s |
+| `normal_30s.mp4` | 4.7% | Mostly "No lesion", with a few false alarms to review | 90 s |
+
+The other high frames in the erosion clip are unlabelled stomach footage. The model was trained only on small-bowel images, so treat flags in the stomach as unverified (section 8.2 shows the same over-calling at the pylorus). On the Windows laptop itself, scans run faster than in the VM.
+
+**Getting a video with clear ulcers back.** The three kept videos contain little disease. For a convincing demo, download one lesion-rich labelled video from Kvasir-Capsule ([OSF dv2ag](https://osf.io/dv2ag/) → `labelled_videos`, pick the single file; CC BY 4.0) and cut a clip around the lesions:
+
+| Video ID | Size | Labelled lesion frames | Where (min:s) |
+| --- | --- | --- | --- |
+| `2fc3db471f9d44c0` | 1.1 GB | 127 ulcer | 0:42–3:04 |
+| `8ebf0e483cac48d6` | 0.56 GB | 144 erosion | 6:29–16:30 |
+| `5e59c7fdb16c4228` | 0.65 GB | 123 erythema, 32 erosion | 14:31–21:23 |
+| `d626f4f4a5ac4785` | 0.89 GB | 582 ulcer, 39 erosion | ulcers 14:20–29:02 |
+
+For example, `ffmpeg -ss 00:00:40 -i 2fc3db471f9d44c0.mp4 -t 150 -c copy ulcer_clip.mp4` keeps 0:40–3:10. All four were part of our 43-video scan, so the Video Scan page already shows their saved timelines. The top frames of your new scan should fall in the same stretch, which is a good check.
+
+**If the three kept videos are ever deleted**, restore them from the backup with `--only kvasir_capsule_videos3` (5.8).
+
+**Other videos.** Any capsule video in the listed formats works, and its length does not matter, because the scan scores a fixed number of frames. Other kinds of video (colonoscopy, a phone recording) will run, but the scores mean nothing: the model only knows small-bowel capsule images. Use real patient videos only with permission and with names and dates removed. The app runs on your own computer, so a video never leaves it, unless the app is hosted on a server such as a Hugging Face Space.
 
 ### 12.3 Re-check the headline numbers without retraining
 
@@ -712,6 +857,8 @@ Scripts expect the datasets in a folder called `temorary solution` (spelling kep
     ├── hyper-kvasir/
     └── hmp2/                         hmp2_metadata_2018-08-20.csv
 ```
+
+On a new computer, restore this folder from the private Hugging Face backup with `get_data.py` (section 5.8).
 
 ---
 
