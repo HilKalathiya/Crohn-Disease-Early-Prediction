@@ -105,7 +105,7 @@ Exact folder names are listed in the guide, section 12.7.
 
 ## Licences and use
 
-* **Code and documentation:** [MIT License](LICENSE), © 2026 Hil Kalathiya and Sahaj Saliya.
+* **Code and documentation:** [MIT License](LICENSE), © 2026 Hil Kalathiya, Sahaj Saliya and Chetan Gadhiya.
 * **Trained model weights and derived results:** non-commercial research and teaching only, with attribution, no clinical use; see [MODELS_LICENSE.md](MODELS_LICENSE.md). They are derived from CrohnIPI (CC BY-NC-ND, research use only) and the other datasets, so the MIT licence does not apply to them.
 * **Sample images** (`app/samples/`): from Kvasir-Capsule, HyperKvasir and LIMUC (CC BY 4.0), shown with attribution. Research-use-only images (CrohnIPI, SEE-AI) are not included; the app skips them when absent.
 * **Not a medical device.** Research prototype only.
